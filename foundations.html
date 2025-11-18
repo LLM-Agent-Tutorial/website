@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foundations · LLM Agent Tutorial</title>
+  <title>What you must know about LLM Agents</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
   <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -49,32 +49,26 @@
 
     <main>
       <section id="llm-basics" class="content-section">
-        <h1 class="section-title">Large language models at a glance</h1>
+        <h1 class="section-title">What you must know about LLM Agents</h1>
         <p>
-          Large language models (LLMs), such as the GPT, DeepSeek, Gemini, and Claude families, are deep learning models
-          with billions of parameters, pre-trained on vast amounts of data. This data, typically sourced from
-          human-generated content, includes web pages, codebases, textbooks, and more. Through exposure to these corpora,
-          LLMs develop the ability to understand and generate language.
+          Large language models (LLMs), such the GPT, DeepSeek, Gemini, and Claude families, are deep learning models with billions of parameters, pre-trained on vast amounts of data. This data, typically sourced from human-generated content, includes web pages, codebases, textbooks, etc. Through training on these corpora, LLMs develop the ability to understand and generate language.
         </p>
-        <p>
+        <!-- <p>
           Because their interface is plain text, people can instruct LLMs to generate code, solve math problems, answer
           healthcare questions, translate, or craft poetry &mdash; as long as both instructions and outputs can be expressed
           as text. A clear prompt that sets context and desired behavior usually leads to usable responses.
-        </p>
+        </p> -->
       </section>
 
       <section id="next-token" class="content-section">
-        <h2 class="section-title">Next-token prediction and context windows</h2>
+        <h2 class="section-title">The principles of LLMs: Next-token prediction</h2>
         <p>
-          The fundamental operation behind LLMs is next-token prediction. Let <em>x</em> denote the textual input to the model
-          (the prompt). Given <em>x</em>, an LLM generates output by predicting one token at a time, ultimately producing a
+          The fundamental operation that drives all LLM usage and applications is <strong>next-token prediction</strong>. A token is a basic unit of text that the model processes, which can represent words, characters, or subword units. Let <em>x</em> denote the textual input to the model, commonly referred to as the prompt. Given <em>x</em>, an LLM generates output by predicting one token at a time, ultimately producing a
           sequence of tokens \(y = (y_1, y_2, \ldots, y_T)\). Formally, this can be represented as
-          \(p(y \mid x) = \prod_{t=1}^{T} p\big(y_t \mid x, y_{1..t-1}\big)\).
+          \(p(y \mid x) = \prod_{t=1}^{T} p\big(y_t \mid x, y_1, y_2,  \ldots, y_T\big)\). When predicting the next token, both the prompt <em>x</em> and the generated tokens \((y_1, y_2, \ldots, y_T)\)lie within a finite context window, which determines the maximum length of text the model can use at once.
         </p>
         <p>
-          When predicting the next token, both the prompt and the generated tokens live inside a finite context window,
-          which caps the maximum length of text the model can reason over at once. Managing that window &mdash; via careful
-          prompting or memory mechanisms &mdash; becomes essential once agents need to operate over extended workflows.
+          LLMs are highly versatile. Due to the nature of next-token prediction, they can perform a wide range of tasks, as long as the task and the output can be expressed in text (input x and output y). Today, people can instruct LLMs using textual prompts to generate code, solve math problems, answer questions in healthcare, write essays, translate languages, create poetry, and much more. Given the current capabilities of LLMs, a prompt, which clearly provides instructions or questions and states the context, typically results in output of acceptable quality.
         </p>
       </section>
 
@@ -132,8 +126,9 @@
         </div>
       </section>
 
+      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
-        <p>If you find this work helpful, please consider citing our paper:</p>
+        
         <pre><code>@article{hu2025llm_agents_tutorial,
   title={A Beginner-Friendly Tutorial on LLM-based Agents},
   author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
