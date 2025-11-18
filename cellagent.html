@@ -6,11 +6,12 @@
   <title>CellAgent · LLM Agent Tutorial</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
+  <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body data-page="cellagent" data-nav="capabilities">
   <header class="site-header">
     <div class="inner">
-      <div class="logo">LLM Agent Tutorial</div>
+      <a class="logo" href="index.html">LLM Agent Tutorial</a>
       <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
       <nav class="primary-nav" id="mainNav">
         <a href="index.html" data-nav-target="home">Home</a>
@@ -25,12 +26,11 @@
 
   <div class="layout">
     <aside class="chapter-sidebar">      <ul class="chapter-links">
-        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
         <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
         <li>
-          <span>What LLM agents can do and how they work</span>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
           <ul class="sub-chapter-links">
-            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
             <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
@@ -49,7 +49,6 @@
 
     <main>
       <section id="cell-overview" class="content-section">
-        <p class="section-label">3.3 Overview</p>
         <h1 class="section-title">Automating biological data analysis through natural language</h1>
         <p>
           <strong>CellAgent</strong> is an autonomous, LLM-driven multi-agent framework that, given raw single-cell RNA sequencing
@@ -60,8 +59,7 @@
       </section>
 
       <section id="cell-roles" class="content-section">
-        <p class="section-label">Role-play</p>
-        <h2 class="section-title">Planner, Executor, Evaluator</h2>
+        <h2 class="section-title">Role-play</h2>
         <div class="card-grid">
           <article class="info-card">
             <h3>Planner</h3>
@@ -82,8 +80,7 @@
       </section>
 
       <section id="cell-planning" class="content-section">
-        <p class="section-label">Planning &amp; tool use</p>
-        <h2 class="section-title">Expert-curated plans plus the sc-Omni toolkit</h2>
+        <h2 class="section-title">Planning &amp; tool use</h2>
         <p>
           The Planner decomposes even simple requests into best-practice pipelines: quality control → normalization →
           highly variable genes → dimensionality reduction → clustering. The Executor then attaches the right tool.
@@ -102,8 +99,7 @@ Plan: QC → Normalization → HVG → Dimensionality Reduction → Clustering.<
       </section>
 
       <section id="cell-reflection" class="content-section">
-        <p class="section-label">Reflection &amp; memory</p>
-        <h2 class="section-title">Evaluator-driven optimization and integrative memory</h2>
+        <h2 class="section-title">Reflection &amp; memory</h2>
         <div class="example-box">
           <p class="example-label">Example · Evaluator feedback</p>
           <p>"The clusters in the UMAP visualization are overlapping, suggesting the current resolution parameter is too low to
@@ -117,6 +113,16 @@ Plan: QC → Normalization → HVG → Dimensionality Reduction → Clustering.<
         </p>
       </section>
 
+      <section class="citation-block">
+        <p>If you find this work helpful, please consider citing our paper:</p>
+        <pre><code>@article{hu2025llm_agents_tutorial,
+  title={A Beginner-Friendly Tutorial on LLM-based Agents},
+  author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
+  year={2025},
+  month={November},
+  note={Manuscript in preparation}
+}</code></pre>
+      </section>
       <div class="page-nav">
         <a class="page-nav-btn" href="index.html">Back to Home</a>
         <a class="page-nav-btn primary" href="virtual-lab.html">Next</a>

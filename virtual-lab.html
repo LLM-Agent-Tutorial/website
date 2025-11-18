@@ -6,11 +6,12 @@
   <title>The Virtual Lab · LLM Agent Tutorial</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
+  <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body data-page="virtual-lab" data-nav="capabilities">
   <header class="site-header">
     <div class="inner">
-      <div class="logo">LLM Agent Tutorial</div>
+      <a class="logo" href="index.html">LLM Agent Tutorial</a>
       <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
       <nav class="primary-nav" id="mainNav">
         <a href="index.html" data-nav-target="home">Home</a>
@@ -25,12 +26,11 @@
 
   <div class="layout">
     <aside class="chapter-sidebar">      <ul class="chapter-links">
-        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
         <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
         <li>
-          <span>What LLM agents can do and how they work</span>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
           <ul class="sub-chapter-links">
-            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
             <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
@@ -49,7 +49,6 @@
 
     <main>
       <section id="vl-overview" class="content-section">
-        <p class="section-label">3.4 Overview</p>
         <h1 class="section-title">AI–human collaboration in medical research</h1>
         <p>
           The <strong>Virtual Lab</strong> facilitates interdisciplinary research through collaboration between AI agents and human
@@ -60,8 +59,7 @@
       </section>
 
       <section id="vl-roles" class="content-section">
-        <p class="section-label">Role-play &amp; reflection</p>
-        <h2 class="section-title">Principal Investigator plus Scientific Critic</h2>
+        <h2 class="section-title">Role-play &amp; reflection</h2>
         <p>
           The PI is charged with maximizing scientific impact, making key decisions, and managing timelines. The Scientific
           Critic offers targeted feedback after each response, refining team assignments and preventing blind spots.
@@ -74,8 +72,7 @@
       </section>
 
       <section id="vl-cooperation" class="content-section">
-        <p class="section-label">Cooperation</p>
-        <h2 class="section-title">Meeting agendas, discussions, and synthesis</h2>
+        <h2 class="section-title">Cooperation</h2>
         <p>
           Team meetings follow a structured agenda supplied by the human. The PI opens, specialist agents respond in
           rounds, and the PI summarizes, recommends decisions, and lists next steps. The human can understand outcomes by
@@ -89,8 +86,7 @@ Summary answer: "Nanobodies. They offer superior stability, tissue penetration, 
       </section>
 
       <section id="vl-tools" class="content-section">
-        <p class="section-label">Tool use</p>
-        <h2 class="section-title">From tool ideation to Rosetta scripts</h2>
+        <h2 class="section-title">Tool use</h2>
         <p>
           After the meeting, the team collaboratively chooses computational tools (AlphaFold, Rosetta, etc.). The PI then
           assigns tools during individual meetings, and specialist agents generate structured scripts with human-in-the-loop
@@ -104,6 +100,16 @@ Summary answer: "Nanobodies. They offer superior stability, tissue penetration, 
         </div>
       </section>
 
+      <section class="citation-block">
+        <p>If you find this work helpful, please consider citing our paper:</p>
+        <pre><code>@article{hu2025llm_agents_tutorial,
+  title={A Beginner-Friendly Tutorial on LLM-based Agents},
+  author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
+  year={2025},
+  month={November},
+  note={Manuscript in preparation}
+}</code></pre>
+      </section>
       <div class="page-nav">
         <a class="page-nav-btn" href="index.html">Back to Home</a>
         <a class="page-nav-btn primary" href="metagpt.html">Next</a>

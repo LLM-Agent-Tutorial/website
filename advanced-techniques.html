@@ -6,11 +6,12 @@
   <title>Advanced Techniques · LLM Agent Tutorial</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
+  <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body data-page="advanced" data-nav="advanced">
   <header class="site-header">
     <div class="inner">
-      <div class="logo">LLM Agent Tutorial</div>
+      <a class="logo" href="index.html">LLM Agent Tutorial</a>
       <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
       <nav class="primary-nav" id="mainNav">
         <a href="index.html" data-nav-target="home">Home</a>
@@ -25,12 +26,11 @@
 
   <div class="layout">
     <aside class="chapter-sidebar">      <ul class="chapter-links">
-        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
         <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
         <li>
-          <span>What LLM agents can do and how they work</span>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
           <ul class="sub-chapter-links">
-            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
             <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
@@ -49,7 +49,6 @@
 
     <main>
       <section id="adv-overview" class="content-section">
-        <p class="section-label">Section 5</p>
         <h1 class="section-title">Advanced techniques: what is happening at the frontier</h1>
         <p>
           The tutorial closes with five research frontiers: injecting domain knowledge, enhancing reasoning, managing long
@@ -58,7 +57,6 @@
       </section>
 
       <section id="adv-knowledge" class="content-section">
-        <p class="section-label">5.1 Injecting domain knowledge</p>
         <h2 class="section-title">In-context, RAG, and fine-tuning</h2>
         <p>
           Injecting domain knowledge steers a general-purpose LLM into an expert agent. Three techniques coexist:</p>
@@ -74,7 +72,6 @@
       </section>
 
       <section id="adv-reasoning" class="content-section">
-        <p class="section-label">5.2 Enhancing reasoning</p>
         <h2 class="section-title">Chain-of-thought, test-time scaling, RL</h2>
         <p>
           Reasoning underpins planning, tool use, and cooperation. Techniques include:</p>
@@ -89,7 +86,6 @@
       </section>
 
       <section id="adv-context" class="content-section">
-        <p class="section-label">5.3 Managing long context</p>
         <h2 class="section-title">Compression, reuse, and hierarchy</h2>
         <p>
           Long contexts raise cost and reduce accuracy. Strategies include context compression (RAG, summarization,
@@ -100,7 +96,6 @@
       </section>
 
       <section id="adv-internalize" class="content-section">
-        <p class="section-label">5.4 Internalizing agent abilities</p>
         <h2 class="section-title">Agent behaviors inside the model</h2>
         <p>
           A recent trend is to internalize planning, tool use, and multi-step execution directly inside the model. Examples
@@ -110,7 +105,6 @@
       </section>
 
       <section id="adv-safety" class="content-section">
-        <p class="section-label">5.5 Agent safety</p>
         <h2 class="section-title">Alignment, control, and recovery</h2>
         <p>
           Deployments demand alignment, controllability, and recoverability. The tutorial recommends: (1) rigorous
@@ -119,6 +113,16 @@
           prevent collusion or rogue behavior.</p>
       </section>
 
+      <section class="citation-block">
+        <p>If you find this work helpful, please consider citing our paper:</p>
+        <pre><code>@article{hu2025llm_agents_tutorial,
+  title={A Beginner-Friendly Tutorial on LLM-based Agents},
+  author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
+  year={2025},
+  month={November},
+  note={Manuscript in preparation}
+}</code></pre>
+      </section>
       <div class="page-nav">
         <a class="page-nav-btn" href="index.html">Back to Home</a>
         <a class="page-nav-btn primary" href="index.html">Next</a>

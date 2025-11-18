@@ -6,11 +6,12 @@
   <title>The AI Scientist · LLM Agent Tutorial</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
+  <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body data-page="ai-scientist" data-nav="capabilities">
   <header class="site-header">
     <div class="inner">
-      <div class="logo">LLM Agent Tutorial</div>
+      <a class="logo" href="index.html">LLM Agent Tutorial</a>
       <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
       <nav class="primary-nav" id="mainNav">
         <a href="index.html" data-nav-target="home">Home</a>
@@ -25,12 +26,11 @@
 
   <div class="layout">
     <aside class="chapter-sidebar">      <ul class="chapter-links">
-        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
         <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
         <li>
-          <span>What LLM agents can do and how they work</span>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
           <ul class="sub-chapter-links">
-            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
             <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
@@ -49,7 +49,6 @@
 
     <main>
       <section id="ais-overview" class="content-section">
-        <p class="section-label">3.2 Overview</p>
         <h1 class="section-title">Towards fully automated scientific research</h1>
         <p>
           The <strong>AI Scientist</strong> aims to independently carry out a scientific research process from idea generation to paper
@@ -60,8 +59,7 @@
       </section>
 
       <section id="ais-planning" class="content-section">
-        <p class="section-label">Planning</p>
-        <h2 class="section-title">Breaking the research loop into sequential steps</h2>
+        <h2 class="section-title">Planning</h2>
         <p>
           Planning helps the AI Scientist organize its multi-step workflow: experimental plans drive code execution while
           paper outlines guide write-ups. Below is the planning prompt straight from the paper.
@@ -75,8 +73,7 @@ Output: Prepare Data → Build Model → Train Baseline → Apply Augmentation �
       </section>
 
       <section id="ais-tools" class="content-section">
-        <p class="section-label">Tool use</p>
-        <h2 class="section-title">Retrieval, coding assistants, and compilers</h2>
+        <h2 class="section-title">Tool use</h2>
         <p>
           In all three phases the AI Scientist leverages tools. During idea generation it retrieves literature via the
           Semantic Scholar API, during experiments it hands plans to the Aider coding assistant, and during paper write-up
@@ -92,8 +89,7 @@ Output: Prepare Data → Build Model → Train Baseline → Apply Augmentation �
       </section>
 
       <section id="ais-reflection" class="content-section">
-        <p class="section-label">Reflection</p>
-        <h2 class="section-title">Self-review with an automated reviewer agent</h2>
+        <h2 class="section-title">Reflection</h2>
         <p>
           Human scientific research relies heavily on reflection, and so does the AI Scientist. It rethinks ideas, analyzes
           experimental results, and performs two rounds of section-by-section reflection while writing. Crucially, the PDF
@@ -108,6 +104,16 @@ Output: Prepare Data → Build Model → Train Baseline → Apply Augmentation �
         <p>The AI Scientist absorbs that feedback to improve subsequent drafts.</p>
       </section>
 
+      <section class="citation-block">
+        <p>If you find this work helpful, please consider citing our paper:</p>
+        <pre><code>@article{hu2025llm_agents_tutorial,
+  title={A Beginner-Friendly Tutorial on LLM-based Agents},
+  author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
+  year={2025},
+  month={November},
+  note={Manuscript in preparation}
+}</code></pre>
+      </section>
       <div class="page-nav">
         <a class="page-nav-btn" href="index.html">Back to Home</a>
         <a class="page-nav-btn primary" href="cellagent.html">Next</a>

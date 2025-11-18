@@ -6,11 +6,12 @@
   <title>LLM Agent Tutorial | Homepage</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
+  <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body data-page="home" data-nav="home">
   <header class="site-header">
     <div class="inner">
-      <div class="logo">LLM Agent Tutorial</div>
+      <a class="logo" href="index.html">LLM Agent Tutorial</a>
       <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
       <nav class="primary-nav" id="mainNav">
         <a href="index.html" data-nav-target="home">Home</a>
@@ -25,12 +26,11 @@
 
   <div class="layout">
     <aside class="chapter-sidebar">      <ul class="chapter-links">
-        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
         <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
         <li>
-          <span>What LLM agents can do and how they work</span>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
           <ul class="sub-chapter-links">
-            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
             <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
@@ -50,8 +50,7 @@
     <main>
       <section id="overview" class="content-section">
         <div class="hero-banner">
-          <p class="section-label">LLM Agent Tutorial · 2025</p>
-          <h1>Beginner-Friendly Companion to Hu et al. (2025)</h1>
+          <h1>A Beginner-Friendly Tutorial on LLM-based Agents</h1>
           <p>
             <strong>A Beginner-Friendly Tutorial on LLM-based Agents</strong> introduces researchers and engineers to
             the rapidly evolving landscape of large language model agents. Authored by Shuyue Hu, Siyue Ren, Yang
@@ -59,25 +58,14 @@
             Chu Han, Yan Zheng, Jianye Hao, and Zhen Wang, the tutorial aligns with our research group's seminar
             series on applied agents.
           </p>
-          <div class="stat-grid">
-            <div class="stat-card">
-              <strong>4</strong>
-              <span>Core chapters</span>
-            </div>
-            <div class="stat-card">
-              <strong>9</strong>
-              <span>Hands-on case studies</span>
-            </div>
-            <div class="stat-card">
-              <strong>2025</strong>
-              <span>Latest revision</span>
-            </div>
-          </div>
+          <figure class="hero-figure">
+            <img src="main_figure_01.png" alt="Overall structure of the LLM agent tutorial" />
+            <figcaption>Figure 1. High-level structure of the tutorial covering foundations, illustrative agents, practical tips, and frontier techniques.</figcaption>
+          </figure>
         </div>
       </section>
 
       <section id="abstract" class="content-section">
-        <p class="section-label">Abstract</p>
         <h2 class="section-title">Why this tutorial matters</h2>
         <p>
           This tutorial is designed for researchers and engineers who are interested in large language model (LLM)-based
@@ -95,60 +83,42 @@
       </section>
 
       <section id="structure" class="content-section">
-        <p class="section-label">Structure</p>
         <h2 class="section-title">From foundations to frontier</h2>
         <p class="section-intro">
           The original Figure&nbsp;1 outlines a flow from fundamentals to concrete examples, practical guidance, and
           frontier research. The diagram below mirrors that structure so you can jump directly to the topic you need.
         </p>
         <div class="structure-map">
-          <div class="structure-card">
+          <a class="structure-card" href="foundations.html">
             <h3>1 · What you must know</h3>
             <p>Preliminaries on next-token prediction, context windows, and six hallmark agent capabilities.</p>
-          </div>
-          <div class="structure-card">
+          </a>
+          <a class="structure-card" href="capabilities.html">
             <h3>2 · What agents can do</h3>
             <p>Nine representative agents spanning social simulation, science, biology, medicine, software, finance,
               gaming, mobile devices, and robotics.</p>
-          </div>
-          <div class="structure-card">
+          </a>
+          <a class="structure-card" href="practical-tips.html">
             <h3>3 · Practical tips</h3>
             <p>Keep designs simple, define goals clearly, guide with human workflows, and rely on example-driven prompts.</p>
-          </div>
-          <div class="structure-card">
+          </a>
+          <a class="structure-card" href="advanced-techniques.html">
             <h3>4 · Advanced frontier</h3>
             <p>Inject domain knowledge, strengthen reasoning, manage long context, internalize agent skills, and keep agents safe.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="resources" class="content-section">
-        <p class="section-label">Resources</p>
-        <h2 class="section-title">Quick links &amp; citation</h2>
-        <p class="section-intro">
-          Cite the tutorial as: Hu, S., Ren, S., Chen, Y., Mu, C., Liu, J., Cui, Z., Zhang, Y., Li, H., Zhou, D., Xu, J.,
-          Zhang, Q., Han, C., Zheng, Y., Hao, J., &amp; Wang, Z. (2025). <em>A Beginner-Friendly Tutorial on LLM-based Agents</em>.
-        </p>
-        <div class="link-grid">
-          <a class="link-card" href="foundations.html">
-            <strong>Foundations</strong>
-            <span>LLMs, agents, and six enabling capabilities.</span>
-          </a>
-          <a class="link-card" href="capabilities.html">
-            <strong>Case study hub</strong>
-            <span>Guided tour of the nine featured agents.</span>
-          </a>
-          <a class="link-card" href="practical-tips.html">
-            <strong>Practical playbook</strong>
-            <span>Step-by-step recommendations for your first agent.</span>
-          </a>
-          <a class="link-card" href="advanced-techniques.html">
-            <strong>Advanced techniques</strong>
-            <span>Domain knowledge, reasoning, long context, and safety.</span>
           </a>
         </div>
       </section>
 
+      <section class="citation-block">
+        <p>If you find this work helpful, please consider citing our paper:</p>
+        <pre><code>@article{hu2025llm_agents_tutorial,
+  title={A Beginner-Friendly Tutorial on LLM-based Agents},
+  author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
+  year={2025},
+  month={November},
+  note={Manuscript in preparation}
+}</code></pre>
+      </section>
       <div class="page-nav">
         <a class="page-nav-btn" href="index.html">Back to Home</a>
         <a class="page-nav-btn primary" href="foundations.html">Next</a>

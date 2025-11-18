@@ -6,11 +6,12 @@
   <title>Voyager · LLM Agent Tutorial</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
+  <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body data-page="voyager" data-nav="capabilities">
   <header class="site-header">
     <div class="inner">
-      <div class="logo">LLM Agent Tutorial</div>
+      <a class="logo" href="index.html">LLM Agent Tutorial</a>
       <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
       <nav class="primary-nav" id="mainNav">
         <a href="index.html" data-nav-target="home">Home</a>
@@ -25,12 +26,11 @@
 
   <div class="layout">
     <aside class="chapter-sidebar">      <ul class="chapter-links">
-        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
         <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
         <li>
-          <span>What LLM agents can do and how they work</span>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
           <ul class="sub-chapter-links">
-            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
             <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
@@ -49,7 +49,6 @@
 
     <main>
       <section id="voy-overview" class="content-section">
-        <p class="section-label">3.7 Overview</p>
         <h1 class="section-title">Exploring, learning, and adapting autonomously in Minecraft</h1>
         <p>
           <strong>Voyager</strong> enables lifelong learning in the Minecraft sandbox. It generates its own curriculum of tasks, solves
@@ -59,8 +58,7 @@
       </section>
 
       <section id="voy-planning" class="content-section">
-        <p class="section-label">Planning</p>
-        <h2 class="section-title">Automatic curriculum generation</h2>
+        <h2 class="section-title">Planning</h2>
         <p>
           Voyager's automatic curriculum module sets tasks based on current abilities and environment state, then
           decomposes them into actionable subtasks. This scaffolds the agent from simple to complex goals.</p>
@@ -72,8 +70,7 @@
       </section>
 
       <section id="voy-tools" class="content-section">
-        <p class="section-label">Tool use</p>
-        <h2 class="section-title">Mineflayer programs for every action</h2>
+        <h2 class="section-title">Tool use</h2>
         <p>
           Voyager controls the character via LLM-generated JavaScript built on the Mineflayer API. Each function is
           self-contained so it can be reused and composed:</p>
@@ -91,8 +88,7 @@
       </section>
 
       <section id="voy-memory" class="content-section">
-        <p class="section-label">Memory &amp; reflection</p>
-        <h2 class="section-title">Skill libraries plus self-verification</h2>
+        <h2 class="section-title">Memory &amp; reflection</h2>
         <p>
           The skill library stores every verified program inside a vector database. When facing a new task, Voyager queries
           the library using embeddings of the task description and environment feedback to retrieve relevant skills for
@@ -108,6 +104,16 @@
         </div>
       </section>
 
+      <section class="citation-block">
+        <p>If you find this work helpful, please consider citing our paper:</p>
+        <pre><code>@article{hu2025llm_agents_tutorial,
+  title={A Beginner-Friendly Tutorial on LLM-based Agents},
+  author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
+  year={2025},
+  month={November},
+  note={Manuscript in preparation}
+}</code></pre>
+      </section>
       <div class="page-nav">
         <a class="page-nav-btn" href="index.html">Back to Home</a>
         <a class="page-nav-btn primary" href="mobile-agent.html">Next</a>

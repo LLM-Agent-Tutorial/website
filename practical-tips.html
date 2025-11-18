@@ -6,11 +6,12 @@
   <title>Practical Tips · LLM Agent Tutorial</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
+  <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body data-page="practical" data-nav="practical">
   <header class="site-header">
     <div class="inner">
-      <div class="logo">LLM Agent Tutorial</div>
+      <a class="logo" href="index.html">LLM Agent Tutorial</a>
       <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
       <nav class="primary-nav" id="mainNav">
         <a href="index.html" data-nav-target="home">Home</a>
@@ -25,12 +26,11 @@
 
   <div class="layout">
     <aside class="chapter-sidebar">      <ul class="chapter-links">
-        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
         <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
         <li>
-          <span>What LLM agents can do and how they work</span>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
           <ul class="sub-chapter-links">
-            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
             <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
@@ -49,7 +49,6 @@
 
     <main>
       <section id="tips-overview" class="content-section">
-        <p class="section-label">Section 4</p>
         <h1 class="section-title">Practical tips: how to build your first LLM agent</h1>
         <p>
           The tutorial emphasizes keeping designs approachable. Today's LLMs already offer strong reasoning, so a handful of
@@ -58,7 +57,6 @@
       </section>
 
       <section id="tips-simplicity" class="content-section">
-        <p class="section-label">Tip 1</p>
         <h2 class="section-title">Keep it simple &amp; define goals clearly</h2>
         <ul class="checklist">
           <li>Keep your agent design as simple as possible. First attempts are rarely seamless, so aim for the simplest
@@ -69,7 +67,6 @@
       </section>
 
       <section id="tips-guide" class="content-section">
-        <p class="section-label">Tip 2</p>
         <h2 class="section-title">Guide agents the way you would guide humans</h2>
         <p>
           If simply stating the goal fails, outline high-level milestones. Think about how you'd brief a teammate. For an
@@ -80,7 +77,6 @@
       </section>
 
       <section id="tips-frameworks" class="content-section">
-        <p class="section-label">Tip 3</p>
         <h2 class="section-title">Start with direct chats before reaching for frameworks</h2>
         <p>
           LangGraph, Dify, Coze, Bedrock, and other frameworks add abstraction layers that can hide raw prompts and
@@ -90,6 +86,16 @@
         </p>
       </section>
 
+      <section class="citation-block">
+        <p>If you find this work helpful, please consider citing our paper:</p>
+        <pre><code>@article{hu2025llm_agents_tutorial,
+  title={A Beginner-Friendly Tutorial on LLM-based Agents},
+  author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
+  year={2025},
+  month={November},
+  note={Manuscript in preparation}
+}</code></pre>
+      </section>
       <div class="page-nav">
         <a class="page-nav-btn" href="index.html">Back to Home</a>
         <a class="page-nav-btn primary" href="advanced-techniques.html">Next</a>

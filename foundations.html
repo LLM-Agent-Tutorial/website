@@ -6,11 +6,12 @@
   <title>Foundations · LLM Agent Tutorial</title>
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
+  <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body data-page="foundations" data-nav="foundations">
   <header class="site-header">
     <div class="inner">
-      <div class="logo">LLM Agent Tutorial</div>
+      <a class="logo" href="index.html">LLM Agent Tutorial</a>
       <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
       <nav class="primary-nav" id="mainNav">
         <a href="index.html" data-nav-target="home">Home</a>
@@ -25,12 +26,11 @@
 
   <div class="layout">
     <aside class="chapter-sidebar">      <ul class="chapter-links">
-        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
         <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
         <li>
-          <span>What LLM agents can do and how they work</span>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
           <ul class="sub-chapter-links">
-            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
             <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
@@ -49,7 +49,6 @@
 
     <main>
       <section id="llm-basics" class="content-section">
-        <p class="section-label">Preliminaries</p>
         <h1 class="section-title">Large language models at a glance</h1>
         <p>
           Large language models (LLMs), such as the GPT, DeepSeek, Gemini, and Claude families, are deep learning models
@@ -65,13 +64,12 @@
       </section>
 
       <section id="next-token" class="content-section">
-        <p class="section-label">Core operation</p>
         <h2 class="section-title">Next-token prediction and context windows</h2>
         <p>
           The fundamental operation behind LLMs is next-token prediction. Let <em>x</em> denote the textual input to the model
           (the prompt). Given <em>x</em>, an LLM generates output by predicting one token at a time, ultimately producing a
-          sequence of tokens <em>y</em> = (y<sub>1</sub>, &hellip;, y<sub>T</sub>). Formally, this can be represented as
-          p(y | x) = &prod;<sub>t=1..T</sub> p(y<sub>t</sub> | x, y<sub>1..t-1</sub>).
+          sequence of tokens \(y = (y_1, y_2, \ldots, y_T)\). Formally, this can be represented as
+          \(p(y \mid x) = \prod_{t=1}^{T} p\big(y_t \mid x, y_{1..t-1}\big)\).
         </p>
         <p>
           When predicting the next token, both the prompt and the generated tokens live inside a finite context window,
@@ -81,7 +79,6 @@
       </section>
 
       <section id="llm-vs-agent" class="content-section">
-        <p class="section-label">From models to agents</p>
         <h2 class="section-title">What makes an LLM agent?</h2>
         <p>
           There is no universally accepted definition of an AI agent, so the line between an LLM and an LLM agent can
@@ -96,7 +93,6 @@
       </section>
 
       <section id="capabilities" class="content-section">
-        <p class="section-label">Key capabilities</p>
         <h2 class="section-title">Six building blocks highlighted in the tutorial</h2>
         <p class="section-intro">
           Below are the capability summaries quoted directly from Section&nbsp;2. Use them as a checklist when designing
@@ -136,6 +132,16 @@
         </div>
       </section>
 
+      <section class="citation-block">
+        <p>If you find this work helpful, please consider citing our paper:</p>
+        <pre><code>@article{hu2025llm_agents_tutorial,
+  title={A Beginner-Friendly Tutorial on LLM-based Agents},
+  author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
+  year={2025},
+  month={November},
+  note={Manuscript in preparation}
+}</code></pre>
+      </section>
       <div class="page-nav">
         <a class="page-nav-btn" href="index.html">Back to Home</a>
         <a class="page-nav-btn primary" href="capabilities.html">Next</a>
