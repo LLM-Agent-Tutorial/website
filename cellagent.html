@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CellAgent · LLM Agent Tutorial</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body data-page="cellagent" data-nav="capabilities">
+  <header class="site-header">
+    <div class="inner">
+      <div class="logo">LLM Agent Tutorial</div>
+      <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
+      <nav class="primary-nav" id="mainNav">
+        <a href="index.html" data-nav-target="home">Home</a>
+        <a href="foundations.html" data-nav-target="foundations">Foundations</a>
+        <a href="capabilities.html" data-nav-target="capabilities">Agent Examples</a>
+        <a href="practical-tips.html" data-nav-target="practical">Practical Tips</a>
+        <a href="advanced-techniques.html" data-nav-target="advanced">Advanced Frontier</a>
+      </nav>
+      <a class="download-btn" href="LLM_Agent_Tutorial%20(3).pdf" download>Download <span>PDF</span></a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="chapter-sidebar">
+      <h2>Reading Path</h2>
+      <p class="chapter-context">Case study 3.3 · CellAgent.</p>
+      <ul class="chapter-links">
+        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
+        <li>
+          <span>What LLM agents can do and how they work</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
+            <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
+            <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
+            <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
+            <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
+            <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
+            <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
+            <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
+            <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
+            <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+          </ul>
+        </li>
+        <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
+        <li><a data-chapter-link="advanced" href="advanced-techniques.html">Advanced Techniques</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <section id="cell-overview" class="content-section">
+        <p class="section-label">3.3 Overview</p>
+        <h1 class="section-title">Automating biological data analysis through natural language</h1>
+        <p>
+          <strong>CellAgent</strong> is an autonomous, LLM-driven multi-agent framework that, given raw single-cell RNA sequencing
+          (scRNA-seq) and spatial transcriptomics data plus natural language instructions, automates end-to-end analysis to
+          deliver high-quality visualizations and processed outputs. Specialized agents plan, execute, and evaluate tasks,
+          simulating a deep-thinking process to ensure transparent reasoning, iterative refinement, and clear results.
+        </p>
+      </section>
+
+      <section id="cell-roles" class="content-section">
+        <p class="section-label">Role-play</p>
+        <h2 class="section-title">Planner, Executor, Evaluator</h2>
+        <div class="card-grid">
+          <article class="info-card">
+            <h3>Planner</h3>
+            <p>A project manager with deep expertise in bioinformatics workflows. The planner interprets requests and
+              outputs an ordered plan with rationale.</p>
+          </article>
+          <article class="info-card">
+            <h3>Executor</h3>
+            <p>A bioinformatician who selects tools from the sc-Omni toolkit, generates Python/R code, and runs it inside a
+              sandbox while explaining decisions.</p>
+          </article>
+          <article class="info-card">
+            <h3>Evaluator</h3>
+            <p>A quality-control expert who inspects UMAP plots and metrics such as ARI/ASW, providing actionable feedback
+              whenever outputs look suspect.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="cell-planning" class="content-section">
+        <p class="section-label">Planning &amp; tool use</p>
+        <h2 class="section-title">Expert-curated plans plus the sc-Omni toolkit</h2>
+        <p>
+          The Planner decomposes even simple requests into best-practice pipelines: quality control → normalization →
+          highly variable genes → dimensionality reduction → clustering. The Executor then attaches the right tool.
+        </p>
+        <div class="example-box">
+          <p class="example-label">Example · Planner output</p>
+          <pre><code>Thought: To perform clustering, we must first ensure the data is properly prepared.
+Plan: QC → Normalization → HVG → Dimensionality Reduction → Clustering.</code></pre>
+        </div>
+        <div class="example-box">
+          <p class="example-label">Example · Tool selection rationale</p>
+          <p>"The current task is cell type annotation... I will select Cellmarker for this step as it provides a robust database of
+            markers for annotation."</p>
+          <p>The agent then emits runnable code calling the documented functions from sc-Omni.</p>
+        </div>
+      </section>
+
+      <section id="cell-reflection" class="content-section">
+        <p class="section-label">Reflection &amp; memory</p>
+        <h2 class="section-title">Evaluator-driven optimization and integrative memory</h2>
+        <div class="example-box">
+          <p class="example-label">Example · Evaluator feedback</p>
+          <p>"The clusters in the UMAP visualization are overlapping, suggesting the current resolution parameter is too low to
+            capture the underlying biological heterogeneity. The clustering is suboptimal. Re-run with a range of higher
+            resolution values (e.g., 0.8, 1.0, 1.2) to achieve better separation."</p>
+        </div>
+        <p>
+          CellAgent also employs global memory (the full analytical plan plus completed steps) and local memory (code,
+          parameters, evaluator feedback for each sub-task). This ensures consistent cooperation and provides a retrievable
+          trail for future iterations.
+        </p>
+      </section>
+    </main>
+
+    <aside class="progress-sidebar">
+      <h2>On this page</h2>
+      <ul class="progress-list">
+        <li><a class="progress-link" data-target="cell-overview" href="#cell-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="cell-roles" href="#cell-roles">Role-play</a></li>
+        <li><a class="progress-link" data-target="cell-planning" href="#cell-planning">Planning &amp; tools</a></li>
+        <li><a class="progress-link" data-target="cell-reflection" href="#cell-reflection">Reflection</a></li>
+      </ul>
+      <div class="progress-meter"><div class="progress-meter-fill"></div></div>
+    </aside>
+  </div>
+
+  <footer class="footer">© 2025 Hu et al. · CellAgent summary.</footer>
+</body>
+</html>

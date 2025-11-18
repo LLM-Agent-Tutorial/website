@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent Examples · LLM Agent Tutorial</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body data-page="capabilities" data-nav="capabilities">
+  <header class="site-header">
+    <div class="inner">
+      <div class="logo">LLM Agent Tutorial</div>
+      <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
+      <nav class="primary-nav" id="mainNav">
+        <a href="index.html" data-nav-target="home">Home</a>
+        <a href="foundations.html" data-nav-target="foundations">Foundations</a>
+        <a href="capabilities.html" data-nav-target="capabilities">Agent Examples</a>
+        <a href="practical-tips.html" data-nav-target="practical">Practical Tips</a>
+        <a href="advanced-techniques.html" data-nav-target="advanced">Advanced Frontier</a>
+      </nav>
+      <a class="download-btn" href="LLM_Agent_Tutorial%20(3).pdf" download>Download <span>PDF</span></a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="chapter-sidebar">
+      <h2>Reading Path</h2>
+      <p class="chapter-context">Use this hub to navigate the nine illustrative agents in Section&nbsp;3.</p>
+      <ul class="chapter-links">
+        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
+        <li>
+          <span>What LLM agents can do and how they work</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
+            <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
+            <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
+            <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
+            <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
+            <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
+            <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
+            <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
+            <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
+            <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+          </ul>
+        </li>
+        <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
+        <li><a data-chapter-link="advanced" href="advanced-techniques.html">Advanced Techniques</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <section id="chapter-intro" class="content-section">
+        <p class="section-label">Section 3</p>
+        <h1 class="section-title">What LLM agents can do and how they work</h1>
+        <p>
+          Section&nbsp;3 presents nine concrete examples that show how LLM agents integrate key abilities to perform complex
+          tasks across various domains. The examples are intentionally selected to be representative and broad in scope,
+          carefully adapted to highlight the underlying agent capabilities. Each case is self-contained so that readers can
+          jump directly to the scenario of interest.
+        </p>
+        <p>
+          The primary approach in these examples is crafting prompts &mdash; providing specific instructions and contextual
+          information in natural language for LLMs. No coding skills are required to understand the cases, reinforcing the
+          tutorial's promise of accessibility for newcomers.
+        </p>
+      </section>
+
+      <section id="capability-table" class="content-section">
+        <p class="section-label">Evidence</p>
+        <h2 class="section-title">Capabilities demonstrated across domains</h2>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Example</th>
+                <th>Domain</th>
+                <th>Memory</th>
+                <th>Role-play</th>
+                <th>Planning</th>
+                <th>Tool use</th>
+                <th>Cooperation</th>
+                <th>Reflection</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Generative Agents</td>
+                <td>Social simulation</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>The AI Scientist</td>
+                <td>Scientific discovery</td>
+                <td></td>
+                <td></td>
+                <td>✓</td>
+                <td>✓</td>
+                <td></td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>CellAgent</td>
+                <td>Biology</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>The Virtual Lab</td>
+                <td>Medicine</td>
+                <td></td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>MetaGPT</td>
+                <td>Software engineering</td>
+                <td></td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>FinAgent</td>
+                <td>Finance</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td>✓</td>
+                <td></td>
+                <td></td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Voyager</td>
+                <td>Game</td>
+                <td>✓</td>
+                <td></td>
+                <td>✓</td>
+                <td>✓</td>
+                <td></td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>Mobile Agent</td>
+                <td>Mobile devices</td>
+                <td>✓</td>
+                <td></td>
+                <td>✓</td>
+                <td>✓</td>
+                <td></td>
+                <td>✓</td>
+              </tr>
+              <tr>
+                <td>PaLM-SayCan</td>
+                <td>Embodied AI</td>
+                <td></td>
+                <td></td>
+                <td>✓</td>
+                <td>✓</td>
+                <td></td>
+                <td>✓</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="example-links" class="content-section">
+        <p class="section-label">Choose a path</p>
+        <h2 class="section-title">Dive into any of the nine case studies</h2>
+        <p class="section-intro">Each card below jumps to a dedicated page with prompts, code snippets, and capability callouts from the paper.</p>
+        <div class="example-list">
+          <a class="example-card" href="generative-agents.html">
+            <h3>Generative Agents</h3>
+            <p>Simulated people with memory, reflection, and daily planning.</p>
+          </a>
+          <a class="example-card" href="ai-scientist.html">
+            <h3>The AI Scientist</h3>
+            <p>Idea generation, experiment iteration, and paper writing without humans.</p>
+          </a>
+          <a class="example-card" href="cellagent.html">
+            <h3>CellAgent</h3>
+            <p>Planner, executor, evaluator triad for scRNA-seq and ST data analysis.</p>
+          </a>
+          <a class="example-card" href="virtual-lab.html">
+            <h3>The Virtual Lab</h3>
+            <p>Principal-investigator orchestration with AI-human collaboration.</p>
+          </a>
+          <a class="example-card" href="metagpt.html">
+            <h3>MetaGPT</h3>
+            <p>Software teams in a box: PM, architect, engineer, QA.</p>
+          </a>
+          <a class="example-card" href="finagent.html">
+            <h3>FinAgent</h3>
+            <p>Multimodal market intelligence, reflection, and tool-augmented trades.</p>
+          </a>
+          <a class="example-card" href="voyager.html">
+            <h3>Voyager</h3>
+            <p>Automatic Minecraft curriculum with reusable skill libraries.</p>
+          </a>
+          <a class="example-card" href="mobile-agent.html">
+            <h3>Mobile Agent</h3>
+            <p>LLM translates natural language into swipe, tap, and type sequences.</p>
+          </a>
+          <a class="example-card" href="palm-saycan.html">
+            <h3>PaLM-SayCan</h3>
+            <p>Separate “say” usefulness from “can” feasibility for grounded robotics.</p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="progress-sidebar">
+      <h2>On this page</h2>
+      <ul class="progress-list">
+        <li><a class="progress-link" data-target="chapter-intro" href="#chapter-intro">Chapter intro</a></li>
+        <li><a class="progress-link" data-target="capability-table" href="#capability-table">Capability table</a></li>
+        <li><a class="progress-link" data-target="example-links" href="#example-links">Case study links</a></li>
+      </ul>
+      <div class="progress-meter"><div class="progress-meter-fill"></div></div>
+    </aside>
+  </div>
+
+  <footer class="footer">© 2025 Hu et al. · Section 3 overview.</footer>
+</body>
+</html>

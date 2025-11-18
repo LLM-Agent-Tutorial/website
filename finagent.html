@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinAgent · LLM Agent Tutorial</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body data-page="finagent" data-nav="capabilities">
+  <header class="site-header">
+    <div class="inner">
+      <div class="logo">LLM Agent Tutorial</div>
+      <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
+      <nav class="primary-nav" id="mainNav">
+        <a href="index.html" data-nav-target="home">Home</a>
+        <a href="foundations.html" data-nav-target="foundations">Foundations</a>
+        <a href="capabilities.html" data-nav-target="capabilities">Agent Examples</a>
+        <a href="practical-tips.html" data-nav-target="practical">Practical Tips</a>
+        <a href="advanced-techniques.html" data-nav-target="advanced">Advanced Frontier</a>
+      </nav>
+      <a class="download-btn" href="LLM_Agent_Tutorial%20(3).pdf" download>Download <span>PDF</span></a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="chapter-sidebar">
+      <h2>Reading Path</h2>
+      <p class="chapter-context">Case study 3.6 · FinAgent.</p>
+      <ul class="chapter-links">
+        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
+        <li>
+          <span>What LLM agents can do and how they work</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
+            <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
+            <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
+            <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
+            <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
+            <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
+            <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
+            <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
+            <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
+            <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+          </ul>
+        </li>
+        <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
+        <li><a data-chapter-link="advanced" href="advanced-techniques.html">Advanced Techniques</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <section id="fin-overview" class="content-section">
+        <p class="section-label">3.6 Overview</p>
+        <h1 class="section-title">A multimodal foundation agent for financial trading</h1>
+        <p>
+          <strong>FinAgent</strong> addresses adaptability and generalization through three components: a market intelligence module
+          that summarizes diverse nancial information, a reection module that reasons about market dynamics and past
+          decisions, and a tool-augmented decision-making module with expert guidance for actions.
+        </p>
+      </section>
+
+      <section id="fin-role-memory" class="content-section">
+        <p class="section-label">Role-play &amp; memory</p>
+        <h2 class="section-title">Expert trader persona plus vectorized knowledge</h2>
+        <p>
+          Role prompt: "You are an expert trader... Imagine working in a real market environment where you have access to
+          daily prices, news, reports, sentiment, technical indicators, and auxiliary strategies." The agent must make
+          informed BUY/HOLD/SELL calls.
+        </p>
+        <p>
+          Memory adopts a vector-based storage architecture with three components: summaries of market intelligence,
+          summaries of low-level reection (patterns in price movements), and summaries of high-level reection (lessons from
+          prior trades). These summaries feed later prompts.
+        </p>
+      </section>
+
+      <section id="fin-reflection" class="content-section">
+        <p class="section-label">Reflection</p>
+        <h2 class="section-title">Dual-level reflection for market sensemaking</h2>
+        <p>
+          Low-level reection analyzes price change data to reason about short-, medium-, and long-term drivers. High-level
+          reection inspects past trading decisions, labeling them right or wrong and suggesting improvements.
+        </p>
+        <div class="example-box">
+          <p class="example-label">Example · Low-level reflection</p>
+          <p>"The short-term price increase of 1.60% for Apple Inc. can be attributed to recent positive market sentiment
+            surrounding Apple's upcoming AR/VR product line..."</p>
+          <p><em>query:</em> Short-term growth in AAPL's price is driven by reactions to product excitement...</p>
+        </div>
+      </section>
+
+      <section id="fin-example" class="content-section">
+        <p class="section-label">Example decision</p>
+        <h2 class="section-title">Assessing a BUY call</h2>
+        <div class="example-box">
+          <p class="example-label">Example · Assessing a BUY call</p>
+          <p>The agent states: "The BUY decision made on 2023-06-01 appears to have been correct. This decision aligned well
+            with the market sentiment and the Kline chart analysis."</p>
+          <p>Improvement plan: "Future scenarios should involve dynamic trade adjustments such as setting stop-losses."</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="progress-sidebar">
+      <h2>On this page</h2>
+      <ul class="progress-list">
+        <li><a class="progress-link" data-target="fin-overview" href="#fin-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="fin-role-memory" href="#fin-role-memory">Role-play &amp; memory</a></li>
+        <li><a class="progress-link" data-target="fin-reflection" href="#fin-reflection">Reflection</a></li>
+        <li><a class="progress-link" data-target="fin-example" href="#fin-example">Example decision</a></li>
+      </ul>
+      <div class="progress-meter"><div class="progress-meter-fill"></div></div>
+    </aside>
+  </div>
+
+  <footer class="footer">© 2025 Hu et al. · FinAgent summary.</footer>
+</body>
+</html>

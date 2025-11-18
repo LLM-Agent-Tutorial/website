@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Techniques · LLM Agent Tutorial</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body data-page="advanced" data-nav="advanced">
+  <header class="site-header">
+    <div class="inner">
+      <div class="logo">LLM Agent Tutorial</div>
+      <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
+      <nav class="primary-nav" id="mainNav">
+        <a href="index.html" data-nav-target="home">Home</a>
+        <a href="foundations.html" data-nav-target="foundations">Foundations</a>
+        <a href="capabilities.html" data-nav-target="capabilities">Agent Examples</a>
+        <a href="practical-tips.html" data-nav-target="practical">Practical Tips</a>
+        <a href="advanced-techniques.html" data-nav-target="advanced">Advanced Frontier</a>
+      </nav>
+      <a class="download-btn" href="LLM_Agent_Tutorial%20(3).pdf" download>Download <span>PDF</span></a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="chapter-sidebar">
+      <h2>Reading Path</h2>
+      <p class="chapter-context">Section 5 explores frontier techniques for pushing agents further.</p>
+      <ul class="chapter-links">
+        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
+        <li>
+          <span>What LLM agents can do and how they work</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
+            <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
+            <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
+            <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
+            <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
+            <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
+            <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
+            <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
+            <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
+            <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+          </ul>
+        </li>
+        <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
+        <li><a data-chapter-link="advanced" href="advanced-techniques.html">Advanced Techniques</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <section id="adv-overview" class="content-section">
+        <p class="section-label">Section 5</p>
+        <h1 class="section-title">Advanced techniques: what is happening at the frontier</h1>
+        <p>
+          The tutorial closes with five research frontiers: injecting domain knowledge, enhancing reasoning, managing long
+          context, internalizing agent abilities, and keeping agents safe. Each tactic below quotes the paper directly.
+        </p>
+      </section>
+
+      <section id="adv-knowledge" class="content-section">
+        <p class="section-label">5.1 Injecting domain knowledge</p>
+        <h2 class="section-title">In-context, RAG, and fine-tuning</h2>
+        <p>
+          Injecting domain knowledge steers a general-purpose LLM into an expert agent. Three techniques coexist:</p>
+        <ul class="checklist">
+          <li><strong>In-context learning:</strong> place relevant information directly inside the prompt. Example triage prompt:
+            "Use the following medical knowledge... chest pain with exertional onset... requires immediate ER evaluation."
+          </li>
+          <li><strong>Retrieval-Augmented Generation:</strong> pull only the most relevant snippets from large corpora, or even from
+            knowledge graphs, text-to-SQL, or live search.</li>
+          <li><strong>Fine-tuning/PEFT:</strong> embed knowledge directly into model weights with LoRA or adapters so behavior changes
+            intrinsically.</li>
+        </ul>
+      </section>
+
+      <section id="adv-reasoning" class="content-section">
+        <p class="section-label">5.2 Enhancing reasoning</p>
+        <h2 class="section-title">Chain-of-thought, test-time scaling, RL</h2>
+        <p>
+          Reasoning underpins planning, tool use, and cooperation. Techniques include:</p>
+        <ul class="checklist">
+          <li><strong>Chain-of-Thought:</strong> add "Let's think step by step" or longer CoT traces; self-consistency and Tree-of-Thoughts
+            explore multiple reasoning paths.</li>
+          <li><strong>Test-Time Scaling:</strong> beam search or Monte Carlo Tree Search generate diverse traces and keep the most
+            consistent outputs.</li>
+          <li><strong>Reinforcement learning:</strong> methods such as REINFORCE, PPO, DPO, and GRPO optimize reasoning policies using
+            verified rewards or human preferences.</li>
+        </ul>
+      </section>
+
+      <section id="adv-context" class="content-section">
+        <p class="section-label">5.3 Managing long context</p>
+        <h2 class="section-title">Compression, reuse, and hierarchy</h2>
+        <p>
+          Long contexts raise cost and reduce accuracy. Strategies include context compression (RAG, summarization,
+          offloading memory), context reuse (prompt caching, maintaining byte-identical prefixes, masking tools instead of
+          removing them), and hierarchical context management (delegating to sub-agents with concise prompts and passing
+          structured summaries between them).
+        </p>
+      </section>
+
+      <section id="adv-internalize" class="content-section">
+        <p class="section-label">5.4 Internalizing agent abilities</p>
+        <h2 class="section-title">Agent behaviors inside the model</h2>
+        <p>
+          A recent trend is to internalize planning, tool use, and multi-step execution directly inside the model. Examples
+          include Claude Code and OpenAI's Operator, which blend multimodal perception with reinforcement learning so the
+          model can inspect browsers, type, click, and scroll. The main requirement is data: demonstrations of agentic
+          behavior collected from interactive environments.</p>
+      </section>
+
+      <section id="adv-safety" class="content-section">
+        <p class="section-label">5.5 Agent safety</p>
+        <h2 class="section-title">Alignment, control, and recovery</h2>
+        <p>
+          Deployments demand alignment, controllability, and recoverability. The tutorial recommends: (1) rigorous
+          permission management and controlled affordances; (2) security-hardened components and trustworthy MCP channels;
+          (3) resilience via snapshots/rollback and fallback policies; (4) supervisory agents in multi-agent systems to
+          prevent collusion or rogue behavior.</p>
+      </section>
+    </main>
+
+    <aside class="progress-sidebar">
+      <h2>On this page</h2>
+      <ul class="progress-list">
+        <li><a class="progress-link" data-target="adv-overview" href="#adv-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="adv-knowledge" href="#adv-knowledge">Domain knowledge</a></li>
+        <li><a class="progress-link" data-target="adv-reasoning" href="#adv-reasoning">Reasoning</a></li>
+        <li><a class="progress-link" data-target="adv-context" href="#adv-context">Long context</a></li>
+        <li><a class="progress-link" data-target="adv-internalize" href="#adv-internalize">Internalizing abilities</a></li>
+        <li><a class="progress-link" data-target="adv-safety" href="#adv-safety">Agent safety</a></li>
+      </ul>
+      <div class="progress-meter"><div class="progress-meter-fill"></div></div>
+    </aside>
+  </div>
+
+  <footer class="footer">© 2025 Hu et al. · Advanced techniques summary.</footer>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The AI Scientist · LLM Agent Tutorial</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body data-page="ai-scientist" data-nav="capabilities">
+  <header class="site-header">
+    <div class="inner">
+      <div class="logo">LLM Agent Tutorial</div>
+      <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
+      <nav class="primary-nav" id="mainNav">
+        <a href="index.html" data-nav-target="home">Home</a>
+        <a href="foundations.html" data-nav-target="foundations">Foundations</a>
+        <a href="capabilities.html" data-nav-target="capabilities">Agent Examples</a>
+        <a href="practical-tips.html" data-nav-target="practical">Practical Tips</a>
+        <a href="advanced-techniques.html" data-nav-target="advanced">Advanced Frontier</a>
+      </nav>
+      <a class="download-btn" href="LLM_Agent_Tutorial%20(3).pdf" download>Download <span>PDF</span></a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="chapter-sidebar">
+      <h2>Reading Path</h2>
+      <p class="chapter-context">Case study 3.2 · The AI Scientist.</p>
+      <ul class="chapter-links">
+        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
+        <li>
+          <span>What LLM agents can do and how they work</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
+            <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
+            <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
+            <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
+            <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
+            <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
+            <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
+            <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
+            <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
+            <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+          </ul>
+        </li>
+        <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
+        <li><a data-chapter-link="advanced" href="advanced-techniques.html">Advanced Techniques</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <section id="ais-overview" class="content-section">
+        <p class="section-label">3.2 Overview</p>
+        <h1 class="section-title">Towards fully automated scientific research</h1>
+        <p>
+          The <strong>AI Scientist</strong> aims to independently carry out a scientific research process from idea generation to paper
+          writing without any human involvement. It produces a research paper in three phases: idea generation,
+          experimental iteration, and paper write-up. Afterward, an LLM-generated review assesses quality so the system can
+          revise accordingly.
+        </p>
+      </section>
+
+      <section id="ais-planning" class="content-section">
+        <p class="section-label">Planning</p>
+        <h2 class="section-title">Breaking the research loop into sequential steps</h2>
+        <p>
+          Planning helps the AI Scientist organize its multi-step workflow: experimental plans drive code execution while
+          paper outlines guide write-ups. Below is the planning prompt straight from the paper.
+        </p>
+        <div class="example-box">
+          <p class="example-label">Example · Planning experiments</p>
+          <pre><code>Idea: Improving image classification through data augmentation.
+Instruction: Plan the list of experiments you would like to run (max 5 runs).
+Output: Prepare Data → Build Model → Train Baseline → Apply Augmentation → Train Again → Evaluate.</code></pre>
+        </div>
+      </section>
+
+      <section id="ais-tools" class="content-section">
+        <p class="section-label">Tool use</p>
+        <h2 class="section-title">Retrieval, coding assistants, and compilers</h2>
+        <p>
+          In all three phases the AI Scientist leverages tools. During idea generation it retrieves literature via the
+          Semantic Scholar API, during experiments it hands plans to the Aider coding assistant, and during paper write-up
+          it compiles LaTeX into PDF. The excerpt below shows how queries are produced for retrieval.
+        </p>
+        <div class="example-box">
+          <p class="example-label">Example · Generating a retrieval query</p>
+          <p>Instruction: "You have an idea and you want to check if it is novel. Provide a search query to survey the
+            literature."</p>
+          <p><strong>Output:</strong> <em>Enhancing the image classification performance of convolutional neural networks using data augmentation.</em></p>
+        </div>
+        <p>The query becomes the parameter for a <code>search_for_papers</code> Python helper that returns Semantic Scholar metadata.</p>
+      </section>
+
+      <section id="ais-reflection" class="content-section">
+        <p class="section-label">Reflection</p>
+        <h2 class="section-title">Self-review with an automated reviewer agent</h2>
+        <p>
+          Human scientific research relies heavily on reflection, and so does the AI Scientist. It rethinks ideas, analyzes
+          experimental results, and performs two rounds of section-by-section reflection while writing. Crucially, the PDF
+          manuscript is reviewed by an LLM reviewer that issues summary, strength, weakness, and decision fields:
+        </p>
+        <div class="example-box">
+          <p class="example-label">Example · Automated review snippet</p>
+          <p>Summary: This paper explores the application of data augmentation techniques in image classification tasks...</p>
+          <p>Weaknesses: lacks comparison with state-of-the-art automatic data augmentation methods...</p>
+          <p>Overall: 4 · Decision: Reject.</p>
+        </div>
+        <p>The AI Scientist absorbs that feedback to improve subsequent drafts.</p>
+      </section>
+    </main>
+
+    <aside class="progress-sidebar">
+      <h2>On this page</h2>
+      <ul class="progress-list">
+        <li><a class="progress-link" data-target="ais-overview" href="#ais-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="ais-planning" href="#ais-planning">Planning</a></li>
+        <li><a class="progress-link" data-target="ais-tools" href="#ais-tools">Tool use</a></li>
+        <li><a class="progress-link" data-target="ais-reflection" href="#ais-reflection">Reflection</a></li>
+      </ul>
+      <div class="progress-meter"><div class="progress-meter-fill"></div></div>
+    </aside>
+  </div>
+
+  <footer class="footer">© 2025 Hu et al. · The AI Scientist summary.</footer>
+</body>
+</html>

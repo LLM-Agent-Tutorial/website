@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Virtual Lab · LLM Agent Tutorial</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body data-page="virtual-lab" data-nav="capabilities">
+  <header class="site-header">
+    <div class="inner">
+      <div class="logo">LLM Agent Tutorial</div>
+      <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
+      <nav class="primary-nav" id="mainNav">
+        <a href="index.html" data-nav-target="home">Home</a>
+        <a href="foundations.html" data-nav-target="foundations">Foundations</a>
+        <a href="capabilities.html" data-nav-target="capabilities">Agent Examples</a>
+        <a href="practical-tips.html" data-nav-target="practical">Practical Tips</a>
+        <a href="advanced-techniques.html" data-nav-target="advanced">Advanced Frontier</a>
+      </nav>
+      <a class="download-btn" href="LLM_Agent_Tutorial%20(3).pdf" download>Download <span>PDF</span></a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="chapter-sidebar">
+      <h2>Reading Path</h2>
+      <p class="chapter-context">Case study 3.4 · The Virtual Lab.</p>
+      <ul class="chapter-links">
+        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
+        <li>
+          <span>What LLM agents can do and how they work</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
+            <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
+            <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
+            <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
+            <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
+            <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
+            <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
+            <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
+            <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
+            <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+          </ul>
+        </li>
+        <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
+        <li><a data-chapter-link="advanced" href="advanced-techniques.html">Advanced Techniques</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <section id="vl-overview" class="content-section">
+        <p class="section-label">3.4 Overview</p>
+        <h1 class="section-title">AI–human collaboration in medical research</h1>
+        <p>
+          The <strong>Virtual Lab</strong> facilitates interdisciplinary research through collaboration between AI agents and human
+          researchers. The human defines two primary agents &mdash; a Principal Investigator (PI) and a Scientific Critic. The
+          PI assembles a specialized team and orchestrates both team and individual meetings to design a comprehensive
+          workflow for the research topic. Humans then execute the final scripts to complete the project.
+        </p>
+      </section>
+
+      <section id="vl-roles" class="content-section">
+        <p class="section-label">Role-play &amp; reflection</p>
+        <h2 class="section-title">Principal Investigator plus Scientific Critic</h2>
+        <p>
+          The PI is charged with maximizing scientific impact, making key decisions, and managing timelines. The Scientific
+          Critic offers targeted feedback after each response, refining team assignments and preventing blind spots.
+        </p>
+        <div class="example-box">
+          <p class="example-label">Example · Team generation excerpt</p>
+          <p>Agent 1 &mdash; Computational Biologist. Goal: Develop and refine predictive models for protein-antibody interactions.</p>
+          <p>The Scientific Critic immediately responds with targeted suggestions before execution begins.</p>
+        </div>
+      </section>
+
+      <section id="vl-cooperation" class="content-section">
+        <p class="section-label">Cooperation</p>
+        <h2 class="section-title">Meeting agendas, discussions, and synthesis</h2>
+        <p>
+          Team meetings follow a structured agenda supplied by the human. The PI opens, specialist agents respond in
+          rounds, and the PI summarizes, recommends decisions, and lists next steps. The human can understand outcomes by
+          reading only the PI's summary.
+        </p>
+        <div class="example-box">
+          <p class="example-label">Example · Agenda capture</p>
+          <pre><code>Agenda question: Will you design standard antibodies or nanobodies?
+Summary answer: "Nanobodies. They offer superior stability, tissue penetration, and..."</code></pre>
+        </div>
+      </section>
+
+      <section id="vl-tools" class="content-section">
+        <p class="section-label">Tool use</p>
+        <h2 class="section-title">From tool ideation to Rosetta scripts</h2>
+        <p>
+          After the meeting, the team collaboratively chooses computational tools (AlphaFold, Rosetta, etc.). The PI then
+          assigns tools during individual meetings, and specialist agents generate structured scripts with human-in-the-loop
+          guidance. The process yields complete RosettaScripts XML, command lines, and helper Python to post-process scores,
+          all ready for researchers to execute.
+        </p>
+        <div class="example-box">
+          <p class="example-label">Example · Tool brainstorming snippet</p>
+          <p>"Apply AlphaFold or Rosetta to model the 3D structures of the top-ranked nanobody variants..."</p>
+          <p>The snippet above is recorded during the tool generation meeting and later translated into executable scripts.</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="progress-sidebar">
+      <h2>On this page</h2>
+      <ul class="progress-list">
+        <li><a class="progress-link" data-target="vl-overview" href="#vl-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="vl-roles" href="#vl-roles">Roles &amp; reflection</a></li>
+        <li><a class="progress-link" data-target="vl-cooperation" href="#vl-cooperation">Cooperation</a></li>
+        <li><a class="progress-link" data-target="vl-tools" href="#vl-tools">Tool implementation</a></li>
+      </ul>
+      <div class="progress-meter"><div class="progress-meter-fill"></div></div>
+    </aside>
+  </div>
+
+  <footer class="footer">© 2025 Hu et al. · The Virtual Lab summary.</footer>
+</body>
+</html>

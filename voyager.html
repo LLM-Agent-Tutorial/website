@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voyager · LLM Agent Tutorial</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body data-page="voyager" data-nav="capabilities">
+  <header class="site-header">
+    <div class="inner">
+      <div class="logo">LLM Agent Tutorial</div>
+      <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
+      <nav class="primary-nav" id="mainNav">
+        <a href="index.html" data-nav-target="home">Home</a>
+        <a href="foundations.html" data-nav-target="foundations">Foundations</a>
+        <a href="capabilities.html" data-nav-target="capabilities">Agent Examples</a>
+        <a href="practical-tips.html" data-nav-target="practical">Practical Tips</a>
+        <a href="advanced-techniques.html" data-nav-target="advanced">Advanced Frontier</a>
+      </nav>
+      <a class="download-btn" href="LLM_Agent_Tutorial%20(3).pdf" download>Download <span>PDF</span></a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="chapter-sidebar">
+      <h2>Reading Path</h2>
+      <p class="chapter-context">Case study 3.7 · Voyager.</p>
+      <ul class="chapter-links">
+        <li><a data-chapter-link="home" href="index.html">Homepage &amp; Abstract</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
+        <li>
+          <span>What LLM agents can do and how they work</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="capabilities" href="capabilities.html">Chapter overview</a></li>
+            <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
+            <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
+            <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
+            <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
+            <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
+            <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
+            <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
+            <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
+            <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+          </ul>
+        </li>
+        <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
+        <li><a data-chapter-link="advanced" href="advanced-techniques.html">Advanced Techniques</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <section id="voy-overview" class="content-section">
+        <p class="section-label">3.7 Overview</p>
+        <h1 class="section-title">Exploring, learning, and adapting autonomously in Minecraft</h1>
+        <p>
+          <strong>Voyager</strong> enables lifelong learning in the Minecraft sandbox. It generates its own curriculum of tasks, solves
+          them with Mineflayer code, and refines behavior via iterative feedback and self-verification, building a growing
+          library of reusable, compositional skills.
+        </p>
+      </section>
+
+      <section id="voy-planning" class="content-section">
+        <p class="section-label">Planning</p>
+        <h2 class="section-title">Automatic curriculum generation</h2>
+        <p>
+          Voyager's automatic curriculum module sets tasks based on current abilities and environment state, then
+          decomposes them into actionable subtasks. This scaffolds the agent from simple to complex goals.</p>
+        <div class="example-box">
+          <p class="example-label">Example · Auto-generated task</p>
+          <p>Reasoning: The inventory is empty now, chop down a tree to get some wood.</p>
+          <p>Task: Obtain a wood log.</p>
+        </div>
+      </section>
+
+      <section id="voy-tools" class="content-section">
+        <p class="section-label">Tool use</p>
+        <h2 class="section-title">Mineflayer programs for every action</h2>
+        <p>
+          Voyager controls the character via LLM-generated JavaScript built on the Mineflayer API. Each function is
+          self-contained so it can be reused and composed:</p>
+        <div class="example-box">
+          <p class="example-label">Example · Generated Mineflayer skill</p>
+          <pre><code>async function mineCobblestone (bot) {
+  let woodenPickaxe = bot.inventory.findInventoryItem(...);
+  if (!woodenPickaxe) {
+    bot.chat("Crafting a wooden pickaxe.");
+    await craftWoodenPickaxe(bot);
+  }
+  ...
+}</code></pre>
+        </div>
+      </section>
+
+      <section id="voy-memory" class="content-section">
+        <p class="section-label">Memory &amp; reflection</p>
+        <h2 class="section-title">Skill libraries plus self-verification</h2>
+        <p>
+          The skill library stores every verified program inside a vector database. When facing a new task, Voyager queries
+          the library using embeddings of the task description and environment feedback to retrieve relevant skills for
+          reuse and composition.
+        </p>
+        <p>
+          Reflection is powered by iterative prompting. After each attempt, Voyager checks success and issues critiques until the
+          task is solved.</p>
+        <div class="example-box">
+          <p class="example-label">Example · Self-verification</p>
+          <p>You have enough materials to craft a wooden pickaxe, but you didn't craft it.</p>
+          <p><strong>Success:</strong> False · <strong>Critique:</strong> Craft a wooden pickaxe with a crafting table using 3 spruce planks and 2 sticks.</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="progress-sidebar">
+      <h2>On this page</h2>
+      <ul class="progress-list">
+        <li><a class="progress-link" data-target="voy-overview" href="#voy-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="voy-planning" href="#voy-planning">Planning</a></li>
+        <li><a class="progress-link" data-target="voy-tools" href="#voy-tools">Tool use</a></li>
+        <li><a class="progress-link" data-target="voy-memory" href="#voy-memory">Memory &amp; reflection</a></li>
+      </ul>
+      <div class="progress-meter"><div class="progress-meter-fill"></div></div>
+    </aside>
+  </div>
+
+  <footer class="footer">© 2025 Hu et al. · Voyager summary.</footer>
+</body>
+</html>
