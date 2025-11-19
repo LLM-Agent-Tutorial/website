@@ -27,29 +27,39 @@
   </header>
 
   <div class="layout">
-    <aside class="chapter-sidebar">
-      <ul class="chapter-links">
-        <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
-        <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
-        <li>
-          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">Examples: What LLM Agents
-            Can Do and How They Work</a>
-          <ul class="sub-chapter-links">
-            <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
-            <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
-            <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
-            <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
-            <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
-            <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
-            <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
-            <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
-            <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
-          </ul>
-        </li>
-        <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
-        <li><a data-chapter-link="advanced" href="advanced-techniques.html">Advanced Techniques</a></li>
+        <aside class="chapter-sidebar">
+  <ul class="chapter-links">
+    <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
+    <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
+    <li><a data-chapter-link="capabilities" href="capabilities.html">What LLM Agents Can Do and How They Work</a></li>
+    <li>
+      <span class="chapter-parent">Example</span>
+      <ul class="sub-chapter-links">
+        <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
+        <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
+        <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
+        <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
+        <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
+        <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
+        <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
+        <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
+        <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
       </ul>
-    </aside>
+    </li>
+    <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
+    <li>
+      <span class="chapter-parent">Advanced Techniques: What is happening at the frontier</span>
+      <ul class="sub-chapter-links">
+        <li><a data-chapter-link="adv-knowledge" href="advanced-knowledge.html">Injecting Domain Knowledge</a></li>
+        <li><a data-chapter-link="adv-reasoning" href="advanced-reasoning.html">Enhancing Reasoning Capabilities</a></li>
+        <li><a data-chapter-link="adv-context" href="advanced-context.html">Managing Long Context</a></li>
+        <li><a data-chapter-link="adv-internalize" href="advanced-internalize.html">Internalizing Agent Abilities</a></li>
+        <li><a data-chapter-link="adv-safety" href="advanced-safety.html">Agent Safety</a></li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+
 
     <main>
       <section id="ais-overview" class="content-section">
@@ -60,7 +70,7 @@
         </div>
         <div class="overview-highlight">
           <p>
-            <strong>The AI Scientist</strong> aims to independently carry out a scientific research process from idea
+            The AI Scientist aims to independently carry out a scientific research process from idea
             generation to paper writing without any human involvement. It produces a research paper in three phases: (1)
             idea generation, (2) experimental iteration, and (3) paper write-up. First, the AI Scientist generate a
             diverse set of ideas that are different from existing literature. Then the AI Scientist executes the
@@ -72,9 +82,10 @@
         </div>
         <figure class="hero-figure">
           <img src="imgs/ai-scientist.png" alt="Workflow of the AI Scientist system" />
-          <figcaption>The AI Scientist moves from idea generation through experimental iteration and paper write-up
-            before an LLM-generated review closes the loop.</figcaption>
+          <figcaption>Conceptual illustration of The AI Scientist, an end-to-end LLM-driven scientific discovery process. The AI Scientist first invents and assesses the novelty of a set of ideas. It then determines how to test the hypotheses, including writing the necessary code by editing a codebase powered by recent advances in automated code generation. Afterward, the experiments are automatically executed to collect a set of results consisting of both numerical scores and visual summaries (e.g. plots or tables). The results are motivated, explained, and summarized in a LaTeX report. Finally, The AI Scientist generates an automated review, according to current practice at standard machine learning conferences. The review can be used to either improve the project or as feedback to future generations for open-ended scientific discovery.
+</figcaption>
         </figure>
+        <p>The sections below unpack how the AI Scientist orchestrates multi-step planning, extensive tool use, and rigorous reflection to produce papers autonomously.</p>
       </section>
 
       <section id="ais-planning" class="content-section">
@@ -149,10 +160,10 @@
     <span class="token variable">results</span> = requests.get(
         <span class="token string">"https://api.semanticscholar.org/paper/search"</span>,
         headers={<span class="token string">"API_KEY"</span>: <span class="token variable">API_KEY</span>},
-        params={{
+        params={
             <span class="token string">"query"</span>: <span class="token string">"Enhancing the image classification performance of convolutional neural networks using data augmentation"</span>,
             <span class="token string">"fields"</span>: <span class="token string">"title, authors, year, abstract, citationCount"</span>,
-        }},
+        },
     )
     <span class="token variable">papers</span> = <span class="token variable">results</span>[<span class="token string">"data"</span>]
     <span class="token keyword">return</span> <span class="token variable">papers</span></code></pre>
@@ -227,8 +238,7 @@
       </section>
 
       <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
-      <section class="citation-block">
-
+      <section id="citation" class="citation-block">
         <pre><code>@article{hu2025llm_agents_tutorial,
           title={A Beginner-Friendly Tutorial on LLM-based Agents},
           author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},

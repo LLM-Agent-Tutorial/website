@@ -37,6 +37,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const sidebar = document.querySelector('.chapter-sidebar');
+  if (sidebar instanceof HTMLElement) {
+    const sidebarScrollKey = 'chapterSidebarScroll';
+    const savedScroll = Number(localStorage.getItem(sidebarScrollKey));
+    if (!Number.isNaN(savedScroll)) {
+      sidebar.scrollTop = savedScroll;
+    }
+
+    let scrollSaveHandle = null;
+    const persistSidebarScroll = () => {
+      scrollSaveHandle = null;
+      try {
+        localStorage.setItem(sidebarScrollKey, sidebar.scrollTop.toString());
+      } catch (error) {
+        /* ignore persistence errors */
+      }
+    };
+
+    sidebar.addEventListener('scroll', () => {
+      if (scrollSaveHandle) return;
+      scrollSaveHandle = window.requestAnimationFrame(persistSidebarScroll);
+    });
+
+    sidebar.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        persistSidebarScroll();
+      });
+    });
+
+    window.addEventListener('beforeunload', persistSidebarScroll);
+  }
+
   const progressLinks = Array.from(document.querySelectorAll('.progress-link'));
   const sections = progressLinks
     .map((link) => {

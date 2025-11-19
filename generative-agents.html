@@ -27,29 +27,39 @@
   </header>
 
   <div class="layout">
-    <aside class="chapter-sidebar">
-      <ul class="chapter-links">
-        <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
-        <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
-        <li>
-          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">Examples: What LLM Agents
-            Can Do and How They Work</a>
-          <ul class="sub-chapter-links">
-            <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
-            <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
-            <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
-            <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
-            <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
-            <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
-            <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
-            <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
-            <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
-          </ul>
-        </li>
-        <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
-        <li><a data-chapter-link="advanced" href="advanced-techniques.html">Advanced Techniques</a></li>
+        <aside class="chapter-sidebar">
+  <ul class="chapter-links">
+    <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
+    <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
+    <li><a data-chapter-link="capabilities" href="capabilities.html">What LLM Agents Can Do and How They Work</a></li>
+    <li>
+      <span class="chapter-parent">Example</span>
+      <ul class="sub-chapter-links">
+        <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
+        <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
+        <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
+        <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
+        <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
+        <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
+        <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
+        <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
+        <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
       </ul>
-    </aside>
+    </li>
+    <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
+    <li>
+      <span class="chapter-parent">Advanced Techniques: What is happening at the frontier</span>
+      <ul class="sub-chapter-links">
+        <li><a data-chapter-link="adv-knowledge" href="advanced-knowledge.html">Injecting Domain Knowledge</a></li>
+        <li><a data-chapter-link="adv-reasoning" href="advanced-reasoning.html">Enhancing Reasoning Capabilities</a></li>
+        <li><a data-chapter-link="adv-context" href="advanced-context.html">Managing Long Context</a></li>
+        <li><a data-chapter-link="adv-internalize" href="advanced-internalize.html">Internalizing Agent Abilities</a></li>
+        <li><a data-chapter-link="adv-safety" href="advanced-safety.html">Agent Safety</a></li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+
 
     <main>
       <section id="overview" class="content-section">
@@ -72,9 +82,15 @@
 
         <figure class="hero-figure">
           <img src="imgs/generative-agents.png" alt="Illustration of generative agents" />
-          <figcaption>Generative Agents provides an LLM-based agent architecture designed to simulate human behaviors
-            within a sandbox environment.</figcaption>
+          <figcaption>Generative agents are presented as believable simulacra of human behavior for interactive
+            applications. In this work, the authors demonstrate generative agents by populating a sandbox environment,
+            reminiscent of The Sims, with twenty-five agents. Users are able to observe and intervene as the agents plan
+            their days, share news, form relationships, and coordinate group activities.</figcaption>
         </figure>
+        <p>We will now use examples and prompt templates to illustrate how Generative Agents leverage
+          <strong>role-play</strong>, <strong>memory</strong>, <strong>planning</strong>, and
+          <strong>reflection</strong> to perform credible social simulations.
+        </p>
       </section>
 
       <section id="role-play" class="content-section">
@@ -170,7 +186,7 @@
             <p><strong>Task:</strong>&nbsp;Summarize the most relevant statements above that can inform (Isabella
               Rodriguez)
               in their conversation with Francisco Lopez.</p>
-            <hr class="detail-divider"/>
+            <hr class="detail-divider" />
             <p><strong>OUTPUT:</strong><br>Isabella Rodriguez and Francisco Lopez are discussing their excitement for
               the
               Valentine's Day party at Hobbs Cafe and working together to make his performance engaging and memorable.
@@ -226,14 +242,13 @@
 
       <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
       <section id="citation" class="citation-block">
-
         <pre><code>@article{hu2025llm_agents_tutorial,
-  title={A Beginner-Friendly Tutorial on LLM-based Agents},
-  author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
-  year={2025},
-  month={November},
-  note={Manuscript in preparation}
-}</code></pre>
+          title={A Beginner-Friendly Tutorial on LLM-based Agents},
+          author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
+          year={2025},
+          month={November},
+          note={Manuscript in preparation}
+        }</code></pre>
       </section>
       <div class="page-nav">
         <a class="page-nav-btn" href="index.html">Back to Home</a>
