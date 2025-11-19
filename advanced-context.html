@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,90 +9,140 @@
   <script defer src="script.js"></script>
   <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body data-page="adv-context" data-nav="advanced">
-<header class="site-header">
-  <div class="inner">
-    <a class="logo" href="index.html">LLM Agent Tutorial</a>
-    <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
-    <nav class="primary-nav" id="mainNav">
-      <a href="index.html" data-nav-target="home">Home</a>
-      <a href="foundations.html" data-nav-target="foundations">Foundations</a>
-      <a href="capabilities.html" data-nav-target="capabilities">Agent Examples</a>
-      <a href="practical-tips.html" data-nav-target="practical">Practical Tips</a>
-      <a href="advanced-techniques.html" data-nav-target="advanced">Advanced Frontier</a>
-    </nav>
-    <a class="download-btn" href="LLM_Agent_Tutorial%20(3).pdf" download>Download <span>PDF</span></a>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="inner">
+      <a class="logo" href="index.html">LLM Agent Tutorial</a>
+      <button class="nav-toggle" aria-controls="mainNav" aria-expanded="false">Menu</button>
+      <nav class="primary-nav" id="mainNav">
+        <a href="index.html" data-nav-target="home">Home</a>
+        <a href="foundations.html" data-nav-target="foundations">Foundations</a>
+        <a href="capabilities.html" data-nav-target="capabilities">Agent Examples</a>
+        <a href="practical-tips.html" data-nav-target="practical">Practical Tips</a>
+        <a href="advanced-techniques.html" data-nav-target="advanced">Advanced Frontier</a>
+      </nav>
+      <a class="download-btn" href="LLM_Agent_Tutorial%20(3).pdf" download>Download <span>PDF</span></a>
+    </div>
+  </header>
 
   <div class="layout">
 
-<aside class="chapter-sidebar">
-  <ul class="chapter-links">
-    <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
-    <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
-    <li><a data-chapter-link="capabilities" href="capabilities.html">What LLM Agents Can Do and How They Work</a></li>
-    <li>
-      <span class="chapter-parent">Example</span>
-      <ul class="sub-chapter-links">
-        <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
-        <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
-        <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
-        <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
-        <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
-        <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
-        <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
-        <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
-        <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+    <aside class="chapter-sidebar">
+      <ul class="chapter-links">
+        <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
+        <li><a data-chapter-link="capabilities" href="capabilities.html">What LLM Agents Can Do and How They Work</a>
+        </li>
+        <li>
+          <span class="chapter-parent">Example</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
+            <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
+            <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
+            <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
+            <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
+            <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
+            <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
+            <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
+            <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+          </ul>
+        </li>
+        <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
+        <li>
+          <span class="chapter-parent">Advanced Techniques: What is happening at the frontier</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="adv-knowledge" href="advanced-knowledge.html">Injecting Domain Knowledge</a></li>
+            <li><a data-chapter-link="adv-reasoning" href="advanced-reasoning.html">Enhancing Reasoning Capabilities</a>
+            </li>
+            <li><a data-chapter-link="adv-context" href="advanced-context.html">Managing Long Context</a></li>
+            <li><a data-chapter-link="adv-internalize" href="advanced-internalize.html">Internalizing Agent
+                Abilities</a></li>
+            <li><a data-chapter-link="adv-safety" href="advanced-safety.html">Agent Safety</a></li>
+          </ul>
+        </li>
       </ul>
-    </li>
-    <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
-    <li>
-      <span class="chapter-parent">Advanced Techniques: What is happening at the frontier</span>
-      <ul class="sub-chapter-links">
-        <li><a data-chapter-link="adv-knowledge" href="advanced-knowledge.html">Injecting Domain Knowledge</a></li>
-        <li><a data-chapter-link="adv-reasoning" href="advanced-reasoning.html">Enhancing Reasoning Capabilities</a></li>
-        <li><a data-chapter-link="adv-context" href="advanced-context.html">Managing Long Context</a></li>
-        <li><a data-chapter-link="adv-internalize" href="advanced-internalize.html">Internalizing Agent Abilities</a></li>
-        <li><a data-chapter-link="adv-safety" href="advanced-safety.html">Agent Safety</a></li>
-      </ul>
-    </li>
-  </ul>
-</aside>
+    </aside>
 
     <main>
       <section id="topic-overview" class="content-section">
         <h1 class="section-title">Managing Long Context</h1>
         <p>
-          Long contexts raise cost and can blur attention. The tutorial advocates compressing history, reusing stable prefixes, and introducing hierarchy so agents never juggle more information than needed.
+          As LLM-based agents often engage in multi-turn, prolonged, or complex workflows, a key challenge they may
+          encounter is the extremely long context, which significantly raises computational costs, slows down inference,
+          and often reduces accuracy due to models’ bias towards recent inputs. Therefore, naively using maximal-length
+          contexts remains impractical for real-world agents. To address this, there are three primary techniques:
+          Context Compression, Context Reuse, and Hierarchical Context Management.
         </p>
       </section>
 
-      <section id="context-tactics" class="content-section">
-        <h2 class="section-title">Context management toolkit</h2>
+      <section id="context-compression" class="content-section">
+        <h2 class="section-title">Context Compression</h2>
         <p>
-          Choose the tactic that matches your bottleneck: aggressively compress stale content, cache reusable prompt segments, and break workflows into hierarchical stages so each sub-agent sees only what it needs.
+          The first strategy is context compression, which reduces the prompt to the minimum necessary set. In
+          Retrieval-Augmented Generation (RAG), a large knowledge source is segmented and indexed so that, at query
+          time, only the top-k relevant chunks are inserted into the prompt instead of the whole corpus. In addition,
+          agents can summarize or merge prior turns to keep the running transcript short; and they can offload long-term
+          information to external memory (e.g., databases or vector stores) and re-inject it only on demand, so the
+          working prompt stays small by default.
         </p>
-        <ul class="checklist">
-          <li><strong>Compression:</strong> Summarize transcripts, chunk memory into retrieval stores, or offload rarely used facts to external notes so that only the salient snippets stay in-context.</li>
-          <li><strong>Reuse:</strong> Prompt caching, byte-identical prefixes, and masked tool definitions preserve context without re-sending everything—crucial when staying within strict token budgets.</li>
-          <li><strong>Hierarchy:</strong> Delegate subtasks to specialized agents with concise prompts and require structured summaries between them. Hierarchy keeps any single context window short while retaining global coherence.</li>
-        </ul>
-      <div class="page-nav">
-        <a class="page-nav-btn" href="advanced-techniques.html">Back to Advanced Techniques overview</a>
-      </div>
       </section>
+
+      <section id="context-reuse" class="content-section">
+        <h2 class="section-title">Context Reuse</h2>
+        <p>
+          The second strategy is context reuse. Intuitively, prompt caching lets the system treat an unchanged prefix as
+          “already processed”, so it does not need to be recomputed on every turn. Concretely, servers reuse precomputed
+          key–value attention states to skip redundant prefix computation, reducing latency and cost. To make caching
+          effective, maintain a stable prefix—system role, shared tools, policies—so cache hits remain consistent across
+          multi-turn conversations. When tool availability must change, avoid editing the prompt; keep all tool
+          definitions in the prefix and switch tools on or off during decoding (mask, don’t remove) to preserve a
+          byte-identical, cache-friendly prefix while constraining actions.
+        </p>
+      </section>
+      <section id="context-reuse" class="content-section">
+        <h2 class="section-title">Hierarchical Context Management</h2>
+        <p>
+          The third strategy is hierarchical context management: rather than continually expanding a single transcript,
+          we structure contexts according to role and scope. An orchestrator manages global goals and constraints,
+          delegating detailed execution to specialized sub-agents, each operating with concise, role-specific prompts.
+          Between these agents, structured summaries, such as key inputs, assumptions, and outputs, are passed instead
+          of lengthy transcripts, ensuring each stage uses a minimal, cache-friendly context. Additionally, capabilities
+          are organized into modular and reusable skill bundles, loaded into context only as needed, further limiting
+          prompt size and complexity. Such hierarchical designs are increasingly common in frameworks and community
+          practices focused on subagent orchestration and modular skill management.
+        </p>
+      </section>
+
+      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
+      <section class="citation-block">
+        <pre><code>@article{hu2025llm_agents_tutorial,
+  title={A Beginner-Friendly Tutorial on LLM-based Agents},
+  author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
+  year={2025},
+  month={November},
+  note={Manuscript in preparation}
+}</code></pre>
+      </section>
+      <div class="page-nav">
+        <a class="page-nav-btn" href="index.html">Back to Home</a>
+        <a class="page-nav-btn primary" href="advanced-internalize.html">Next</a>
+      </div>
     </main>
-      <aside class="progress-sidebar">
-        <h2>On this page</h2>
-        <ul class="progress-list">
-          <li><a class="progress-link" data-target="topic-overview" href="#topic-overview">Overview</a></li>
-          <li><a class="progress-link" data-target="context-tactics" href="#context-tactics">Context management toolkit</a></li>
-        </ul>
-        <div class="progress-meter"><div class="progress-meter-fill"></div></div>
-      </aside>
+    <aside class="progress-sidebar">
+      <h2>On this page</h2>
+      <ul class="progress-list">
+        <li><a class="progress-link" data-target="topic-overview" href="#topic-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="context-tactics" href="#context-tactics">Context management
+            toolkit</a></li>
+      </ul>
+      <div class="progress-meter">
+        <div class="progress-meter-fill"></div>
+      </div>
+    </aside>
   </div>
 
   <footer class="footer">© 2025 Hu et al. · Advanced techniques summary.</footer>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <script defer src="script.js"></script>
   <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body data-page="virtual-lab" data-nav="capabilities">
   <header class="site-header">
     <div class="inner">
@@ -25,69 +27,80 @@
   </header>
 
   <div class="layout">
-        <aside class="chapter-sidebar">
-  <ul class="chapter-links">
-    <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
-    <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
-    <li><a data-chapter-link="capabilities" href="capabilities.html">What LLM Agents Can Do and How They Work</a></li>
-    <li>
-      <span class="chapter-parent">Example</span>
-      <ul class="sub-chapter-links">
-        <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
-        <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
-        <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
-        <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
-        <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
-        <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
-        <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
-        <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
-        <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+    <aside class="chapter-sidebar">
+      <ul class="chapter-links">
+        <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
+        <li><a data-chapter-link="capabilities" href="capabilities.html">What LLM Agents Can Do and How They Work</a>
+        </li>
+        <li>
+          <span class="chapter-parent">Example</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
+            <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
+            <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
+            <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
+            <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
+            <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
+            <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
+            <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
+            <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+          </ul>
+        </li>
+        <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
+        <li>
+          <span class="chapter-parent">Advanced Techniques: What is happening at the frontier</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="adv-knowledge" href="advanced-knowledge.html">Injecting Domain Knowledge</a></li>
+            <li><a data-chapter-link="adv-reasoning" href="advanced-reasoning.html">Enhancing Reasoning Capabilities</a>
+            </li>
+            <li><a data-chapter-link="adv-context" href="advanced-context.html">Managing Long Context</a></li>
+            <li><a data-chapter-link="adv-internalize" href="advanced-internalize.html">Internalizing Agent
+                Abilities</a></li>
+            <li><a data-chapter-link="adv-safety" href="advanced-safety.html">Agent Safety</a></li>
+          </ul>
+        </li>
       </ul>
-    </li>
-    <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
-    <li>
-      <span class="chapter-parent">Advanced Techniques: What is happening at the frontier</span>
-      <ul class="sub-chapter-links">
-        <li><a data-chapter-link="adv-knowledge" href="advanced-knowledge.html">Injecting Domain Knowledge</a></li>
-        <li><a data-chapter-link="adv-reasoning" href="advanced-reasoning.html">Enhancing Reasoning Capabilities</a></li>
-        <li><a data-chapter-link="adv-context" href="advanced-context.html">Managing Long Context</a></li>
-        <li><a data-chapter-link="adv-internalize" href="advanced-internalize.html">Internalizing Agent Abilities</a></li>
-        <li><a data-chapter-link="adv-safety" href="advanced-safety.html">Agent Safety</a></li>
-      </ul>
-    </li>
-  </ul>
-</aside>
+    </aside>
 
 
     <main>
       <section id="vl-overview" class="content-section">
-        <h1 class="section-title">The Virtual Lab: AI–human Collaboration in Medical Research</h1>
+        <h1 class="section-title">The Virtual Lab: AI-human Collaboration in Medical Research</h1>
         <div class="resource-links">
           <a class="resource-link" href="#" target="_blank" rel="noreferrer">Paper ↗</a>
           <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
         </div>
         <div class="overview-highlight">
           <p>
-            The <strong>Virtual Lab</strong> facilitates interdisciplinary research through collaboration between AI agents and human
-            researchers. Initially the human researcher defines two primary agents—a Principal Investigator (PI) and a
-            Scientific Critic. The PI assembles a specialized team and orchestrates both team and individual meetings to
-            design a comprehensive workflow for the research topic, and the human researcher ultimately executes the finalized
-            scripts to complete the project.
+            The Virtual Lab facilitates interdisciplinary research through collaboration between AI agents and human
+            researchers. Initially, the human researcher defines two primary agents—a Principal Investigator (PI) and a
+            Scientific Critic. The PI agent automatically assembles a specialized team of scientific agents tailored to
+            the specific research topic. Research in the Virtual Lab occurs through two types of meetings: team meetings
+            and individual meetings. In both cases, the human researcher provides an initial agenda to guide the
+            discussion, and then the agents discuss how to address the agenda. After running multiple team or individual
+            meetings in parallel, the PI agent conducts a final individual aggregation meeting. With assistance from the
+            human researcher, the PI synthesizes the previously generated tool scripts and summarizes the outcomes of
+            earlier discussions, constructing a comprehensive workflow tailored to the initial research topic. Finally,
+            the human researcher leverages this finalized workflow, employing the generated tools to complete the
+            research project.
           </p>
         </div>
         <figure class="hero-figure">
           <img src="imgs/virtual-lab.png" alt="Agents collaborating inside the Virtual Lab" />
-          <figcaption>The Virtual Lab has humans define the PI and Scientific Critic, then lets AI agents plan meetings, tools, and scripts for biomedical research.</figcaption>
+          <figcaption>The Virtual Lab has humans define the PI and Scientific Critic, then lets AI agents plan meetings,
+            tools, and scripts for biomedical research.</figcaption>
         </figure>
-        <p class="capability-lede">Up next, we outline how the Virtual Lab’s role-played PI and Scientific Critic apply reflection, coordinated team meetings, and tool generation workflows to drive medical research.</p>
+        <p>Key capabilities of the Virtual Lab: </p>
       </section>
 
       <section id="vl-roles" class="content-section">
         <h2 class="section-title">Role-play</h2>
         <p>
-          The Virtual Lab introduces two key roles: a Principal Investigator (PI) agent acting as the primary coordinator, and
-          a Scientific Critic agent that provides critical oversight and identifies potential risks. Together, they ensure
-          high-quality decision-making and maintain workflow transparency.
+          The Virtual Lab introduces two key roles: a Principal Investigator (PI) agent acting as the primary
+          coordinator, and a Scientific Critic agent that provides critical oversight and identifies potential risks.
+          Together, they ensure high-quality decision-making and maintain workflow transparency. Below we use the PI
+          agent as an example to illustrate the key elements of an agent role:
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
@@ -96,8 +109,11 @@
           <div class="detail-box__body">
             <p><strong>Title:</strong> Principal Investigator</p>
             <p><strong>Expertise:</strong> Running a science research lab.</p>
-            <p><strong>Goal:</strong> Perform research in your area of expertise that maximizes the scientific impact of the work.</p>
-            <p><strong>Role:</strong> Lead a team of experts to solve an important scientific problem, make key decisions based on team input, and manage the project timeline and resources.</p>
+            <p><strong>Goal:</strong> Perform research in your area of expertise that maximizes the scientific impact of
+              the work.</p>
+            <p><strong>Role:</strong> Lead a team of experts to solve an important scientific problem, make key
+              decisions about the project direction based on team member input, and manage the project timeline and
+              resources.</p>
           </div>
         </div>
       </section>
@@ -105,28 +121,47 @@
       <section id="vl-reflection" class="content-section">
         <h2 class="section-title">Reflection</h2>
         <p>
-          Once the human researcher defines a high-level goal, the PI determines which specialist agents are needed in an
-          individual team generation meeting. The Scientific Critic provides targeted feedback after each response, guiding
-          agents toward improved outcomes.
+          Once the human researcher defines a high-level goal, the PI agent determines which specialist scientist agents
+          are needed (such as Sequence Designers, Structure Predictors, Energy Evaluators, and Evidence Retrievers) in
+          an individual team generation meeting. Individual meetings allow an agent to focus on a specific task, the
+          Scientific Critic provides targeted feedback after each response, guiding the agent toward improved outcomes.
+          During the team generation meeting, the PI outlines each agent’s title, expertise, goal, and role, the
+          Scientific Critic then reviews these assignments and provides feedback to refine the roles before execution
+          begins. The following example illustrates how a PI agent might generate a suitable team for a given research
+          task and how the reflection process operates in practice.
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
             <h4>Example of team generation (Principal Investigator)</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>INPUT:</strong> Project: develop antibodies or nanobodies for the newest SARS-CoV-2 variant. Task: Generate a team of 3 scientists.</p>
+            <p><strong>INPUT</strong>:</p>
+            <p><strong>Project</strong>: You are working on a research project to use machine learning to develop
+              antibodies or nanobodies for the newest variant of the SARS-CoV-2 spike protein... </p>
+            <p><strong>Task</strong>:Generate a team of 3 scientists to help you with this project.</p>
+            <hr class="detail-divider" />
             <p><strong>OUTPUT:</strong></p>
-            <p><strong>Agent 1 — Title:</strong> Computational Biologist · <strong>Expertise:</strong> Protein structure prediction and modeling · <strong>Goal:</strong> Develop and refine predictive models for protein-antibody interactions · <strong>Role:</strong> Provide insights into molecular dynamics and structural constraints impacting antibody design.</p>
-            <p>Agent 2: ...</p>
+            <p><strong>Agent 1:</strong></p>
+            <p><i>Title</i> Computational Biologist·</p>
+            <p><i>Expertise:</i> Protein structure prediction and modeling. </p>
+            <p><i>Goal:</i> Develop and refine predictive models for protein-antibody interactions. </p>
+            <p><i>Role:</i> Provide insights into molecular dynamics and structural constraints impacting antibody
+              design.</p>
+            <p><strong>Agent 2</strong>:...</p>
+            <p>...</p>
           </div>
         </div>
+
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
             <h4>Example of reflection (Scientific Critic)</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>INPUT:</strong> Chat History: ... · <strong>Task:</strong> Please critique (agent)'s most recent answer.</p>
-            <p><strong>OUTPUT:</strong> As the Scientific Critic, I would like to address ...</p>
+            <p><strong>Chat History</strong>:...</p>
+            <p><strong>Task</strong>: Please critique (agent)’s most recent answer. </p>
+            <hr class="detail-divider" />
+            <p><strong>OUTPUT:</strong></p>
+            <p>As the Scientific Critic, I would like to address ...</p>
           </div>
         </div>
       </section>
@@ -134,35 +169,70 @@
       <section id="vl-cooperation" class="content-section">
         <h2 class="section-title">Cooperation</h2>
         <p>
-          Team meetings involve collaborative discussions among the PI, scientist agents, and the Scientific Critic. The human
-          researcher sets an agenda, the PI initiates the conversation, agents provide insights in turn, and the PI synthesizes
-          input, summarizes decisions, and identifies next steps.
+          Team meetings involve collaborative discussions among the PI, scientist agents, and the Scientific Critic. The
+          human researcher sets an agenda, and the PI initiates the conversation by outlining key questions. Each agent
+          then provides their insights in turn. After several discussion rounds, the PI synthesizes the input,
+          summarizes important decisions, and identifies next steps. The human researcher can quickly understand
+          outcomes by reviewing only the PI’s concise summary. An example of a team cooperation scenario is provided
+          below.
         </p>
+
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
-            <h4>Example of team meeting start (Principal Investigator)</h4>
+            <h4>Example of team generation (Principal Investigator)</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>INPUT:</strong> Agenda questions supplied by the human researcher (e.g., Will you design standard antibodies or nanobodies?). Team members include the Computational Biologist, Scientific Critic, ...</p>
-            <p><strong>OUTPUT:</strong> "Thank you, everyone, for joining this important meeting. Our task is to ..."</p>
+            <p><strong>INPUT</strong>:</p>
+            <p><strong>Agenda (Provided by human researcher)</strong>: You are working on a research project to use
+              machine learning to develop antibodies or nanobodies for the newest variant of the SARS-CoV-2 spike
+              protein. Please create ... </p>
+            <p><strong>Agenda questions (Provided by human researcher)</strong>:<br>1. Will you design standard
+              antibodies or nanobodies?<br>2. ...</p>
+            <p><strong>Team members</strong>: Computational Biologist, Scientific Critic, ... </p>
+            <p><strong>Task</strong>: Provide your initial thoughts on the agenda as well as any questions you have to
+              guide the discussion among the team members. </p>
+            <hr class="detail-divider" />
+            <p><strong>OUTPUT:</strong></p>
+            <p>Thank you, everyone, for joining this important meeting. Our task is to ...</p>
           </div>
         </div>
+
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
             <h4>Example of team member discussion (Computational Biologist)</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>INPUT:</strong> Chat History: ... · <strong>Task:</strong> Provide your thoughts on the discussion (round 2 of 5).</p>
-            <p><strong>OUTPUT:</strong> "As the Computational Biologist, I will focus on ..."</p>
+            <p><strong>INPUT</strong>:</p>
+            <p><strong>Chat History</strong>:...</p>
+            <p><strong>Task</strong>: P: Provide your thoughts on the discussion (round 2 of 5).</p>
+            <hr class="detail-divider" />
+            <p><strong>OUTPUT:</strong></p>
+            <p>As the Computational Biologist, I will focus on ...</p>
           </div>
         </div>
+
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
             <h4>Example of summarizing the discussion (Principal Investigator)</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>INPUT:</strong> Chat History: ... · <strong>Task:</strong> Summarize the meeting, provide recommendations, and answer agenda questions.</p>
-            <p><strong>OUTPUT:</strong> Summarization of each team member ... Recommendation: focus on ... Answers: "1. Will you design standard antibodies or nanobodies? Answer: Nanobodies. Justification: Nanobodies offer superior stability..." Next Steps: Data acquisition, model development, ...</p>
+            <p><strong>INPUT</strong>:</p>
+            <p><strong>Chat History</strong>: ... </p>
+            <p><strong>Task</strong>:<br>Summarize the meeting in detail for future discussions, provide a specific
+              recommendation regarding the agenda, and answer the agenda questions (if any) based on the discussion
+              while strictly adhering to the agenda rules (if any).</p>
+            <hr class="detail-divider" />
+            <p><strong>OUTPUT</strong>:</p>
+            <p><strong>Summarization of each team member</strong>: Computational Biologist: ...<br>...</p>
+            <p><strong>Recommendation:</strong>:Based on the input from the team, I recommend focusing on ...</p>
+            <p><strong>Answers of agenda questions:</strong>:<br>1. Will you design standard antibodies or nanobodies?
+              <br><i>Answer</i>: Nanobodies. <br><i>Justification</i>: Nanobodies offer superior stability, tissue
+              penetration, and ... <br>2. ...
+            </p>
+            <p><strong>Next Steps</strong>: 1. <i>Data Acquisition and Verification</i>: Collaborate with partners and
+              use automated alerts to acquire and verify the latest cross-reactivity data for selected nanobodies.
+              <br>2. <i>Model Development</i>: ...
+            </p>
           </div>
         </div>
       </section>
@@ -170,26 +240,53 @@
       <section id="vl-tools" class="content-section">
         <h2 class="section-title">Tool use</h2>
         <p>
-          After finalizing project details, agents move through tool generation and tool implementation meetings with human
-          assistance. Teams brainstorm candidate tools (AlphaFold, Rosetta, etc.), then the PI assigns tools and specialist agents
-          generate structured scripts that humans later execute.
+          After finalizing project details in the team meeting, the agents move forward with the help of human
+          researchers to complete the steps of tool generation and tool implementation. In the tool generation phase,
+          the agents hold another team meeting to collaboratively choose the computational tools they will use. Here is
+          an example showing how the team generates appropriate tools during the meeting.
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
             <h4>Example of tool generation discussion (Computational Biologist)</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>INPUT:</strong> Project context and summaries of previous meetings. Task: List several tools (5–10) that would be relevant.</p>
-            <p><strong>OUTPUT:</strong> "Apply AlphaFold or Rosetta to model the 3D structures of the top-ranked nanobody variants..."</p>
+            <p><strong>INPUT</strong>:</p>
+            <p><strong>Project</strong>:You are working on a research project to ...</p>
+            <p><strong>Summaries of the previous meetings</strong>: Your team previous decided to modify existing
+              nanobodies to improve their binding to the newest variant of the SARS-CoV-2 spike protein ...</p>
+            <p><strong>Chat History of current meeting</strong>: ...</p>
+            <p><strong>Task</strong>:Please list several tools (5-10) that would be relevant.</p>
+            <hr class="detail-divider" />
+            <p><strong>OUTPUT:</strong></p>
+            <p>... Apply AlphaFold or Rosetta to model the 3D structures of the top-ranked nanobody variants ...</p>
           </div>
         </div>
+        <p>
+          Once the toolset is agreed upon, the implementation phase begins. First, the PI holds an individual meeting to
+          assign specific computational tools to each specialist agent. Next, each specialist agent conducts their own
+          individual meetings, guided and assisted by the human researcher, to generate structured scripts for the
+          assigned tools. Under the guidance of the human researcher, the agents iteratively refine these scripts
+          through feedback. The human researcher then manually stores the finalized scripts for subsequent
+          implementation. The following example illustrates how a specialist agent generates a structured Rosetta script
+          under the guidance of a human researcher:
+        </p>
+
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
             <h4>Example of tool implementation (Computational Biologist)</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>INPUT:</strong> Decision: modify existing nanobodies. Task provided by the human researcher: use Rosetta to calculate binding energy in three parts.</p>
-            <p><strong>OUTPUT:</strong> Part 1 — RosettaScripts XML ... · Part 2 — Rosetta command example · Part 3 — Python script to process score files.</p>
+            <p><strong>INPUT</strong>:</p>
+            <p><strong>Project</strong>: You are working on a research project to ... </p>
+            <p><strong>Decision</strong>:Your team previous decided to modify existing nanobodies to improve their binding to the newest variant of the SARS-CoV-2 spike protein..</p>
+            <p><strong>Task</strong><i>(Provided by human researcher)</i>: Now you must use Rosetta to calculate the binding energy of nanobody-antigen complexes. You must do this in <strong>3</strong> parts. First, write a complete RosettaScripts XML file ...</p>
+            <hr class="detail-divider" />
+            <p><strong>OUTPUT</strong>:</p>
+            <p><strong>Part 1</strong>:RosettaScripts XML for Binding Energy Calculation:<br>&lt;xml&gt;<br> ... <br>&lt;/xml&gt;</p>
+            <p><strong>Part 2</strong>:Rosetta Command Example<br>
+            '''bash rosetta_scripts.default.linuxgccrelease ...'''</p>
+            <p><strong>Part 3</strong>:Python Script to Process Score Files<br>import os import pandas as pd ...
+            </p>
           </div>
         </div>
       </section>
@@ -197,7 +294,7 @@
 
       <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
-        
+
         <pre><code>@article{hu2025llm_agents_tutorial,
   title={A Beginner-Friendly Tutorial on LLM-based Agents},
   author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
@@ -221,10 +318,13 @@
         <li><a class="progress-link" data-target="vl-cooperation" href="#vl-cooperation">Cooperation</a></li>
         <li><a class="progress-link" data-target="vl-tools" href="#vl-tools">Tool use</a></li>
       </ul>
-      <div class="progress-meter"><div class="progress-meter-fill"></div></div>
+      <div class="progress-meter">
+        <div class="progress-meter-fill"></div>
+      </div>
     </aside>
   </div>
 
   <footer class="footer">© 2025 Hu et al. · The Virtual Lab summary.</footer>
 </body>
+
 </html>

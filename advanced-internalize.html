@@ -64,24 +64,24 @@
       <section id="topic-overview" class="content-section">
         <h1 class="section-title">Internalizing Agent Abilities</h1>
         <p>
-          A growing trend is to internalize planning, tool use, and multi-step execution inside the model itself. Systems like Claude Code or OpenAI’s Operator fuse multimodal perception with RL to let the model inspect screens, type, click, and scroll.
+            As AI agents continue to advance, a recent trend is to internalize agent abilities directly within the model itself. This allows the model to perform agent-like behaviors (such as planning, tool use, and multi-step task execution) or integrate more seamlessly with agent frameworks that extend these abilities. For example, Claude Code incorporates structured reasoning and tool-usage capabilities optimized for autonomous coding workflows. It can generate code, run tasks, analyze results, and iterate based on feedback. Similarly, OpenAI’s Operator, which combines the multimodal perception of GPT-4o with advanced reasoning through reinforcement learning, includes a built-in browser that the model can observe and control. It can inspect webpages, type, click, and scroll—interacting with the environment through standard mouse and keyboard actions. While internalizing agent abilities is fundamentally training the model, many techniques used for training LLMs can be applied. The key distinction, however, lies in the data: agent-centric training requires constructing datasets that capture agent behaviorsdemonstrations of actions, sequences, and decision-making in interactive environments.
         </p>
       </section>
 
-      <section id="internalize-tactics" class="content-section">
-        <h2 class="section-title">Key ingredients</h2>
-        <p>
-          Trainable agent behaviors need realistic demonstrations, grounded control loops, and rigorous evaluation so the resulting policy acts safely once it is deployed as an autonomous worker.
-        </p>
-        <ul class="checklist">
-          <li><strong>Demonstration data:</strong> High-quality traces from interactive environments teach the model how to plan, backtrack, and recover. The richer the demonstrations, the more capable the internalized agent becomes.</li>
-          <li><strong>Multimodal control:</strong> Vision-language-action models watch the UI, reason over the state, and issue keyboard or mouse commands end-to-end—removing hand-written planners.</li>
-          <li><strong>Evaluation and safety:</strong> Offline validation, reward modeling, and supervision remain essential because the behavior now lives in the weights. Guardrails and intervention hooks must be designed alongside training.</li>
-        </ul>
-      <div class="page-nav">
-        <a class="page-nav-btn" href="advanced-techniques.html">Back to Advanced Techniques overview</a>
-      </div>
+      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
+      <section class="citation-block">
+        <pre><code>@article{hu2025llm_agents_tutorial,
+  title={A Beginner-Friendly Tutorial on LLM-based Agents},
+  author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
+  year={2025},
+  month={November},
+  note={Manuscript in preparation}
+}</code></pre>
       </section>
+      <div class="page-nav">
+        <a class="page-nav-btn" href="index.html">Back to Home</a>
+        <a class="page-nav-btn primary" href="advanced-safety.html">Next</a>
+      </div>
     </main>
       <aside class="progress-sidebar">
         <h2>On this page</h2>

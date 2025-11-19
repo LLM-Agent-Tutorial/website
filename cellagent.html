@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <script defer src="script.js"></script>
   <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body data-page="cellagent" data-nav="capabilities">
   <header class="site-header">
     <div class="inner">
@@ -25,38 +27,41 @@
   </header>
 
   <div class="layout">
-        <aside class="chapter-sidebar">
-  <ul class="chapter-links">
-    <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
-    <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
-    <li><a data-chapter-link="capabilities" href="capabilities.html">What LLM Agents Can Do and How They Work</a></li>
-    <li>
-      <span class="chapter-parent">Example</span>
-      <ul class="sub-chapter-links">
-        <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
-        <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
-        <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
-        <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
-        <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
-        <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
-        <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
-        <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
-        <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+    <aside class="chapter-sidebar">
+      <ul class="chapter-links">
+        <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
+        <li><a data-chapter-link="capabilities" href="capabilities.html">What LLM Agents Can Do and How They Work</a>
+        </li>
+        <li>
+          <span class="chapter-parent">Example</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
+            <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
+            <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
+            <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
+            <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
+            <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
+            <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
+            <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
+            <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+          </ul>
+        </li>
+        <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
+        <li>
+          <span class="chapter-parent">Advanced Techniques: What is happening at the frontier</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="adv-knowledge" href="advanced-knowledge.html">Injecting Domain Knowledge</a></li>
+            <li><a data-chapter-link="adv-reasoning" href="advanced-reasoning.html">Enhancing Reasoning Capabilities</a>
+            </li>
+            <li><a data-chapter-link="adv-context" href="advanced-context.html">Managing Long Context</a></li>
+            <li><a data-chapter-link="adv-internalize" href="advanced-internalize.html">Internalizing Agent
+                Abilities</a></li>
+            <li><a data-chapter-link="adv-safety" href="advanced-safety.html">Agent Safety</a></li>
+          </ul>
+        </li>
       </ul>
-    </li>
-    <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
-    <li>
-      <span class="chapter-parent">Advanced Techniques: What is happening at the frontier</span>
-      <ul class="sub-chapter-links">
-        <li><a data-chapter-link="adv-knowledge" href="advanced-knowledge.html">Injecting Domain Knowledge</a></li>
-        <li><a data-chapter-link="adv-reasoning" href="advanced-reasoning.html">Enhancing Reasoning Capabilities</a></li>
-        <li><a data-chapter-link="adv-context" href="advanced-context.html">Managing Long Context</a></li>
-        <li><a data-chapter-link="adv-internalize" href="advanced-internalize.html">Internalizing Agent Abilities</a></li>
-        <li><a data-chapter-link="adv-safety" href="advanced-safety.html">Agent Safety</a></li>
-      </ul>
-    </li>
-  </ul>
-</aside>
+    </aside>
 
 
     <main>
@@ -68,28 +73,46 @@
         </div>
         <div class="overview-highlight">
           <p>
-            <strong>CellAgent</strong> is an autonomous, LLM-driven multi-agent framework that, given raw single-cell RNA sequencing
+            CellAgent is an autonomous, LLM-driven multi-agent framework that, given raw single-cell RNA sequencing
             (scRNA-seq) and spatial transcriptomics (ST) data plus natural language instructions, automates end-to-end
-            analysis to deliver high-quality visualizations and processed data outputs. Traditional analysis requires extensive
-            programming and domain expertise, creating a significant barrier for many biologists. CellAgent addresses this by
-            employing a hierarchical framework of specialized agents that plan, execute, and evaluate tasks, simulating a
-            deep-thinking process to ensure high-quality, automated scientific discovery with transparent reasoning, iterative
-            refinement, and clear outputs across all steps.
+            analysis to deliver high-quality visualizations and processed data outputs. Traditional analysis in this
+            field requires extensive programming and domain expertise, creating a significant barrier for many
+            biologists. CellAgent addresses this by employing a hierarchical framework of specialized agents that plan,
+            execute, and evaluate tasks, simulating a “deep-thinking” process to ensure high-quality, automated
+            scientific discovery, with transparent reasoning, iterative refinement, and clear outputs across all steps.
           </p>
         </div>
         <figure class="hero-figure">
           <img src="imgs/cellagent.png" alt="Overview of the CellAgent pipeline" />
-          <figcaption>Schematic of the CellAgent Framework. a, Example of user input received by the CellAgent, comprising single-cell data and user-provided text information. b, Upon receiving user input, the Planner role first parses user intent and decomposes the task into subtasks. c, Illustration of final results, including results of individual subtasks and the final task outcome. d, Detailed view of the CellAgent's processing flow for subtasks. The current subtask and historical code memory are inputted to an Executor, which initially retrieves tools and outputs available tools for this step. Subsequently, corresponding documentation for these tools is acquired, and the Executor derives solutions (text analysis and code generation) based on the documentation. These codes are executed in the code sandbox, and if exceptions are encountered, solutions are regenerated until successful execution of this task. Then, the Evaluator assesses the results of the current task and allows the Executor to optimize solutions. Ultimately, based on its evaluation of results under multiple solutions, the Evaluator aggregates results to obtain the final outcome of this step.</figcaption>
+          <figcaption>Schematic of the CellAgent Framework. a, Example of user input received by the CellAgent,
+            comprising single-cell data and user-provided text information. b, Upon receiving user input, the Planner
+            role first parses user intent and decomposes the task into subtasks. c, Illustration of final results,
+            including results of individual subtasks and the final task outcome. d, Detailed view of the CellAgent's
+            processing flow for subtasks. The current subtask and historical code memory are inputted to an Executor,
+            which initially retrieves tools and outputs available tools for this step. Subsequently, corresponding
+            documentation for these tools is acquired, and the Executor derives solutions (text analysis and code
+            generation) based on the documentation. These codes are executed in the code sandbox, and if exceptions are
+            encountered, solutions are regenerated until successful execution of this task. Then, the Evaluator assesses
+            the results of the current task and allows the Executor to optimize solutions. Ultimately, based on its
+            evaluation of results under multiple solutions, the Evaluator aggregates results to obtain the final outcome
+            of this step.</figcaption>
         </figure>
-        <p class="capability-lede">The remainder of this page details how CellAgent leans on role-play, hierarchical planning, specialized tool use, evaluator-led reflection, structured cooperation, and shared memory to finish analyses end-to-end.</p>
+        <p class="capability-lede">The remainder of this page details how CellAgent leans on role-play, hierarchical
+          planning, specialized tool use, evaluator-led reflection, structured cooperation, and shared memory to finish
+          analyses end-to-end.</p>
       </section>
 
       <section id="cell-roles" class="content-section">
         <h2 class="section-title">Role-play</h2>
         <p>
-          CellAgent's architecture is built on a clear division of labor among three specialized agents: a <strong>Planner</strong>, an
-          <strong>Executor</strong>, and an <strong>Evaluator</strong>. Each agent has a distinct role modeled after the workflow of a human expert,
-          enabling iterative refinement without human intervention.
+          CellAgent's architecture is built on a clear division of labor among three specialized agents: a
+          <strong>Planner</strong>, an
+          <strong>Executor</strong>, and an <strong>Evaluator</strong>. Each agent has a distinct role modeled after the
+          workflow of a human expert. The Planner acts as a project lead, interpreting the user’s high-level goal and
+          breaking it down into a logical sequence of analytical steps. The Executor functions as a bioinformatician,
+          selecting the appropriate tools, writing code, and running the analysis for each step. The Evaluator serves as
+          a quality control specialist, assessing the output of the Executor to ensure biological accuracy and
+          coherence, enabling iterative refinement without human intervention.
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
@@ -98,9 +121,16 @@
           <div class="detail-box__body">
             <p><strong>Name:</strong> Planner</p>
             <p><strong>Profile:</strong> A project manager with deep expertise in bioinformatics workflows.</p>
-            <p><strong>Goal:</strong> Interpret a user's natural language request and decompose it into a logical, step-by-step analytical plan suitable for single-cell data analysis.</p>
-            <p><strong>Expert Knowledge:</strong> Ground decisions in expert-provided principles and best practices (QC → normalization → HVGs → dimensionality reduction → batch correction → neighborhood graph → clustering → annotation → downstream analyses, ...).</p>
-            <p><strong>Output Format:</strong> Return two parts — <em>Thought</em>: brief rationale summarizing assumptions, data modality, and strategy; <em>Plan</em>: ordered list of actionable steps.</p>
+            <p><strong>Goal:</strong> To interpret a user’s natural language request and decompose it into a logical,
+              step-by-step analytical plan suitable for single-cell data analysis, leveraging expert-curated prompts to
+              enhance domain-specific understanding.</p>
+            <p><strong>Expert Knowledge:</strong> The planner should ground decisions in expert-provided principles and
+              best practices for planning, including: QC &rightarrow; normalization &rightarrow; highly variable genes
+              (HVGs) &rightarrow; dimensionality reduction (PCA, UMAP) &rightarrow; batch correction (if needed)
+              &rightarrow; neighborhood graph &rightarrow; clustering &rightarrow; annotation &rightarrow; downstream
+              analyses, ... .</p>
+            <p><strong>Output Format:</strong> Return 2 parts: <i>"Thought"</i> Brief rationale summarizing assumptions,
+              data modality, and the high-level strategy. <i>"Plan"</i>: An ordered list of actionable steps. </p>
           </div>
         </div>
         <div class="detail-box detail-box--has-divider">
@@ -110,9 +140,13 @@
           <div class="detail-box__body">
             <p><strong>Name:</strong> Executor</p>
             <p><strong>Profile:</strong> A bioinformatician specializing in scRNA-seq data analysis.</p>
-            <p><strong>Goal:</strong> Given a specific sub-task (e.g., Perform cell type annotation), select the best tool from the sc-Omni toolkit, generate correct Python/R code, and execute it in the code sandbox.</p>
-            <p><strong>Constraint:</strong> Must use tools and parameters documented in sc-Omni (e.g., CellTypist | scType | CellMarker2.0).</p>
-            <p><strong>Output Format:</strong> Return <em>Thought</em>: rationale for tool selection, parameters, and assumptions; <em>Code</em>: executable code block.</p>
+            <p><strong>Goal:</strong> Given a specific sub-task (e.g., "Perform cell type annotation"), select the best
+              tool from the sc-Omni toolkit, generate correct Python/R code, and execute it in the code sandbox.</p>
+            <p><strong>Constraint:</strong> Must use tools and parameters documented in sc-Omni. The available tools for
+              this step are CellTypist | scType | CellMarker2.0. Ensure code is executable and handles data objects from
+              previous steps correctly.</p>
+            <p><strong>Output Format:</strong>Return 2 parts: <i>"Thought"</i>: Brief rationale for tool selection, key
+              parameters, and input assumptions. <i>"code"</i>: Provide an executable code block (Python or R).</p>
           </div>
         </div>
         <div class="detail-box detail-box--has-divider">
@@ -121,10 +155,17 @@
           </div>
           <div class="detail-box__body">
             <p><strong>Name:</strong> Evaluator</p>
-            <p><strong>Profile:</strong> A quality control expert in bioinformatics, proficient in assessing statistical and biological validity.</p>
-            <p><strong>Goal:</strong> Critically evaluate results generated by the Executor using plots (UMAP | Heatmaps) and metrics (ARI | ASW) to determine if outcomes are biologically meaningful.</p>
-            <p><strong>Constraint:</strong> Base evaluations on established biological principles and predefined metrics.</p>
-            <p><strong>Output Format:</strong> Provide <em>Evaluation Thought</em>: concise reasoning capturing potential issues; <em>Feedback</em>: actionable next steps.</p>
+            <p><strong>Profile:</strong> A quality control expert in bioinformatics, proficient in assessing the
+              statistical and biological validity of single-cell analysis results.</p>
+            <p><strong>Goal:</strong> To critically evaluate the results generated by the Executor. This includes
+              analyzing plots (UMAP | Heatmaps) and quantitative metrics (ARI | ASW) to determine if the outcome is
+              biologically meaningful and technically sound. If the result is suboptimal, provide specific, actionable
+              feedback for improvement (e.g., "adjust parameter X," "try tool Y").</p>
+            <p><strong>Constraint:</strong> Must base evaluations on established biological principles and predefined
+              metrics, effectively replacing traditional manual assessments.</p>
+            <p><strong>Output Format:</strong> Return 2 parts: <i>"Evaluation Thought"</i>: Concise reasoning that
+              interprets visualizations and metrics against biological/technical criteria; note any suspected issues
+              (e.g., overclustering, batch effects). <i>"Feedback"</i>: Actionable next steps.</p>
           </div>
         </div>
       </section>
@@ -132,9 +173,12 @@
       <section id="cell-planning" class="content-section">
         <h2 class="section-title">Planning</h2>
         <p>
-          Planning in CellAgent is a hierarchical process managed by the Planner agent. Upon receiving a user's request in
-          natural language, the Planner leverages expert-curated knowledge to decompose the complex task into well-defined,
-          sequential sub-tasks so the analysis follows a logically sound and scientifically valid workflow.
+          Planning in CellAgent is a hierarchical process managed by the Planner agent. Upon receiving a user’s request
+          in natural language, the Planner leverages its expert-curated knowledge (as given in their role-play prompt
+          shown above) to decompose the complex task into a series of well-defined, sequential sub-tasks. This ensures
+          the overall analysis follows a logically sound and scientifically valid workflow. For instance, a simple
+          request for “clustering” is broken down into essential preprocessing steps before the final clustering is
+          performed, mirroring best practices in the field.
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
@@ -143,9 +187,18 @@
           <div class="detail-box__body">
             <p><strong>INPUT:</strong></p>
             <p><strong>Core Instruction:</strong> This is a 3k PBMCs dataset, please help me complete clustering.</p>
+            <hr class="detail-divider" />
             <p><strong>OUTPUT:</strong></p>
-            <p><strong>Thought:</strong> To perform clustering, we must first ensure the data is properly prepared.</p>
-            <p><strong>Plan:</strong> Quality Control → Normalization → Identification of Highly Variable Genes → Dimensionality Reduction (e.g., PCA, UMAP) → Clustering.</p>
+            <p><strong>Thought:</strong> To perform clustering, we must first ensure the data is properly prepared. I
+              will create a plan that includes quality control, normalization, and dimensionality reduction before the
+              final clustering step.</p>
+            <p><strong>Plan:</strong>
+              "Quality Control": Filter out low-quality cells and genes.<br>
+              "Normalization": Standardize expression values across cells.<br>
+              "Identification of Highly Variable Genes": Focus the analysis on the most informative genes.<br>
+              "Dimensionality Reduction": Project data into lower dimensions (e.g., PCA, UMAP).<br>
+              "Clustering": Identify groups of similar cells.
+            </p>
           </div>
         </div>
       </section>
@@ -153,20 +206,31 @@
       <section id="cell-tools" class="content-section">
         <h2 class="section-title">Tool use</h2>
         <p>
-          The Executor agent is equipped with the expert-curated sc-Omni toolkit, consolidating essential software such as
-          Scanpy, CellTypist, and Harmony. The Executor selects the appropriate tool, understands its parameters, and
-          generates the corresponding code, overcoming the limitations of general-purpose LLMs.
+          The Executor agent is equipped with a comprehensive, expert-curated toolkit named scOmni. This toolkit
+          consolidates a wide range of essential software for single-cell analysis (e.g., Scanpy, CellTypist, Harmony)
+          and provides detailed documentation on their usage. The Executor intelligently select the most appropriate
+          tool for a given sub-task, understand its parameters, and generate the corresponding code. This structured
+          approach overcomes the limitations of general-purpose LLMs, which often lack the specialized knowledge to use
+          these tools correctly.
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
             <h4>Example of tool use (Executor role)</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>INPUT:</strong> Step 5: Cell Type Annotation. Available tools: Cellmarker | CellTypist | scType.</p>
+            <p><strong>INPUT:</strong></p>
+            <p><strong>Current Sub-task:</strong>Step 5: Cell Type Annotation</p>
+            <p><strong>Available Tools:</strong>sc-Omni toolkit, including
+              <code>Cellmarker | CellTypist | scType.</code></p>
+            <hr class="detail-divider" />
             <p><strong>OUTPUT:</strong></p>
-            <p><strong>Thought:</strong> The current task is cell type annotation... I will select Cellmarker for this step as it provides a robust database of markers for annotation.</p>
-            <pre><code>from sc_omni.tools import cellmarker
-adata = cellmarker.annotate(adata, tissue='blood', cell_type='pbmc')</code></pre>
+            <p><strong>Thought:</strong> The current task is cell type annotation. I will consult the sc-Omni
+              documentation to find suitable tools. Both "Cellmarker” and ”Celltypist” are effective for this purpose. I
+              will select Cellmarker for this step as it provides a robust database of markers for annotation.</p>
+            <p><strong>Code:</strong><pre><code>
+              # Generate Python code using the Cellmarker tool. from sc_omni.tools import cellmarker adata =
+              cellmarker.annotate(adata, tissue=’blood’, cell_type=’pbmc’)</code></pre>
+            </p>
           </div>
         </div>
       </section>
@@ -174,19 +238,21 @@ adata = cellmarker.annotate(adata, tissue='blood', cell_type='pbmc')</code></pre
       <section id="cell-reflection" class="content-section">
         <h2 class="section-title">Reflection</h2>
         <p>
-          CellAgent incorporates a self-reflective optimization mechanism driven by the Evaluator agent. After the Executor
-          runs code, the Evaluator assesses the output and, if suboptimal, provides critical feedback and suggests corrective
-          actions, ensuring the final results are robust and accurate.
+          CellAgent incorporates a self-reflective optimization mechanism driven by the Evaluator agent. After the Executor runs a piece of code, the Evaluator assesses the quality and correctness of the output, such as plots or statistical results. This process replaces traditional manual assessment. If the results are suboptimal (e.g., poor cell clustering, insufficient batch correction), the Evaluator provides critical feedback and suggests corrective actions, such as adjusting hyperparameters or trying an alternative tool. This iterative loop of execution and reflection ensures the final results are robust and accurate.
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
             <h4>Example of reflection (Evaluator role)</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>INPUT:</strong> Executor ran clustering with <code>leiden</code> resolution=0.5. UMAP plot shows poorly separated clusters.</p>
-            <p><strong>OUTPUT:</strong></p>
-            <p><strong>Evaluation Thought:</strong> The clusters in the UMAP visualization are overlapping, suggesting the current resolution parameter is too low.</p>
-            <p><strong>Feedback:</strong> The clustering is suboptimal. Re-run with a range of higher resolution values (e.g., 0.8, 1.0, 1.2) to achieve better separation.</p>
+            <p><strong>INPUT:</strong></p>
+            <p><strong>Last Operation</strong>: Executor ran clustering with leiden resolution=0.5.</p>
+             <p><strong>Current Result</strong>: UMAP plot showing poorly separated cell clusters.</p> 
+             <p><strong>Task</strong>: The clusters in the UMAP visualization are overlapping, suggesting the current resolution parameter is too low to capture the underlying biological heterogeneity. The quality is insufficient.</p>
+            <hr class="detail-divider" />
+            <p><strong>OUTPUT</strong>:</p>
+            <p><strong>Evaluation Thought</strong>: The clusters in the UMAP visualization are overlapping, suggesting the current resolution parameter is too low to capture the underlying biological heterogeneity. The quality is insufficient.</p>
+            <p><strong>Feedback</strong>:The clustering is suboptimal. Re-run the execution step with a range of higher resolution values (e.g., 0.8, 1.0, 1.2) to achieve better separation.</p>
           </div>
         </div>
       </section>
@@ -194,25 +260,20 @@ adata = cellmarker.annotate(adata, tissue='blood', cell_type='pbmc')</code></pre
       <section id="cell-cooperation" class="content-section">
         <h2 class="section-title">Cooperation</h2>
         <p>
-          Cooperation in CellAgent follows a structured, hierarchical workflow. The Planner creates a high-level plan and
-          passes sub-tasks to the Executor, who hands processed results to the Evaluator. Feedback loops guide refinements
-          until each sub-task completes, ensuring orderly progression through the analysis.
+          Cooperation in CellAgent follows a structured, hierarchical workflow rather than a conversational model. The agents coordinate by passing structured information sequentially. The Planner creates a high-level plan and passes the first sub-task to the Executor. The Executor completes the subtask and hands its result (e.g., a processed data object and visualizations) to the Evaluator. The Evaluator provides feedback to the Executor, which may trigger a refinement of the current sub-task. Once a subtask is successfully completed, the Executor proceeds to the next one in the plan, ensuring an orderly and systematic progression through the entire analysis.
         </p>
       </section>
 
       <section id="cell-memory" class="content-section">
         <h2 class="section-title">Memory</h2>
         <p>
-          CellAgent employs a global and local integrative memory control mechanism to maintain context throughout the
-          analysis. <strong>Global Memory</strong> stores the complete analytical plan and the final result for each step, keeping agents
-          aligned with the scientific objective. <strong>Local Memory</strong> captures operational details within each sub-task, including
-          code, parameters, and Evaluator feedback, enabling consistent cooperation and iterative refinement.
+          To enable efficient cooperation among agents and maintain context throughout a complex, multi-step analysis, CellAgent employs a global and local integrative memory control mechanism. This system systematically stores and manages historical information to optimize retrieval efficiency and enhance task execution. Global Memory maintains the high-level context, storing the complete analytical plan generated by the Planner and the final result for each step. This ensures all agent actions remain aligned with the overall scientific objective. Local Memory, in contrast, captures the operational details within each sub-task, including the specific code, parameters, and feedback from the Evaluator. This Memory mechanism is essential for ensuring consistency between sequential steps and enabling the iterative, self-reflective optimization loop.
         </p>
       </section>
 
       <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
-        
+
         <pre><code>@article{hu2025llm_agents_tutorial,
   title={A Beginner-Friendly Tutorial on LLM-based Agents},
   author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
@@ -238,10 +299,13 @@ adata = cellmarker.annotate(adata, tissue='blood', cell_type='pbmc')</code></pre
         <li><a class="progress-link" data-target="cell-cooperation" href="#cell-cooperation">Cooperation</a></li>
         <li><a class="progress-link" data-target="cell-memory" href="#cell-memory">Memory</a></li>
       </ul>
-      <div class="progress-meter"><div class="progress-meter-fill"></div></div>
+      <div class="progress-meter">
+        <div class="progress-meter-fill"></div>
+      </div>
     </aside>
   </div>
 
   <footer class="footer">© 2025 Hu et al. · CellAgent summary.</footer>
 </body>
+
 </html>
