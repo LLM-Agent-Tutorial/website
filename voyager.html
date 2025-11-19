@@ -27,9 +27,9 @@
   <div class="layout">
     <aside class="chapter-sidebar">      <ul class="chapter-links">
         <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
-        <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
         <li>
-          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">Examples: What LLM Agents Can Do and How They Work</a>
           <ul class="sub-chapter-links">
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
@@ -49,58 +49,97 @@
 
     <main>
       <section id="voy-overview" class="content-section">
-        <h1 class="section-title">Exploring, learning, and adapting autonomously in Minecraft</h1>
-        <p>
-          <strong>Voyager</strong> enables lifelong learning in the Minecraft sandbox. It generates its own curriculum of tasks, solves
-          them with Mineflayer code, and refines behavior via iterative feedback and self-verification, building a growing
-          library of reusable, compositional skills.
-        </p>
+        <h1 class="section-title">Voyager: Exploring, Learning, and Adapting Autonomously in Minecraft</h1>
+        <div class="resource-links">
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">Paper ↗</a>
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+        <div class="overview-highlight">
+          <p>
+            <strong>Voyager</strong> is designed to enable lifelong learning in Minecraft. It generates its own curriculum of tasks,
+            completes them through code-based actions, and refines its behavior via iterative feedback and self-verification,
+            building a growing library of reusable skills that support progressively more sophisticated behaviors.
+          </p>
+        </div>
+        <figure class="hero-figure">
+          <img src="imgs/voyager.png" alt="Voyager exploring Minecraft via Mineflayer code" />
+          <figcaption>Voyager autonomously proposes tasks, writes Mineflayer code to act, and stores verified skills for future reuse.</figcaption>
+        </figure>
       </section>
 
       <section id="voy-planning" class="content-section">
         <h2 class="section-title">Planning</h2>
         <p>
-          Voyager's automatic curriculum module sets tasks based on current abilities and environment state, then
-          decomposes them into actionable subtasks. This scaffolds the agent from simple to complex goals.</p>
-        <div class="example-box">
-          <p class="example-label">Example · Auto-generated task</p>
-          <p>Reasoning: The inventory is empty now, chop down a tree to get some wood.</p>
-          <p>Task: Obtain a wood log.</p>
+          Voyager uses the automatic curriculum module for planning. The module autonomously generates new tasks based on
+          current abilities and environment state, then decomposes high-level goals into actionable sub-tasks. When generating
+          skill code, Voyager also produces the corresponding plan.
+        </p>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of an automatically generated task</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong> Instruction describing the mentor role, full game state (biome, time, inventory, entities, etc.), and a log of completed/failed tasks.</p>
+            <p><strong>OUTPUT:</strong> <em>Reasoning:</em> "The inventory is empty now, chop down a tree to get some wood." <em>Task:</em> Obtain a wood log.</p>
+          </div>
         </div>
       </section>
 
       <section id="voy-tools" class="content-section">
         <h2 class="section-title">Tool use</h2>
         <p>
-          Voyager controls the character via LLM-generated JavaScript built on the Mineflayer API. Each function is
-          self-contained so it can be reused and composed:</p>
-        <div class="example-box">
-          <p class="example-label">Example · Generated Mineflayer skill</p>
-          <pre><code>async function mineCobblestone (bot) {
-  let woodenPickaxe = bot.inventory.findInventoryItem(...);
+          Voyager controls its character by asking the LLM to write Mineflayer JavaScript. Mineflayer provides high-level APIs
+          for moving, mining, crafting, and fighting. Each generated function is stored as an independent skill that can be
+          retrieved later and composed into more complex behaviors.
+        </p>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of generated Mineflayer code</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong> Instruction to write Mineflayer code, useful programs, current game state, task ("Obtain a wood log"), context, and critique.</p>
+            <p><strong>OUTPUT:</strong></p>
+            <pre><code>async function mineCobblestone(bot) {
+  let woodenPickaxe = bot.inventory.findInventoryItem(
+    mcData.itemsByName["wooden_pickaxe"].id
+  );
   if (!woodenPickaxe) {
     bot.chat("Crafting a wooden pickaxe.");
     await craftWoodenPickaxe(bot);
+    woodenPickaxe = bot.inventory.findInventoryItem(
+      mcData.itemsByName["wooden_pickaxe"].id
+    );
   }
   ...
 }</code></pre>
+          </div>
         </div>
       </section>
 
       <section id="voy-memory" class="content-section">
-        <h2 class="section-title">Memory &amp; reflection</h2>
+        <h2 class="section-title">Memory</h2>
         <p>
-          The skill library stores every verified program inside a vector database. When facing a new task, Voyager queries
-          the library using embeddings of the task description and environment feedback to retrieve relevant skills for
-          reuse and composition.
+          Voyager exhibits memory through its skill library, an extensible vector database storing all verified executable
+          programs. When a new task is proposed, Voyager queries the library using the task description and environment feedback
+          to retrieve relevant skills, enabling composition of complex behaviors.
         </p>
+      </section>
+
+      <section id="voy-reflection" class="content-section">
+        <h2 class="section-title">Reflection</h2>
         <p>
-          Reflection is powered by iterative prompting. After each attempt, Voyager checks success and issues critiques until the
-          task is solved.</p>
-        <div class="example-box">
-          <p class="example-label">Example · Self-verification</p>
-          <p>You have enough materials to craft a wooden pickaxe, but you didn't craft it.</p>
-          <p><strong>Success:</strong> False · <strong>Critique:</strong> Craft a wooden pickaxe with a crafting table using 3 spruce planks and 2 sticks.</p>
+          An iterative prompting mechanism endows Voyager with reflection ability. After executing each generated program it
+          observes environmental feedback, execution errors, and self-verification signals, revising the action code until the
+          task succeeds.
+        </p>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of self-verification</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong> Instruction to evaluate task progress, current game state (inventory contains crafting table, spruce planks, sticks), and the task "Craft a wooden pickaxe."</p>
+            <p><strong>OUTPUT:</strong> <em>Reasoning:</em> You have enough materials to craft a wooden pickaxe, but you didn't craft it. <strong>Success:</strong> False. <strong>Critique:</strong> Craft a wooden pickaxe with a crafting table using 3 spruce planks and 2 sticks.</p>
+          </div>
         </div>
       </section>
 
@@ -127,7 +166,8 @@
         <li><a class="progress-link" data-target="voy-overview" href="#voy-overview">Overview</a></li>
         <li><a class="progress-link" data-target="voy-planning" href="#voy-planning">Planning</a></li>
         <li><a class="progress-link" data-target="voy-tools" href="#voy-tools">Tool use</a></li>
-        <li><a class="progress-link" data-target="voy-memory" href="#voy-memory">Memory &amp; reflection</a></li>
+        <li><a class="progress-link" data-target="voy-memory" href="#voy-memory">Memory</a></li>
+        <li><a class="progress-link" data-target="voy-reflection" href="#voy-reflection">Reflection</a></li>
       </ul>
       <div class="progress-meter"><div class="progress-meter-fill"></div></div>
     </aside>

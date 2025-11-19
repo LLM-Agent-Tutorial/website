@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <script defer src="script.js"></script>
   <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body data-page="ai-scientist" data-nav="capabilities">
   <header class="site-header">
     <div class="inner">
@@ -25,11 +27,13 @@
   </header>
 
   <div class="layout">
-    <aside class="chapter-sidebar">      <ul class="chapter-links">
+    <aside class="chapter-sidebar">
+      <ul class="chapter-links">
         <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
-        <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
         <li>
-          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">Examples: What LLM Agents
+            Can Do and How They Work</a>
           <ul class="sub-chapter-links">
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
@@ -49,71 +53,189 @@
 
     <main>
       <section id="ais-overview" class="content-section">
-        <h1 class="section-title">Towards fully automated scientific research</h1>
-        <p>
-          The <strong>AI Scientist</strong> aims to independently carry out a scientific research process from idea generation to paper
-          writing without any human involvement. It produces a research paper in three phases: idea generation,
-          experimental iteration, and paper write-up. Afterward, an LLM-generated review assesses quality so the system can
-          revise accordingly.
-        </p>
+        <h1 class="section-title">The AI Scientist: Towards Fully Automated Scientific Research</h1>
+        <div class="resource-links">
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">Paper ↗</a>
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+        <div class="overview-highlight">
+          <p>
+            <strong>The AI Scientist</strong> aims to independently carry out a scientific research process from idea
+            generation to paper writing without any human involvement. It produces a research paper in three phases: (1)
+            idea generation, (2) experimental iteration, and (3) paper write-up. First, the AI Scientist generate a
+            diverse set of ideas that are different from existing literature. Then the AI Scientist executes the
+            proposed experiments and visualizes its results during experimental iteration. In paper write-up, it
+            produces a concise and informative write-up of its progress in the style of a standard machine learning
+            conference in LaTeX. Afterward, an LLM-generated review is introduced to assess the quality of the generated
+            paper for the AI Scientist to revise accordingly.
+          </p>
+        </div>
+        <figure class="hero-figure">
+          <img src="imgs/ai-scientist.png" alt="Workflow of the AI Scientist system" />
+          <figcaption>The AI Scientist moves from idea generation through experimental iteration and paper write-up
+            before an LLM-generated review closes the loop.</figcaption>
+        </figure>
       </section>
 
       <section id="ais-planning" class="content-section">
         <h2 class="section-title">Planning</h2>
         <p>
-          Planning helps the AI Scientist organize its multi-step workflow: experimental plans drive code execution while
-          paper outlines guide write-ups. Below is the planning prompt straight from the paper.
+          Planning helps the AI Scientist break down a complex goal into smaller, sequential steps. For example, during
+          experimental iteration, the AI Scientist plans the experimental steps for each selected idea, writes code and
+          conducts experiments according to these plans. In the paper write-up phase, the AI Scientist organizes its
+          scientific findings into research papers. Overall, the planning ability helps the AI Scientist organize its
+          multi-step research process, allowing it to generate, improve, carry out ideas, and write research papers in a
+          clear and purposeful way. We provide an example of how the AI Scientist generates an experimental plan below.
         </p>
-        <div class="example-box">
-          <p class="example-label">Example · Planning experiments</p>
-          <pre><code>Idea: Improving image classification through data augmentation.
-Instruction: Plan the list of experiments you would like to run (max 5 runs).
-Output: Prepare Data → Build Model → Train Baseline → Apply Augmentation → Train Again → Evaluate.</code></pre>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of planning an experiment list for the generated idea</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong></p>
+            <p><strong>Idea:</strong>&nbsp;Improving image classification through data augmentation.</p>
+            <p><strong>Instruction:</strong>&nbsp;Your goal is to implement the given idea. Plan the list of experiments
+              you would like to run. You are given a total of up to 5 runs to complete the necessary experiments.</p>
+            <hr class="detail-divider" />
+            <p><strong>OUTPUT:</strong></br>
+              1.&nbsp;Prepare Data: Load and inspect the CIFAR-10 dataset.</br>
+              2.&nbsp;Build Model: Set up a simple convolutional neural network.</br>
+              3.&nbsp;Train Baseline: Train the model without data augmentation and record accuracy.</br>
+              4.&nbsp;Apply Augmentation: Add image transformations such as flipping, rotating, and adjusting the
+              brightness.</br>
+              5.&nbsp;Train Again: Retrain the model with augmentation and compare results.</br>
+              6.&nbsp;Evaluate: Measure test accuracy and visualize performance improvements.
+            </p>
+          </div>
         </div>
       </section>
 
       <section id="ais-tools" class="content-section">
         <h2 class="section-title">Tool use</h2>
         <p>
-          In all three phases the AI Scientist leverages tools. During idea generation it retrieves literature via the
-          Semantic Scholar API, during experiments it hands plans to the Aider coding assistant, and during paper write-up
-          it compiles LaTeX into PDF. The excerpt below shows how queries are produced for retrieval.
+          In all three phases, the AI Scientist extensively leverages tools. During idea generation, the AI Scientist
+          evaluates the novelty of ideas by retrieving literature. It prompts an LLM to formulate search queries (such
+          as related paper titles or keyword combinations), and then passes these queries to a built-in Python module
+          that calls the Semantic Scholar API2 to get related literature. In experimental iteration, to carry out
+          experiments, the AI Scientist employs Aider3, a coding assistant. The Aider takes the experimental plan
+          generated by the LLM as input and then automatically generates code to execute the plan. In paper write-up,
+          after the LLM generates the manuscript in LaTeX format, the AI scientist calls a LaTeX compiler to process the
+          tex file and produces the corresponding PDF. The following is an example of generating a literature retrieval
+          query.
         </p>
-        <div class="example-box">
-          <p class="example-label">Example · Generating a retrieval query</p>
-          <p>Instruction: "You have an idea and you want to check if it is novel. Provide a search query to survey the
-            literature."</p>
-          <p><strong>Output:</strong> <em>Enhancing the image classification performance of convolutional neural networks using data augmentation.</em></p>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of generating a query for literature retrieval</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong></p>
+            <p><strong>Idea:</strong>&nbsp;Improving image classification through data augmentation.</p>
+            <p><strong>Instruction:</strong>&nbsp;You have an idea and you want to check if it is novel. You will be
+              given access to the Semantic Scholar API, which you may use to survey the literature and find relevant
+              papers to help you make your decision. Please provide a search query to search the literature.</p>
+            <p><strong>OUTPUT:</strong></p>
+            <p>Query:&nbsp;Enhancing the image classification performance of convolutional neural networks using data
+              augmentation.</p>
+          </div>
         </div>
-        <p>The query becomes the parameter for a <code>search_for_papers</code> Python helper that returns Semantic Scholar metadata.</p>
+        The generated query is used as a parameter of the following built-in Python function, which retrieves related
+        work by invoking Semantic Scholar API.
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Python code of literature retrieval</h4>
+          </div>
+          <div class="detail-box__body">
+            <pre><code><span class="token keyword">def</span> <span class="token function">search_for_papers</span>(...):
+    <span class="token variable">results</span> = requests.get(
+        <span class="token string">"https://api.semanticscholar.org/paper/search"</span>,
+        headers={<span class="token string">"API_KEY"</span>: <span class="token variable">API_KEY</span>},
+        params={{
+            <span class="token string">"query"</span>: <span class="token string">"Enhancing the image classification performance of convolutional neural networks using data augmentation"</span>,
+            <span class="token string">"fields"</span>: <span class="token string">"title, authors, year, abstract, citationCount"</span>,
+        }},
+    )
+    <span class="token variable">papers</span> = <span class="token variable">results</span>[<span class="token string">"data"</span>]
+    <span class="token keyword">return</span> <span class="token variable">papers</span></code></pre>
+          </div>
+        </div>
+        Below is an example showing the return value of the function "search_for_papers()", which is the retrieved
+        papers.
+        <div class="citation-block">
+          <pre><code>{
+  "title": "ImageNet Classification with Deep Convolutional Neural Networks",
+  "authors": "Krizhevsky, Sutskever, Hinton",
+  "year": 2012,
+  "abstract": "We trained a large, deep convolutional neural network to classify the 1.3 million high-resolution images in the LSVRC-2010...",
+  "citationCount": 149105
+}</code></pre>
+        </div>
       </section>
 
       <section id="ais-reflection" class="content-section">
         <h2 class="section-title">Reflection</h2>
         <p>
-          Human scientific research relies heavily on reflection, and so does the AI Scientist. It rethinks ideas, analyzes
-          experimental results, and performs two rounds of section-by-section reflection while writing. Crucially, the PDF
-          manuscript is reviewed by an LLM reviewer that issues summary, strength, weakness, and decision fields:
+          Human scientific research relies heavily on reflection, and the AI Scientist is no exception. When generating
+          ideas, the AI Scientist use self-reflection to refine each proposed idea. During experiment iteration, it
+          analyzes the experimental results and adjusts methods accordingly. In paper write-up, the AI Scientist perform
+          two rounds of self-reflection section-by-section, aiming to improve the accuracy, conciseness, and coherence
+          of each section. The most important reflection is based on the Automated Paper Reviewing mechanism. The PDF
+          version of the generated paper is converted into text and reviewed by an LLM-based reviewer agent. The review
+          feedback is used by the AI Scientist to improve the paper writing. An example for generating review comments
+          is as follows.
         </p>
-        <div class="example-box">
-          <p class="example-label">Example · Automated review snippet</p>
-          <p>Summary: This paper explores the application of data augmentation techniques in image classification tasks...</p>
-          <p>Weaknesses: lacks comparison with state-of-the-art automatic data augmentation methods...</p>
-          <p>Overall: 4 · Decision: Reject.</p>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of generating review comments by the reviewer agent</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong></p>
+            <p><strong>Instruction:</strong> You are an AI researcher who is reviewing a paper that was submitted to a
+              prestigious ML venue. Be critical and cautious in your decision. If a paper is bad or you are unsure, give
+              it bad scores and reject it. Below is a reviewing guidelines. When writing your review, please keep in
+              mind that after decisions have been made, reviews and meta-reviews of accepted papers and opted-in
+              rejected papers will be made public.</p>
+            <p><strong>Paper:</strong><br>
+              # Data Augmentation for Improved Image Classification<br>
+              ## Abstract<br>
+              This paper explores the use of data augmentation techniques to enhance the performance of
+              convolutional neural networks in image classification tasks...<br>
+              ## Introduction <br>
+              Deep learning models,
+              particularly convolutional neural networks (CNNs), have achieved remarkable success in image
+              classification. However, their performance heavily depends on the availability of large, diverse
+              datasets...<br>
+              ...
+            </p>
+            <p><strong>Guidelines:</strong><br>
+              ## Review Form<br>
+              Below is a description of the questions you will be asked on the review form for each paper and some
+              guidelines on what to consider when answering these questions...
+              1. Summary: Briefly summarize the paper and its contributions...<br>
+              2. Questions: Please list up and carefully describe any questions and suggestions for the authors....<br>
+              3. Limitations: Have the authors adequately addressed the limitations and potential negative societal
+              impact of their work?...</p>
+            <p><strong>OUTPUT:</strong></p>
+            <p>Summary:<br>
+              This paper explores the application of data augmentation techniques in image classification tasks...<br>
+              Strengths: 1. Detailed ablation studies analyzing the contribution of different augmentation strategies.
+              2. ...<br>
+              Weaknesses: 1. Lacks comparison with state-of-the-art automatic data augmentation methods. 2. ... <br>
+              Questions: 1. Why was this specific combination of augmentation strategies chosen? 2. ...<br>
+              Overall: 4<br>Confidence: 4<br>Decision: Reject</p>
+          </div>
         </div>
-        <p>The AI Scientist absorbs that feedback to improve subsequent drafts.</p>
       </section>
 
       <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
-        
+
         <pre><code>@article{hu2025llm_agents_tutorial,
-  title={A Beginner-Friendly Tutorial on LLM-based Agents},
-  author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
-  year={2025},
-  month={November},
-  note={Manuscript in preparation}
-}</code></pre>
+          title={A Beginner-Friendly Tutorial on LLM-based Agents},
+          author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
+          year={2025},
+          month={November},
+          note={Manuscript in preparation}
+        }</code></pre>
       </section>
       <div class="page-nav">
         <a class="page-nav-btn" href="index.html">Back to Home</a>
@@ -129,10 +251,13 @@ Output: Prepare Data → Build Model → Train Baseline → Apply Augmentation �
         <li><a class="progress-link" data-target="ais-tools" href="#ais-tools">Tool use</a></li>
         <li><a class="progress-link" data-target="ais-reflection" href="#ais-reflection">Reflection</a></li>
       </ul>
-      <div class="progress-meter"><div class="progress-meter-fill"></div></div>
+      <div class="progress-meter">
+        <div class="progress-meter-fill"></div>
+      </div>
     </aside>
   </div>
 
   <footer class="footer">© 2025 Hu et al. · The AI Scientist summary.</footer>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <script defer src="script.js"></script>
   <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body data-page="generative-agents" data-nav="capabilities">
   <header class="site-header">
     <div class="inner">
@@ -25,11 +27,13 @@
   </header>
 
   <div class="layout">
-    <aside class="chapter-sidebar">      <ul class="chapter-links">
+    <aside class="chapter-sidebar">
+      <ul class="chapter-links">
         <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
-        <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
         <li>
-          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">Examples: What LLM Agents
+            Can Do and How They Work</a>
           <ul class="sub-chapter-links">
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
@@ -48,80 +52,181 @@
     </aside>
 
     <main>
-      <section id="ga-overview" class="content-section">
-        <h1 class="section-title">Simulacra of believable human behaviors</h1>
+      <section id="overview" class="content-section">
+        <h1 class="section-title">Generative Agents: Simulacra of Believable Human Behaviors</h1>
+        <div class="resource-links">
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">Paper ↗</a>
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+
+        <div class="overview-highlight">
+          <p>
+            Generative Agents provides an LLM-based agent architecture designed to simulate human behaviors within a
+            sandbox environment. Because human behavior is inherently vast, dynamic, and contextdependent, traditional
+            agents often struggle to produce behavior that appears genuinely human believable. Generative Agents address
+            this by memorizing past experiences, reflecting on them, and generating plans and actions that remain
+            coherent in the moment and over time. They can wake up at fixed times, prepare meals, and go to work; they
+            can also initiate conversations with others, make plans for the future, and coordinate a party.
+          </p>
+        </div>
+
+        <figure class="hero-figure">
+          <img src="imgs/generative-agents.png" alt="Illustration of generative agents" />
+          <figcaption>Generative Agents provides an LLM-based agent architecture designed to simulate human behaviors
+            within a sandbox environment.</figcaption>
+        </figure>
+      </section>
+
+      <section id="role-play" class="content-section">
+        <h2 class="section-title">Role-Play</h2>
+        <!-- <h3>Role-play prompts</h3> -->
         <p>
-          <strong>Generative Agents</strong> provide an LLM-based agent architecture designed to simulate human behaviors within a
-          sandbox environment. Because human behavior is vast, dynamic, and context-dependent, traditional agents often
-          struggle to appear genuinely believable. Generative Agents memorize past experiences, reflect on them, and
-          generate plans and actions that remain coherent in the moment and over time &mdash; they can wake up, cook, head to
-          work, coordinate parties, and improvise conversations with other agents.
+          This capability is crucial for generative agents, as their high-level agent descriptions shape the types of
+          agents they become. The agent descriptions are composed of three aspects: (i) basic information, which
+          specifies attributes such as the agent's name, age, and innate traits; (ii) current state, which indicates
+          what the agent is presently engaged in, for example, hosting a Valentine's Day party; (iii) lifestyle, which
+          outlines the agent's daily routines, such as when it wakes up and goes to sleep. These aspects are not fixed
+          and can be adapted based on different tasks. To illustrate, we present the description of generative agent
+          Isabella Rodriguez, showing what such a high-level description looks like in practice. These agent
+          descriptions guide their behavior in role-playing, such as by enabling them to generate conversations that
+          reflect their characteristics and make decisions consistent with their preferences.
         </p>
-      </section>
-
-      <section id="ga-role-memory" class="content-section">
-        <h2 class="section-title">Role-play &amp; memory</h2>
-        <div class="card-grid">
-          <article class="info-card">
-            <h3>Role-play prompts</h3>
-            <p>
-              Agent descriptions are composed of three aspects: basic information (name, age, innate traits), current
-              state, and lifestyle. These aspects can be adapted per task. For example, Isabella Rodriguez is a 34-year-old
-              caf&eacute; owner preparing a Valentine's Day party, and her persona guides all downstream behaviors.
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of an agent description</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>Basic information:</strong><br>
+              <i>"name"</i>:&nbsp;"Isabella Rodriguez",<br>
+              <i>"age"</i>:&nbsp;34, <br>
+              <i>"innate"</i>:&nbsp;"friendly, outgoing, hospitable", <br>
+              <i>"learned"</i>:&nbsp;"Isabella Rodriguez is a café owner of Hobbs Cafe who loves to make people feel
+              welcome."
             </p>
-          </article>
-          <article class="info-card">
-            <h3>Structured memory</h3>
-            <p>
-              Memory lives in a JSON database with three types: event, chat, and thought. Retrieval ranks memories by
-              recency, relevance (via cosine similarity), and importance (LLM-rated). This keeps the most meaningful
-              experiences salient without overloading the context window.
-            </p>
-          </article>
-        </div>
-        <div class="example-box">
-          <p class="example-label">Example · Rating memory importance</p>
-          <p>Task: "On a scale of 1 to 10, rate the poignancy of: buying groceries at The Willows Market and Pharmacy."</p>
-          <p><strong>Output:</strong> 3</p>
+            <p><strong>Current state:</strong> "Today is the day! Isabella Rodriguez is filled with excitement as the
+              Valentine's Day party at Hobbs Cafe is finally here… Isabella is confident that her efforts will pay off
+              and that the party will be a great success."</p>
+            <p><strong>Lifestyle:</strong> "Isabella Rodriguez goes to bed around 11 pm, awakes up around 6 am."</p>
+          </div>
         </div>
       </section>
 
-      <section id="ga-planning" class="content-section">
-        <h2 class="section-title">Planning</h2>
+      <section id="memory" class="content-section">
+        <h2 class="section-title">Memory</h2>
         <p>
-          Plans specify a future sequence of actions that promote consistent behavior. Daily plans are generated based on
-          each agent's character profile and current state, then executed sequentially with dynamic adjustments as the day
-          unfolds.
+          Memory in generative agents is stored in a JSON-format database that records and retrieves past information,
+          ensuring consistency with prior experiences. Agent memory consists of three types: (i) event, which records
+          observations of the environment or other agents (e.g., "Isabella Rodriguez is packing her bag"); (ii) chat,
+          which captures conversations with other agents; and (iii) thought, which stores an agent's reflections (e.g.,
+          "Maria Lopez is planning something"). Retaining every detail of past history is impractical for LLMs.
+          Generative Agents therefore retrieve memories based on three factors: recency, relevance, and importance.
+          Recency, modeled with an exponential decay function, prioritizes recently accessed memories so that the most
+          recent events remain salient. Relevance, computed via cosine similarity, assigns higher scores to memories
+          related to the current situation. Importance distinguishes mundane from significant experiences by prompting
+          LLMs to rate how meaningful a memory is. We provide an example that demonstrates how to instruct LLMs to
+          assess importance.
         </p>
-        <div class="example-box">
-          <p class="example-label">Example · Daily plan prompt</p>
-          <pre><code>Today is (current date). Here is Isabella's plan today in broad strokes:
-06:00 AM: Wake up and complete morning routine
-07:00 AM: Prepare breakfast and review final details for the party
-08:00 AM: Open Hobbs Cafe and greet early customers
-...
-11:00 PM: Clean up with staff and reflect on the success of the event</code></pre>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of rating memory importance</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong></p>
+            <p><strong>Task:</strong> On a scale of 1 to 10, where 1 is purely mundane (e.g., brushing teeth, making the
+              bed) and 10 is extremely poignant (e.g., a breakup, college acceptance), rate the likely poignancy of the
+              following piece of memory.</p>
+            <p><strong>Memory:</strong> buying groceries at The Willows Market and Pharmacy</p>
+            <p><strong>Rating:</strong> &lt;Completed by LLMs&gt;</p>
+            <hr class="detail-divider" />
+            <p><strong>OUTPUT:</strong><br>3</p>
+          </div>
         </div>
       </section>
 
-      <section id="ga-reflection" class="content-section">
+      <section id="reflection" class="content-section">
         <h2 class="section-title">Reflection</h2>
         <p>
-          Over time, memory may accumulate redundant records. Generative Agents therefore reflect on extended chats and
-          summarize them into higher-level thoughts that help future interactions. After Isabella speaks with Francisco
-          about the show, the LLM condenses their excitement into a single sentence that keeps the party preparations on
-          track.
+          Over time, an agent's memory may accumulate excessive and redundant records; to address this, the agent can
+          reflect on extended chats and summarizes them into higher-level thoughts. Below is a prompt template for
+          condensing the conversation between Isabella and Francisco about preparing for the Valentine's Day party into
+          one sentence.
         </p>
-        <div class="example-box">
-          <p class="example-label">Example · Condensing a conversation</p>
-          <p>"Isabella Rodriguez and Francisco Lopez are discussing their excitement for the Valentine's Day party at Hobbs
-            Cafe and working together to make his performance engaging and memorable."</p>
+
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of reflecting on chats to yield high-level thoughts</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong></p>
+            <p><strong>Chat:</strong><br>
+              (Isabella Rodriguez): Francisco! I'm so glad you're here early. The decorations are all set, and the
+              guests are already asking about tonight's party. How are you feeling?<br>
+              (Francisco Lopez): Honestly, Isabella, I'm thrilled! This is my first Valentine's event at Hobbs Cafe, and
+              the atmosphere is perfect. I can't wait ......
+            </p>
+            <p><strong>Currently:</strong>&nbsp;"Today is the day! Isabella Rodriguez is filled with excitement as the
+              Valentine's Day party at Hobbs Cafe is finally here. ...... Isabella is confident that her efforts will
+              pay off and that the party will be a great success."</p>
+            <p><strong>Task:</strong>&nbsp;Summarize the most relevant statements above that can inform (Isabella
+              Rodriguez)
+              in their conversation with Francisco Lopez.</p>
+            <hr class="detail-divider"/>
+            <p><strong>OUTPUT:</strong><br>Isabella Rodriguez and Francisco Lopez are discussing their excitement for
+              the
+              Valentine's Day party at Hobbs Cafe and working together to make his performance engaging and memorable.
+            </p>
+          </div>
         </div>
       </section>
 
+      <section id="planning" class="content-section">
+        <h2 class="section-title">Planning</h2>
+        <p>
+          Plans specify a future sequence of actions that promote consistent behavior over time. In generative agents, a
+          daily plan is generated based on the agent's character profile, covering its basic attributes, current state,
+          and lifestyle. Each daily plan comprises ordered entries, each with a location, start time, and duration.
+          After the plan list is generated, the agent executes the entries sequentially and, when circumstances change,
+          adjusts it dynamically based on the current state. Below, we illustrate how Isabella Rodriguez's plan on the
+          Valentine's Day can be generated and represented.
+        </p>
+
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of Isabella Rodriguez's planning for Valentine's Day</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong></p>
+            <p><strong>Character:</strong><br>
+              <i>Basic Information</i>:<br>
+              <i>Name:</i>&nbsp;Isabella Rodriguez<br>
+              <i></i>Age:</i>&nbsp;34......<br>
+              <i>Current State:</i>&nbsp;Today is the day! Isabella Rodriguez is filled with excitement as the
+              Valentine's Day party at Hobbs Cafe is finally here...<br>
+              <i>Lifestyle:</i> Isabella Rodriguez goes to bed around 11pm, wakes up around 6am.
+            </p>
+            <p><strong>Current Date:</strong>&nbsp;"Today is the day! Isabella Rodriguez is filled with excitement as
+              the
+              Valentine's Day party at Hobbs Cafe is finally here. ...... Isabella is confident that her efforts will
+              pay off and that the party will be a great success."</p>
+            <p><strong>Task:</strong>&nbsp;Today is (current date). Here is (agent's name)'s plan today in broad strokes
+              (with times, e.g., lunch at 12:00 p.m., watch TV 7–8 p.m.):<br></p>
+            1.&nbsp;06:00 AM: Wake up and complete morning routine. 2.&nbsp;&lt;Completed by LLMs&gt;
+            <hr class="detail-divider" />
+            <p><strong>OUTPUT:</strong><br>
+              06:00 AM: Wake up and complete morning routine<br>
+              07:00 AM: Prepare breakfast and review final details for the Valentine's Day party<br>
+              08:00 AM: Open Hobbs Cafe and greet early customers<br>......<br>
+              11:00 PM: Clean up with staff and reflect on the success of the event before going to bed
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+
       <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
-      <section class="citation-block">
-        
+      <section id="citation" class="citation-block">
+
         <pre><code>@article{hu2025llm_agents_tutorial,
   title={A Beginner-Friendly Tutorial on LLM-based Agents},
   author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
@@ -139,15 +244,19 @@
     <aside class="progress-sidebar">
       <h2>On this page</h2>
       <ul class="progress-list">
-        <li><a class="progress-link" data-target="ga-overview" href="#ga-overview">Overview</a></li>
-        <li><a class="progress-link" data-target="ga-role-memory" href="#ga-role-memory">Role-play &amp; memory</a></li>
-        <li><a class="progress-link" data-target="ga-planning" href="#ga-planning">Planning</a></li>
-        <li><a class="progress-link" data-target="ga-reflection" href="#ga-reflection">Reflection</a></li>
+        <li><a class="progress-link" data-target="overview" href="#overview">Overview</a></li>
+        <li><a class="progress-link" data-target="role-play" href="#role-play">Role-play</a></li>
+        <li><a class="progress-link" data-target="memory" href="#memory">Memory</a></li>
+        <li><a class="progress-link" data-target="reflection" href="#reflection">Reflection</a></li>
+        <li><a class="progress-link" data-target="planning" href="#planning">Planning</a></li>
       </ul>
-      <div class="progress-meter"><div class="progress-meter-fill"></div></div>
+      <div class="progress-meter">
+        <div class="progress-meter-fill"></div>
+      </div>
     </aside>
   </div>
 
   <footer class="footer">© 2025 Hu et al. · Generative Agents summary.</footer>
 </body>
+
 </html>

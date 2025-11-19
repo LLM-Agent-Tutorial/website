@@ -27,9 +27,9 @@
   <div class="layout">
     <aside class="chapter-sidebar">      <ul class="chapter-links">
         <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
-        <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
         <li>
-          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">Examples: What LLM Agents Can Do and How They Work</a>
           <ul class="sub-chapter-links">
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
@@ -49,47 +49,78 @@
 
     <main>
       <section id="mob-overview" class="content-section">
-        <h1 class="section-title">Operate the mobile phone as smoothly as a human</h1>
-        <p>
-          The <strong>Mobile Agent</strong> assists users by translating natural language requests into precise swipe, tap, and type
-          sequences. Users provide high-level objectives; the agent interprets the current screenshot and history, devises a
-          plan, and executes the necessary gestures, minimizing manual effort.
-        </p>
+        <h1 class="section-title">Mobile Agent: Operate the Mobile Phone as Smoothly as a Human</h1>
+        <div class="resource-links">
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">Paper ↗</a>
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+        <div class="overview-highlight">
+          <p>
+            The <strong>Mobile Agent</strong> assists users by simplifying interactions with mobile devices, making complex operations
+            easier and more intuitive. Users provide high-level instructions in natural language, and the agent interprets
+            those instructions, identifies the necessary steps, and automatically performs actions such as tapping buttons,
+            entering text, or navigating across apps, significantly streamlining task completion.
+          </p>
+        </div>
+        <figure class="hero-figure">
+          <img src="imgs/mobile-agent.jpg" alt="Mobile Agent executing phone operations" />
+          <figcaption>The Mobile Agent turns high-level language commands into precise tap, swipe, and type sequences.</figcaption>
+        </figure>
       </section>
 
       <section id="mob-planning" class="content-section">
         <h2 class="section-title">Planning</h2>
         <p>
-          The agent combines the user's instruction with the live screenshot to decide what to do next. Example prompt:
+          The agent interprets the user's instruction in the context of the device's current state (typically represented by the
+          latest screenshot). Using this understanding, it formulates an operational plan and identifies the optimal next
+          action, translating high-level goals into precise swipes, taps, or text entry.
         </p>
-        <div class="example-box">
-          <p class="example-label">Example · Planning next touch</p>
-          <p>Instruction: Set a clock for 7:00 a.m. Screenshot: [home screen]. Task: Think and select the next action.</p>
-          <p><strong>Output:</strong> Operation Thought: Currently on the home screen we need to first tap the clock icon... Action: Tap(500,800).</p>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of planning the next action</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong> Instruction: Set a clock for 7:00 a.m. Screenshot: ... History: {...} Task: Think and select the next action (swipe, tap, type ...).</p>
+            <p><strong>OUTPUT:</strong> <em>Operation Thought:</em> Currently on the home screen we need to first tap the clock icon ... <em>Action:</em> Tap(500,800).</p>
+          </div>
         </div>
       </section>
 
       <section id="mob-tools" class="content-section">
         <h2 class="section-title">Tool use</h2>
         <p>
-          After planning, the action is sent to an action-mapping tool that converts the abstract gesture into executable
-          Android Debug Bridge commands. <code>Tap(500,800)</code> becomes <code>adb shell input tap 500 800</code>. Swipes, text entry, and app
-          launches are handled the same way, closing the loop between LLM reasoning and device control.
+          After generating the next action, the agent directly inputs it into an action mapping tool, which converts the
+          natural-language action into executable instructions for the device. Tap(500,800) becomes <code>adb shell input tap 500 800</code>,
+          while swipes, text entry, and app launches are translated into the appropriate Android Debug Bridge commands,
+          connecting high-level planning with concrete device operations.
         </p>
       </section>
 
       <section id="mob-reflection" class="content-section">
-        <h2 class="section-title">Reflection &amp; memory</h2>
+        <h2 class="section-title">Reflection</h2>
         <p>
-          After each gesture the agent compares before/after screenshots. If the outcome diverges &mdash; for example an incorrect page opens &mdash; the agent detects
-          the failure, revises the plan, and retries so that errors do not cascade. Throughout the workflow it also stores
-          relevant context (intermediate results, app state) for later steps.
+          After each operation, the agent evaluates its effectiveness by comparing the screenshot before and after the action.
+          If the outcome diverges—such as when an incorrect page opens—the agent detects the error and initiates corrective
+          measures so failures do not cascade.
         </p>
-        <div class="example-box">
-          <p class="example-label">Example · Verifying the last action</p>
-          <p>"By comparing these two images, it is found ... so this operation is successful."</p>
-          <p>When the screenshots disagree, the agent flags failure and replans immediately.</p>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of reflection for checking operation success</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong> Last Screenshot: ... Current Screenshot: ... Latest Operation: ... Task: Compare and determine whether the latest operation was successful.</p>
+            <p><strong>OUTPUT:</strong> "By comparing these two images, it is found ... so this operation is successful."</p>
+          </div>
         </div>
+      </section>
+
+      <section id="mob-memory" class="content-section">
+        <h2 class="section-title">Memory</h2>
+        <p>
+          Throughout the workflow, the agent maintains a memory of task-relevant information that may be required in later
+          steps. It records intermediate results and contextual details across applications, ensuring continuity for multi-step
+          and cross-application tasks.
+        </p>
       </section>
 
       <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
@@ -116,6 +147,7 @@
         <li><a class="progress-link" data-target="mob-planning" href="#mob-planning">Planning</a></li>
         <li><a class="progress-link" data-target="mob-tools" href="#mob-tools">Tool use</a></li>
         <li><a class="progress-link" data-target="mob-reflection" href="#mob-reflection">Reflection</a></li>
+        <li><a class="progress-link" data-target="mob-memory" href="#mob-memory">Memory</a></li>
       </ul>
       <div class="progress-meter"><div class="progress-meter-fill"></div></div>
     </aside>

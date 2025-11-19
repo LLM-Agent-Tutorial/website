@@ -27,9 +27,9 @@
   <div class="layout">
     <aside class="chapter-sidebar">      <ul class="chapter-links">
         <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
-        <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
         <li>
-          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">Examples: What LLM Agents Can Do and How They Work</a>
           <ul class="sub-chapter-links">
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
@@ -49,61 +49,100 @@
 
     <main>
       <section id="meta-overview" class="content-section">
-        <h1 class="section-title">A multi-agent framework that writes code efficiently</h1>
-        <p>
-          <strong>MetaGPT</strong> mirrors established software engineering practices by assigning specialized roles, structuring plans,
-          leveraging tools for automated coding, and iterating through inter-agent cooperation. Product Managers craft PRDs,
-          Architects design systems, Engineers implement, Project Managers coordinate, and QA ensures quality.
-        </p>
+        <h1 class="section-title">MetaGPT: Multi-Agent Framework that Write Code Efficiently</h1>
+        <div class="resource-links">
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">Paper ↗</a>
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+        <div class="overview-highlight">
+          <p>
+            <strong>MetaGPT</strong> is an LLM-based multi-agent framework designed to mirror established software engineering
+            practices. It explicitly assigns specialized roles, structures detailed planning and task decomposition, leverages
+            tools for automated code generation, and facilitates iterative debugging through inter-agent cooperation.
+          </p>
+        </div>
+        <figure class="hero-figure">
+          <img src="imgs/metagpt.png" alt="MetaGPT agents cooperating on a software project" />
+          <figcaption>MetaGPT mirrors product, architect, engineering, and QA roles to coordinate complex software workflows.</figcaption>
+        </figure>
       </section>
 
       <section id="meta-roleplay" class="content-section">
         <h2 class="section-title">Role-play</h2>
-        <div class="card-grid">
-          <article class="info-card">
-            <h3>Product Manager</h3>
-            <p>Name: Alice. Goal: create PRDs or market research while using the user's language.</p>
-          </article>
-          <article class="info-card">
-            <h3>Architect</h3>
-            <p>Receives requirements via the message pool and drafts system designs with modules, interfaces, and files.</p>
-          </article>
-          <article class="info-card">
-            <h3>Engineer &amp; QA</h3>
-            <p>Engineers implement features using editor/terminal tools; QA validates requirements and test plans.</p>
-          </article>
+        <p>
+          Role-play serves as a foundational capability within MetaGPT, shaping how agents function and collaborate. Roles
+          include Product Manager, Architect, Project Manager, Engineer, and QA Engineer. Role prompts define name, profile,
+          goal, and constraints that govern responsibilities and interaction standards.
+        </p>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of role-playing as a product manager</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>Name:</strong> Alice</p>
+            <p><strong>Profile:</strong> Product Manager</p>
+            <p><strong>Goal:</strong> Create a Product Requirement Document or market research/competitive product research.</p>
+            <p><strong>Constraint:</strong> Utilize the same language as the user requirements for seamless communication.</p>
+          </div>
         </div>
       </section>
 
       <section id="meta-planning" class="content-section">
         <h2 class="section-title">Planning</h2>
         <p>
-          Planning is initiated by the Product Manager. Given "Make the 2048 sliding tile number puzzle game," MetaGPT
-          outputs product goals, user stories, competitive analysis, and a prioritized requirement pool (core gameplay high,
-          score tracking medium, responsive design low). This structured PRD anchors all downstream work.
+          Planning involves systematically decomposing complex software engineering tasks into structured, actionable
+          procedures clearly assigned to specific agent roles. The Product Manager analyzes user requirements and produces a
+          detailed Product Requirements Document (PRD) that defines goals, user stories, competitive analysis, and a prioritized
+          requirement pool, guiding downstream agents.
         </p>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of planning for a product requirement document</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong> Agent description, high-level user requirements ("Make the 2048 sliding tile number puzzle game"), and the task to generate a structured PRD.</p>
+            <p><strong>OUTPUT:</strong> Product Goals: Simple, responsive, user-friendly 2048 puzzle game for desktop and mobile. User Stories: Quickly start games, slide tiles to merge numbers, view scores, reset easily. Competitive Analysis: Original 2048 is simple but limited; mobile versions have good UI but intrusive ads; Threes! is polished yet paid. Prioritized Requirement Pool: Core gameplay (high), score tracking and reset (medium), responsive design and customization (low).</p>
+          </div>
+        </div>
       </section>
 
       <section id="meta-coop" class="content-section">
-        <h2 class="section-title">Cooperation &amp; tools</h2>
+        <h2 class="section-title">Cooperation</h2>
         <p>
-          Cooperation revolves around a publish-subscribe message pool. Example message:
+          Cooperation revolves around the shared message pool mechanism. Agents publish structured outputs to the pool,
+          other agents subscribe to relevant messages, and tasks flow through publish-subscribe interactions that preserve
+          division of labor.
         </p>
-        <div class="example-box">
-          <p class="example-label">Example · Publish-subscribe message</p>
-          <pre><code>{
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of the product manager assigning tasks to the architect</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong> Instruction to publish a message with task details, paths, requirements, and the receiving agent.</p>
+            <p><strong>OUTPUT:</strong></p>
+            <pre><code>{
   "content": "Bob (Architect), the PRD is ready at docs/PRD.md. Please draft the system design accordingly.",
   "send_to": "Bob"
 }</code></pre>
+          </div>
         </div>
+      </section>
+
+      <section id="meta-tools" class="content-section">
+        <h2 class="section-title">Tool use</h2>
         <p>
-          When Engineers work, they choose from role-aligned tools. Before coding <code>game.py</code>, Alex issues
-          <code>Editor.open_file</code> with path <code>docs/system_design.json</code> to inspect specs, demonstrating explicit reasoning behind each tool call.
+          Tool use is essential in MetaGPT. Product Managers employ market analysis utilities, Architects use design tools, and
+          Engineers leverage coding tools (Editor, Terminal, Code Review) to streamline work. Engineers justify each tool call,
+          specify parameters, and execute the associated shell commands.
         </p>
-        <div class="example-box">
-          <p class="example-label">Example · Tool invocation rationale</p>
-          <p>Reason: Before implementing <code>game.py</code>, I need to carefully review the complete system design.</p>
-          <p>Tool: <code>Editor.open_file</code> with parameters { "path": "docs/system_design.json" }.</p>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of the engineer reviewing the system design using <code>Editor.open_file</code></h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong> Agent description for Alex (Engineer), system design from the Architect, current task to implement <code>game.py</code>, and access to Editor/Terminal/CodeReview tools.</p>
+            <p><strong>OUTPUT:</strong> <em>Reason:</em> Before implementing <code>game.py</code>, I need to carefully review the complete system design. <em>Tool:</em> <code>Editor.open_file</code>. <em>Tool Parameters:</em> { "path": "docs/system_design.json" }.</p>
+          </div>
         </div>
       </section>
 
@@ -130,7 +169,8 @@
         <li><a class="progress-link" data-target="meta-overview" href="#meta-overview">Overview</a></li>
         <li><a class="progress-link" data-target="meta-roleplay" href="#meta-roleplay">Role-play</a></li>
         <li><a class="progress-link" data-target="meta-planning" href="#meta-planning">Planning</a></li>
-        <li><a class="progress-link" data-target="meta-coop" href="#meta-coop">Cooperation &amp; tools</a></li>
+        <li><a class="progress-link" data-target="meta-coop" href="#meta-coop">Cooperation</a></li>
+        <li><a class="progress-link" data-target="meta-tools" href="#meta-tools">Tool use</a></li>
       </ul>
       <div class="progress-meter"><div class="progress-meter-fill"></div></div>
     </aside>

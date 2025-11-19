@@ -27,9 +27,9 @@
   <div class="layout">
     <aside class="chapter-sidebar">      <ul class="chapter-links">
         <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
-        <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
         <li>
-          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">Examples: What LLM Agents Can Do and How They Work</a>
           <ul class="sub-chapter-links">
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
@@ -49,52 +49,79 @@
 
     <main>
       <section id="saycan-overview" class="content-section">
-        <h1 class="section-title">A clear, grounded agent pattern</h1>
-        <p>
-          Embodied agents must translate language into safe behavior amid partial observability and uncertainty. PaLM-SayCan
-          separates high-level reasoning (Say) from low-level feasibility (Can). At each step it asks: What is useful to do
-          next, and what can the robot actually do now? Only actions that are both useful and feasible execute.
-        </p>
+        <h1 class="section-title">PaLM–SayCan: A Clear, Grounded Agent Pattern</h1>
+        <div class="resource-links">
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">Paper ↗</a>
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </div>
+        <div class="overview-highlight">
+          <p>
+            Embodied agents must turn open-ended language into safe, effective behavior amid partial observability, long
+            horizons, hardware limits, and real-time uncertainty. PaLM-SayCan addresses these issues by separating high-level
+            reasoning (Say) from low-level feasibility (Can): it asks what is useful to do next and what the robot can actually
+            do now, executing only actions that are both useful and feasible.
+          </p>
+        </div>
+        <figure class="hero-figure">
+          <img src="imgs/palm-saycan.png" alt="PaLM-SayCan combining Say and Can scores" />
+          <figcaption>PaLM-SayCan multiplies usefulness from the LLM ("Say") with feasibility from affordances ("Can") before executing skills.</figcaption>
+        </figure>
       </section>
 
       <section id="saycan-planning" class="content-section">
         <h2 class="section-title">Planning (Say)</h2>
         <p>
-          The LLM ranks named skills by usefulness.</p>
-        <div class="example-box">
-          <p class="example-label">Example · Planning probabilities</p>
-          <p>Instruction: I spilled my drink. Skills: [find sponge, pick up sponge, find apple].</p>
-          <p><strong>Utilities:</strong> find sponge 0.85, pick up sponge 0.10, find apple 0.05.</p>
-          <p>Rationale: Locate a cleaning tool before manipulation.</p>
+          The LLM acts as a semantic planner over a fixed skill set. It does not invent new primitives; it scores each provided
+          skill by usefulness while optionally revealing short reasoning for interpretability.
+        </p>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of planning (Say)</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong> Role: Semantic planner for a mobile manipulator. Instruction: I spilled my drink. Available Skills: ["find a sponge", "pick up sponge", "find an apple"]. Task progress: No cleanup tools found yet. Constraints: score every listed skill with a probability.</p>
+            <p><strong>OUTPUT:</strong> Utility scores — find sponge: 0.85; pick up sponge: 0.10; find apple: 0.05. <strong>Rationale:</strong> Locate a cleaning tool before manipulation; ignore irrelevant goals.</p>
+          </div>
         </div>
       </section>
 
       <section id="saycan-tools" class="content-section">
         <h2 class="section-title">Skill schema</h2>
         <p>
-          Each skill exposes a schema with name, description, preconditions, postconditions, executor, and affordance
-          model.</p>
-        <div class="example-box">
-          <p class="example-label">Example · Skill schema</p>
-          <pre><code>Name: open_refrigerator
+          SayCan treats low-level abilities as tools that must be grounded in two ways: text-to-skill grounding with
+          human-readable names/descriptions, and execution grounding via executors with preconditions and postconditions. New
+          skills are registered with their schema plus an affordance estimator to become available immediately.
+        </p>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of skill schema</h4>
+          </div>
+          <div class="detail-box__body">
+            <pre><code>Name: open_refrigerator
 Description: Open the refrigerator door using the handle.
-Preconditions: handle visible; gripper free
+Preconditions: handle visible and within reach; gripper free
 Postconditions: door angle &gt; 20°
 Executor: grasp → pull → release
 Affordance: A_open_refrigerator(x) predicts success from detections, depth, reachability.</code></pre>
+          </div>
         </div>
       </section>
 
       <section id="saycan-reflection" class="content-section">
         <h2 class="section-title">Reflection (Can)</h2>
         <p>
-          For each skill, a pre-trained affordance function estimates likelihood of success from the current scene.
-          Decision-making multiplies the Say utility with the Can feasibility.</p>
-        <div class="example-box">
-          <p class="example-label">Example · Combining Say &amp; Can</p>
-          <p>Instruction: I'd like a cold apple. Scene: robot far from a closed refrigerator.</p>
-          <p>Scores: navigate (Say 0.50 × Can 0.95), open (0.40 × 0.20), pick up (0.10 × 0.05).</p>
-          <p>Action: navigate to refrigerator, after which opening becomes feasible.</p>
+          Reflection is the feasibility check that keeps the plan honest. For each available skill, a pre-trained affordance
+          function estimates the likelihood of success in the current scene. The system multiplies the Say usefulness and Can
+          feasibility scores before executing the top skill.
+        </p>
+        <div class="detail-box detail-box--has-divider">
+          <div class="detail-box__header">
+            <h4>Example of reflection (Can) and decision</h4>
+          </div>
+          <div class="detail-box__body">
+            <p><strong>INPUT:</strong> Instruction: I'd like a cold apple. Scene: robot is far from a closed refrigerator; handle visible but out of reach. Skills: [navigate to refrigerator, open refrigerator, pick up apple]. Planning (Say) utilities: navigate 0.50; open 0.40; pick up 0.10. Affordance estimates: navigate 0.95; open 0.20; pick up 0.05.</p>
+            <p><strong>OUTPUT:</strong> Combined scores favor <em>navigate to refrigerator</em>. After moving, the affordance for <em>open refrigerator</em> rises, so the next step becomes opening the door, followed by picking up the apple.</p>
+          </div>
         </div>
       </section>
 

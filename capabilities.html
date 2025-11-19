@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <script defer src="script.js"></script>
   <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body data-page="capabilities" data-nav="capabilities">
   <header class="site-header">
     <div class="inner">
@@ -25,11 +27,13 @@
   </header>
 
   <div class="layout">
-    <aside class="chapter-sidebar">      <ul class="chapter-links">
+    <aside class="chapter-sidebar">
+      <ul class="chapter-links">
         <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
-        <li><a data-chapter-link="foundations" href="foundations.html">What you must know about LLM Agents</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
         <li>
-          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">What LLM agents can do and how they work</a>
+          <a class="chapter-parent" data-chapter-link="capabilities" href="capabilities.html">Examples: What LLM Agents Can Do and
+            How They Work</a>
           <ul class="sub-chapter-links">
             <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
             <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
@@ -49,8 +53,8 @@
 
     <main>
       <section id="chapter-intro" class="content-section">
-        <h1 class="section-title">What LLM agents can do and how they work</h1>
-        <p>
+        <h1 class="section-title">Examples: What LLM Agents Can Do and How They Work</h1>
+        <!-- <p>
           Section&nbsp;3 presents nine concrete examples that show how LLM agents integrate key abilities to perform complex
           tasks across various domains. The examples are intentionally selected to be representative and broad in scope,
           carefully adapted to highlight the underlying agent capabilities. Each case is self-contained so that readers can
@@ -60,124 +64,131 @@
           The primary approach in these examples is crafting prompts &mdash; providing specific instructions and contextual
           information in natural language for LLMs. No coding skills are required to understand the cases, reinforcing the
           tutorial's promise of accessibility for newcomers.
+        </p> -->
+        <p>
+          In this section, we present a carefully selected set of examples to illustrate the key agent capabilities and
+          their underlying mechanisms (through prompt design) across various applications. These examples are summarized
+          in the next Table, with each presented in a self-contained manner.
         </p>
-      </section>
 
-      <section id="capability-table" class="content-section">
-        <h2 class="section-title">Capabilities demonstrated across domains</h2>
+      <!-- <section id="capability-table" class="content-section"> -->
+      <!-- <h2 class="section-title">Capabilities demonstrated across domains</h2> -->
         <div class="table-scroll">
           <table>
+            <caption>An overview of representative examples of LLM agents, their application domains, and demonstrated capabilities.</caption>
             <thead>
               <tr>
                 <th>Example</th>
-                <th>Domain</th>
-                <th>Memory</th>
-                <th>Role-play</th>
-                <th>Planning</th>
-                <th>Tool use</th>
-                <th>Cooperation</th>
-                <th>Reflection</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Generative Agents</td>
-                <td>Social simulation</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>The AI Scientist</td>
-                <td>Scientific discovery</td>
-                <td></td>
-                <td></td>
-                <td>✓</td>
-                <td>✓</td>
-                <td></td>
-                <td>✓</td>
-              </tr>
-              <tr>
-                <td>CellAgent</td>
-                <td>Biology</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-              </tr>
-              <tr>
-                <td>The Virtual Lab</td>
-                <td>Medicine</td>
-                <td></td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-              </tr>
-              <tr>
-                <td>MetaGPT</td>
-                <td>Software engineering</td>
-                <td></td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>FinAgent</td>
-                <td>Finance</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td>✓</td>
-                <td></td>
-                <td></td>
-                <td>✓</td>
-              </tr>
-              <tr>
-                <td>Voyager</td>
-                <td>Game</td>
-                <td>✓</td>
-                <td></td>
-                <td>✓</td>
-                <td>✓</td>
-                <td></td>
-                <td>✓</td>
-              </tr>
-              <tr>
-                <td>Mobile Agent</td>
-                <td>Mobile devices</td>
-                <td>✓</td>
-                <td></td>
-                <td>✓</td>
-                <td>✓</td>
-                <td></td>
-                <td>✓</td>
-              </tr>
-              <tr>
-                <td>PaLM-SayCan</td>
-                <td>Embodied AI</td>
-                <td></td>
-                <td></td>
-                <td>✓</td>
-                <td>✓</td>
-                <td></td>
-                <td>✓</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+              <th>Domain</th>
+              <th>Memory</th>
+              <th>Role-play</th>
+              <th>Planning</th>
+              <th>Tool use</th>
+              <th>Cooperation</th>
+              <th>Reflection</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Generative Agents</td>
+              <td>Social simulation</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>The AI Scientist</td>
+              <td>Scientific discovery</td>
+              <td></td>
+              <td></td>
+              <td>✓</td>
+              <td>✓</td>
+              <td></td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>CellAgent</td>
+              <td>Biology</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>The Virtual Lab</td>
+              <td>Medicine</td>
+              <td></td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>MetaGPT</td>
+              <td>Software engineering</td>
+              <td></td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>FinAgent</td>
+              <td>Finance</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td></td>
+              <td></td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>Voyager</td>
+              <td>Game</td>
+              <td>✓</td>
+              <td></td>
+              <td>✓</td>
+              <td>✓</td>
+              <td></td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>Mobile Agent</td>
+              <td>Mobile devices</td>
+              <td>✓</td>
+              <td></td>
+              <td>✓</td>
+              <td>✓</td>
+              <td></td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>PaLM-SayCan</td>
+              <td>Embodied AI</td>
+              <td></td>
+              <td></td>
+              <td>✓</td>
+              <td>✓</td>
+              <td></td>
+              <td>✓</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       </section>
+
+      <!-- </section> -->
 
       <section id="example-links" class="content-section">
         <h2 class="section-title">Dive into any of the nine case studies</h2>
-        <p class="section-intro">Each card below jumps to a dedicated page with prompts, code snippets, and capability callouts from the paper.</p>
+        <p class="section-intro">Each card below jumps to a dedicated page with prompts, code snippets, and capability callouts from the paper. Audiences can jump directly to a specific example without needing to follow them in sequence.</p>
         <div class="example-list">
           <a class="example-card" href="generative-agents.html">
             <h3>Generative Agents</h3>
@@ -213,14 +224,14 @@
           </a>
           <a class="example-card" href="palm-saycan.html">
             <h3>PaLM-SayCan</h3>
-            <p>Separate “say” usefulness from “can” feasibility for grounded robotics.</p>
+            <p>Separate "say" usefulness from "can" feasibility for grounded robotics.</p>
           </a>
         </div>
       </section>
 
       <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
-        
+
         <pre><code>@article{hu2025llm_agents_tutorial,
   title={A Beginner-Friendly Tutorial on LLM-based Agents},
   author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
@@ -239,13 +250,16 @@
       <h2>On this page</h2>
       <ul class="progress-list">
         <!-- <li><a class="progress-link" data-target="chapter-intro" href="#chapter-intro">Chapter intro</a></li> -->
-        <li><a class="progress-link" data-target="capability-table" href="#capability-table">Capability table</a></li>
+        <li><a class="progress-link" data-target="chapter-intro" href="#chapter-intro">Overview</a></li>
         <li><a class="progress-link" data-target="example-links" href="#example-links">Case study links</a></li>
       </ul>
-      <div class="progress-meter"><div class="progress-meter-fill"></div></div>
+      <div class="progress-meter">
+        <div class="progress-meter-fill"></div>
+      </div>
     </aside>
   </div>
 
   <footer class="footer">© 2025 Hu et al. · Section 3 overview.</footer>
 </body>
+
 </html>

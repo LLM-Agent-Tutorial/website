@@ -55,7 +55,7 @@ img {
 }
 
 .site-header .inner {
-  width: min(1200px, 100% - 4rem);
+  width: min(1400px, 100% - 4rem);
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -117,7 +117,7 @@ img {
 }
 
 .layout {
-  width: min(1200px, 100% - 4rem);
+  width: min(1400px, 100% - 4rem);
   margin: 0 auto;
   flex: 1;
   display: grid;
@@ -275,7 +275,6 @@ main {
 }
 
 .section-intro {
-  max-width: 60ch;
   color: var(--muted);
 }
 
@@ -365,8 +364,46 @@ code {
   padding: 0.15rem 0.3rem;
 }
 
+body[data-page='ai-scientist'] pre,
+body[data-page='ai-scientist'] code {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #2a2f45;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+
+body[data-page='ai-scientist'] pre {
+  padding: 0.85rem 0;
+  border: none;
+}
+
+body[data-page='ai-scientist'] pre code {
+  padding: 0;
+}
+
+body[data-page='ai-scientist'] .token.keyword {
+  color: #c678dd;
+}
+
+body[data-page='ai-scientist'] .token.function {
+  color: #61afef;
+}
+
+body[data-page='ai-scientist'] .token.string {
+  color: #98c379;
+}
+
+body[data-page='ai-scientist'] .token.variable {
+  color: #e5c07b;
+}
+
+body[data-page='ai-scientist'] .token.number {
+  color: #d19a66;
+}
+
 .table-scroll {
-  overflow-x: auto;
+  overflow: visible;
 }
 
 table {
@@ -422,6 +459,77 @@ table th {
 .citation-intro {
   margin-top: 3rem;
   font-weight: 600;
+}
+
+.resource-links {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0 1.5rem;
+  font-family: var(--font-sans);
+}
+
+.resource-link {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.overview-highlight {
+  background: var(--surface-muted);
+  border-left: 3px solid var(--accent);
+  padding: 1.2rem 1.5rem;
+  border-radius: var(--radius);
+  margin-top: 1rem;
+}
+
+.detail-box {
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.4rem;
+  background: #fffdfa;
+}
+
+.detail-box--has-divider {
+  padding: 0;
+}
+
+.detail-box h4 {
+  margin: 0 0 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.detail-box--has-divider h4 {
+  margin: 0;
+}
+
+.detail-box--has-divider .detail-box__header {
+  background: var(--surface-muted);
+  border-bottom: 2px solid var(--border);
+  border-top-left-radius: calc(var(--radius) - 2px);
+  border-top-right-radius: calc(var(--radius) - 2px);
+  padding: 0.85rem 1.4rem;
+}
+
+.detail-box--has-divider .detail-box__body {
+  padding: 1.2rem 1.4rem 1.4rem;
+}
+
+.detail-box p {
+  margin: 0.35rem 0;
+  font-family: 'Georgia', serif;
+}
+
+.detail-divider {
+  border: 0;
+  border-top: 2px solid var(--border);
+  margin: 1rem 0;
+}
+
+.detail-box .detail-divider {
+  border-top: 1px solid var(--border);
+  margin: 1rem 0;
 }
 
 .section-title {

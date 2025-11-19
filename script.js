@@ -49,23 +49,38 @@ document.addEventListener('DOMContentLoaded', () => {
     .filter(Boolean);
 
   if (sections.length) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          sections.forEach(({ link, target }) => {
-            if (target === entry.target) {
-              link.classList.add('is-active');
-            } else {
-              link.classList.remove('is-active');
-            }
-          });
-        });
-      },
-      { rootMargin: '-30% 0px -50% 0px', threshold: 0.2 }
-    );
+    const headerOffset = 140;
 
-    sections.forEach(({ target }) => observer.observe(target));
+    const setActiveLink = (activeTarget) => {
+      sections.forEach(({ link, target }) => {
+        link.classList.toggle('is-active', target === activeTarget);
+      });
+    };
+
+    const updateActiveSection = () => {
+      const scrollPosition = window.scrollY + headerOffset;
+      const scrolledToBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+
+      if (scrolledToBottom) {
+        setActiveLink(sections[sections.length - 1].target);
+        return;
+      }
+
+      for (let i = sections.length - 1; i >= 0; i -= 1) {
+        const { target } = sections[i];
+        if (scrollPosition >= target.offsetTop) {
+          setActiveLink(target);
+          return;
+        }
+      }
+
+      setActiveLink(sections[0].target);
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
   }
 
   const progressFill = document.querySelector('.progress-meter-fill');
