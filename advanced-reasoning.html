@@ -19,9 +19,9 @@
       <a href="foundations.html" data-nav-target="foundations">Foundations</a>
       <a href="capabilities.html" data-nav-target="capabilities">Agent Examples</a>
       <a href="practical-tips.html" data-nav-target="practical">Practical Tips</a>
-      <a href="advanced-techniques.html" data-nav-target="advanced">Advanced Frontier</a>
+      <a href="advanced-knowledge.html" data-nav-target="advanced">Advanced Frontier</a>
     </nav>
-    <a class="download-btn" href="LLM_Agent_Tutorial%20(3).pdf" download>Download <span>PDF</span></a>
+    <a class="download-btn" href="A Beginner-Friendly Tutorial on LLM-based Agents.pdf" download>Download <span>PDF</span></a>
   </div>
 </header>
 
@@ -64,20 +64,20 @@
       <section id="topic-overview" class="content-section">
         <h1 class="section-title">Enhancing Reasoning Capabilities</h1>
         <p>
-          Reasoning underpins many core agent abilities, including planning, tool use, and cooperation. Recent advances have significantly strengthened the reasoning capabilities of LLMs. For example, OpenAI’s oseries and DeepSeek-R1 are LLMs specifically enhanced for reasoning. Compared with standard LLMs (such as the GPT-4 series) from the same providers, these models are explicitly trained to perform multistep thinking before producing an answer. As a result, they often demonstrate superior performance on complex tasks such as mathematics and programming, though they also tend to produce substantially longer outputs and consume more tokens.
+          Reasoning underpins many core agent abilities, including planning, tool use, and cooperation. Recent advances have significantly strengthened the reasoning capabilities of LLMs. For example, OpenAI's oseries and DeepSeek-R1 are LLMs specifically enhanced for reasoning. Compared with standard LLMs (such as the GPT-4 series) from the same providers, these models are explicitly trained to perform multistep thinking before producing an answer. As a result, they often demonstrate superior performance on complex tasks such as mathematics and programming, though they also tend to produce substantially longer outputs and consume more tokens.
         </p>
       </section>
 
       <section id="chain-of-thought" class="content-section">
         <h2 class="section-title">Chain-of-Thought</h2>
         <p>
-          This technique is the most simple technique for enhancing a model's reasoning ability. It encourages models to generate intermediate reasoning steps by adding a simple instruction to the prompt—"Let’s think step by step”. This prompt guides the model to engage in multi-step reasoning before arriving at its final answer, rather than responding directly. Despite its simplicity, this method yields substantial improvements in reasoning performance. Building on this, long CoT extends the depth and complexity of reasoning traces by encouraging models to elaborate over multiple stages, simulate nested sub-decisions, and maintain coherence across extended contexts. Self-consistency aggregates reasoning from multiple CoT samples to increase reliability, while Tree-of-Thoughts (ToT)generalizes CoT by searching over multiple reasoning paths before settling on a final solution.
+          This technique is the most simple technique for enhancing a model's reasoning ability. It encourages models to generate intermediate reasoning steps by adding a simple instruction to the prompt—"Let's think step by step". This prompt guides the model to engage in multi-step reasoning before arriving at its final answer, rather than responding directly. Despite its simplicity, this method yields substantial improvements in reasoning performance. Building on this, long CoT extends the depth and complexity of reasoning traces by encouraging models to elaborate over multiple stages, simulate nested sub-decisions, and maintain coherence across extended contexts. Self-consistency aggregates reasoning from multiple CoT samples to increase reliability, while Tree-of-Thoughts (ToT)generalizes CoT by searching over multiple reasoning paths before settling on a final solution.
         </p>
       </section>
       <section id="test-time-scaling" class="content-section">
         <h2 class="section-title">Test-Time Scaling</h2>
         <p>
-          Test Time Scaling (TTS) is another simple yet powerful strategy for enhancing the reasoning capabilities of LLMs at inference time, without requiring retraining or architectural changes. The core idea is to generate multiple reasoning samples–such as diverse CoT traces–and select the most consistent or confident output. This leverages the model’s ability to explore varied reasoning paths and self-correct through redundancy. Two basic and popular TTS methods are Beam Search and Monte Carlo Tree Search (MCTS). Beam Search maintains a fixed number of top candidate sequences based on likelihood scores, promoting diversity while preserving high-probability paths. MCTS adaptively explores the reasoning space by simulating reasoning paths and using statistical heuristics to guide search toward promising paths. These techniques allow LLMs to scale their deliberative capacity, improving reliability and reducing hallucinations in tasks that demand multi-step reasoning, such as math word problems, commonsense inference, and strategic planning.
+          Test Time Scaling (TTS) is another simple yet powerful strategy for enhancing the reasoning capabilities of LLMs at inference time, without requiring retraining or architectural changes. The core idea is to generate multiple reasoning samples–such as diverse CoT traces–and select the most consistent or confident output. This leverages the model's ability to explore varied reasoning paths and self-correct through redundancy. Two basic and popular TTS methods are Beam Search and Monte Carlo Tree Search (MCTS). Beam Search maintains a fixed number of top candidate sequences based on likelihood scores, promoting diversity while preserving high-probability paths. MCTS adaptively explores the reasoning space by simulating reasoning paths and using statistical heuristics to guide search toward promising paths. These techniques allow LLMs to scale their deliberative capacity, improving reliability and reducing hallucinations in tasks that demand multi-step reasoning, such as math word problems, commonsense inference, and strategic planning.
         </p>
       </section>
       <section id="reinforcement-learning" class="content-section">
@@ -106,6 +106,8 @@
         <h2>On this page</h2>
         <ul class="progress-list">
           <li><a class="progress-link" data-target="topic-overview" href="#topic-overview">Overview</a></li>
+          <li><a class="progress-link" data-target="chain-of-thought" href="#chain-of-thought">Chain-of-Thought</a></li>
+          <li><a class="progress-link" data-target="test-time-scaling" href="#test-time-scaling">Test-Time Scaling</a></li>
           <li><a class="progress-link" data-target="reinforcement-learning" href="#reinforcement-learning">Reinforcement Learning</a></li>
         </ul>
         <div class="progress-meter"><div class="progress-meter-fill"></div></div>

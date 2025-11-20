@@ -20,9 +20,9 @@
         <a href="foundations.html" data-nav-target="foundations">Foundations</a>
         <a href="capabilities.html" data-nav-target="capabilities">Agent Examples</a>
         <a href="practical-tips.html" data-nav-target="practical">Practical Tips</a>
-        <a href="advanced-techniques.html" data-nav-target="advanced">Advanced Frontier</a>
+        <a href="advanced-knowledge.html" data-nav-target="advanced">Advanced Frontier</a>
       </nav>
-      <a class="download-btn" href="LLM_Agent_Tutorial%20(3).pdf" download>Download <span>PDF</span></a>
+      <a class="download-btn" href="A Beginner-Friendly Tutorial on LLM-based Agents.pdf" download>Download <span>PDF</span></a>
     </div>
   </header>
 
@@ -79,7 +79,7 @@
         <h2 class="section-title">In-Context Learning</h2>
         <p>
           The most straightforward way to inject domain knowledge is to place the relevant information directly within
-          the LLM's context window. This method leverages the model’s incontext learning ability, allowing it to use the
+          the LLM's context window. This method leverages the model's incontext learning ability, allowing it to use the
           provided text as a direct source of truth for generating a response. As the user can dynamically insert any
           piece of information on the fly without requiring any additional infrastructure, in-context learning is very
           agile and is especially effective when the knowledge is limited in scope, such as some trading rules for the
@@ -107,7 +107,7 @@
         </div>
         <p>However, this method is not well-suited for extensive knowledge bases. Directly including large volumes of
           text in every prompt can be expensive (as the API costs are usually calculated on the number of input and
-          output tokens), especially in multi-turn dialogues. Moreover, too long context can “crowd out” the space
+          output tokens), especially in multi-turn dialogues. Moreover, too long context can "crowd out" the space
           needed for the user's query, the conversation history, and the model's generated output, potentially leading
           to truncated or less coherent responses. We will discuss how to handle the long context window in Section  <a href="advanced-context.html"><em>Managing Long Context</em></a>.
         </p>
@@ -116,7 +116,7 @@
       <section id="retrieval-augmented-generation" class="content-section">
         <h2 class="section-title">Retrieval-Augmented Generation</h2>
         <p>
-          When dealing with a large corpus of documents, RAG offers a more scalable and efficient solution. Instead of attempting to fit all possible information into the context window, RAG operates on a “just-in-time” basis by retrieving only the most relevant snippets of knowledge in response to the user's query. Taking the medical scenario as an example, this allows an agent to pull specific symptom descriptions for cardiac ischemia from a vast medical database to provide precise, expert-level advice. Standard RAG often treats knowledge chunks as independent, parallel pieces of information, but the user can also explore different ways to construct the knowledge base according to their needs. For example, by incorporating a knowledge graph, the system can represent the intricate relationships between different concepts and entities, and thus fetches not just directly relevant text but also interconnected information. Finally, RAG is not limited to a static set of documents. The retrieval mechanism can be extended to pull information from a wide variety of sources, including structured databases (e.g., via text-to-SQL queries) or live web searches, ensuring the agent has access to the most current information available.
+          When dealing with a large corpus of documents, RAG offers a more scalable and efficient solution. Instead of attempting to fit all possible information into the context window, RAG operates on a "just-in-time" basis by retrieving only the most relevant snippets of knowledge in response to the user's query. Taking the medical scenario as an example, this allows an agent to pull specific symptom descriptions for cardiac ischemia from a vast medical database to provide precise, expert-level advice. Standard RAG often treats knowledge chunks as independent, parallel pieces of information, but the user can also explore different ways to construct the knowledge base according to their needs. For example, by incorporating a knowledge graph, the system can represent the intricate relationships between different concepts and entities, and thus fetches not just directly relevant text but also interconnected information. Finally, RAG is not limited to a static set of documents. The retrieval mechanism can be extended to pull information from a wide variety of sources, including structured databases (e.g., via text-to-SQL queries) or live web searches, ensuring the agent has access to the most current information available.
         </p>
       </section>
 
@@ -146,8 +146,9 @@
       <h2>On this page</h2>
       <ul class="progress-list">
         <li><a class="progress-link" data-target="topic-overview" href="#topic-overview">Overview</a></li>
-        <li><a class="progress-link" data-target="in-context-learning" href="#in-context-learning">In-context
-            learning</a></li>
+        <li><a class="progress-link" data-target="in-context-learning" href="#in-context-learning">In-Context Learning</a></li>
+        <li><a class="progress-link" data-target="retrieval-augmented-generation" href="#retrieval-augmented-generation">Retrieval-Augmented Generation</a></li>
+        <li><a class="progress-link" data-target="fine-tuning" href="#fine-tuning">Fine-Tuning</a></li>
       </ul>
       <div class="progress-meter">
         <div class="progress-meter-fill"></div>

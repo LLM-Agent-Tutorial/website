@@ -20,9 +20,9 @@
         <a href="foundations.html" data-nav-target="foundations">Foundations</a>
         <a href="capabilities.html" data-nav-target="capabilities">Agent Examples</a>
         <a href="practical-tips.html" data-nav-target="practical">Practical Tips</a>
-        <a href="advanced-techniques.html" data-nav-target="advanced">Advanced Frontier</a>
+        <a href="advanced-knowledge.html" data-nav-target="advanced">Advanced Frontier</a>
       </nav>
-      <a class="download-btn" href="LLM_Agent_Tutorial%20(3).pdf" download>Download <span>PDF</span></a>
+      <a class="download-btn" href="A Beginner-Friendly Tutorial on LLM-based Agents.pdf" download>Download <span>PDF</span></a>
     </div>
   </header>
 
@@ -73,7 +73,7 @@
         <h2 class="section-title">1. Keep your agent design as simple as possible.</h2>
         <p>First attempts are rarely seamless, so the most important principle is to aim for the simplest viable design
           and minimal complexity. Building an LLM agent is already much easier than it was just a few years ago—back
-          when the first version of ChatGPT appeared—because today’s models are much more capable. Their strengthened
+          when the first version of ChatGPT appeared—because today's models are much more capable. Their strengthened
           reasoning skills mean that tasks once solved only through long, fine-grained prompt chains can now often be
           handled with a single, concise prompt.</p>
       </section>
@@ -85,14 +85,14 @@
         </p>
       </section>
 
-      <section id="tips-frameworks" class="content-section">
+      <section id="tips-human-approach" class="content-section">
         <h2 class="section-title">3. Guide your agent by considering how humans would approach the same task.</h2>
         <p>
           If simply setting the goal does not lead to desired agent behaviors, a helpful strategy is to craft prompts that outline highlevel milestones to guide agent behaviors. Think about how you would brief a person on the same task. For example, if you are building an essay-writing agent, a human researcher would propose an idea, review relevant literature, suggest a solution, and validate that solution. Structure your prompt around these stages, e.g., "First, propose an original idea on [topic]; then scan the literature...", and let the agent handle the finer details.
         </p>
       </section>
 
-      <section id="tips-frameworks" class="content-section">
+      <section id="tips-examples" class="content-section">
         <h2 class="section-title">4. Provide illustrative examples.</h2>
         <p>
           Examples can accelerate understanding for both humans and LLM agents. If you need structured output, show the desired format, e.g., "Produce the result in this JSON schema:...". When a specific methodology matters (e.g., a clinical guideline for diagnosis and treatment), include step-by-step examples that embody each required step. Well-chosen examples help guide the agent's behavior and reduce ambiguity. Note that this practice is often referred as in-context learning in the literature.
@@ -119,7 +119,7 @@
       </section>
       <div class="page-nav">
         <a class="page-nav-btn" href="index.html">Back to Home</a>
-        <a class="page-nav-btn primary" href="advanced-techniques.html">Next</a>
+        <a class="page-nav-btn primary" href="advanced-knowledge.html">Next</a>
       </div>
     </main>
 
@@ -127,9 +127,11 @@
       <h2>On this page</h2>
       <ul class="progress-list">
         <li><a class="progress-link" data-target="tips-overview" href="#tips-overview">Overview</a></li>
-        <li><a class="progress-link" data-target="tips-simplicity" href="#tips-simplicity">Simplicity</a></li>
-        <li><a class="progress-link" data-target="tips-guide" href="#tips-guide">Guidance &amp; examples</a></li>
-        <li><a class="progress-link" data-target="tips-frameworks" href="#tips-frameworks">Framework advice</a></li>
+        <li><a class="progress-link" data-target="tips-simplicity" href="#tips-simplicity">1. Keep your agent design as simple as possible.</a></li>
+        <li><a class="progress-link" data-target="tips-guide" href="#tips-guide">2. Clearly define the goal or task for your agent.</a></li>
+        <li><a class="progress-link" data-target="tips-human-approach" href="#tips-human-approach">3. Guide your agent by considering how humans would approach the same task.</a></li>
+        <li><a class="progress-link" data-target="tips-examples" href="#tips-examples">4. Provide illustrative examples.</a></li>
+        <li><a class="progress-link" data-target="tips-frameworks" href="#tips-frameworks">5. Start with chatting with LLMs directly, and restrict the use of agent framework.</a></li>
       </ul>
       <div class="progress-meter">
         <div class="progress-meter-fill"></div>

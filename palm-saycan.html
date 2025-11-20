@@ -18,9 +18,9 @@
         <a href="foundations.html" data-nav-target="foundations">Foundations</a>
         <a href="capabilities.html" data-nav-target="capabilities">Agent Examples</a>
         <a href="practical-tips.html" data-nav-target="practical">Practical Tips</a>
-        <a href="advanced-techniques.html" data-nav-target="advanced">Advanced Frontier</a>
+        <a href="advanced-knowledge.html" data-nav-target="advanced">Advanced Frontier</a>
       </nav>
-      <a class="download-btn" href="LLM_Agent_Tutorial%20(3).pdf" download>Download <span>PDF</span></a>
+      <a class="download-btn" href="A Beginner-Friendly Tutorial on LLM-based Agents.pdf" download>Download <span>PDF</span></a>
     </div>
   </header>
 
@@ -63,12 +63,12 @@
       <section id="saycan-overview" class="content-section">
         <h1 class="section-title">PaLM-SayCan: A Clear, Grounded Agent Pattern</h1>
         <div class="resource-links">
-          <a class="resource-link" href="#" target="_blank" rel="noreferrer">Paper &nearr;</a>
-          <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub &nearr;</a>
+          <a class="resource-link" href="https://arxiv.org/pdf/2204.01691" target="_blank" rel="noreferrer">Paper &nearr;</a>
+          <a class="resource-link" href="https://say-can.github.io/" target="_blank" rel="noreferrer">Website &nearr;</a>
         </div>
         <div class="overview-highlight">
           <p>
-            Embodied agents must turn open-ended language into safe, effective behavior amid partial observability, long horizons, hardware limits, and real-time uncertainty. Typical failures include vague plans that ignore geometry, hallucinated capabilities the robot does not have, and unsafe actions a robot cannot execute. PaLM-SayCan addresses these issues by separating high-level reasoning from low-level feasibility. At each step it asks: <i>What is useful to do next</i>? (Say) and <i>What can the robot actually do now?</i> (Can). Only actions that are both useful and feasible are executed. At decision time, the agent takes the user’s instruction, its current state, and a library of named skills. The LLM ranks the skills by how helpful each one would be right now (<i>Say</i>). A pre-trained affordance model then estimates how likely each skill is to succeed in the current scene (<i>Can</i>). The system combines usefulness and feasibility, executes the top skill, logs the outcome, updates state, and repeats until the goal is reached or no safe, feasible action remains.
+            Embodied agents must turn open-ended language into safe, effective behavior amid partial observability, long horizons, hardware limits, and real-time uncertainty. Typical failures include vague plans that ignore geometry, hallucinated capabilities the robot does not have, and unsafe actions a robot cannot execute. PaLM-SayCan addresses these issues by separating high-level reasoning from low-level feasibility. At each step it asks: <i>What is useful to do next</i>? (Say) and <i>What can the robot actually do now?</i> (Can). Only actions that are both useful and feasible are executed. At decision time, the agent takes the user's instruction, its current state, and a library of named skills. The LLM ranks the skills by how helpful each one would be right now (<i>Say</i>). A pre-trained affordance model then estimates how likely each skill is to succeed in the current scene (<i>Can</i>). The system combines usefulness and feasibility, executes the top skill, logs the outcome, updates state, and repeats until the goal is reached or no safe, feasible action remains.
           </p>
         </div>
         <figure class="hero-figure">
@@ -106,7 +106,7 @@
       <section id="saycan-tools" class="content-section">
         <h2 class="section-title">Skill schema</h2>
         <p>
-          SayCan treats low-level abilities as tools that must be grounded in two ways. First, <strong>text-to-skill grounding</strong>: each skill exposes a human-readable name and description (and optional arguments) so the LLM can align language to capabilities. Second, <strong>execution grounding</strong>: each skill has an executor with preconditions and postconditions; execution returns a structured outcome (success/failure and observations) that updates the progress log and the robot’s state. Adding capabilities is modular: register a new skill by its name/description, provide (or train) its executor and an affordance estimator, and it immediately becomes available to the planner.
+          SayCan treats low-level abilities as tools that must be grounded in two ways. First, <strong>text-to-skill grounding</strong>: each skill exposes a human-readable name and description (and optional arguments) so the LLM can align language to capabilities. Second, <strong>execution grounding</strong>: each skill has an executor with preconditions and postconditions; execution returns a structured outcome (success/failure and observations) that updates the progress log and the robot's state. Adding capabilities is modular: register a new skill by its name/description, provide (or train) its executor and an affordance estimator, and it immediately becomes available to the planner.
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
@@ -126,7 +126,7 @@
       <section id="saycan-reflection" class="content-section">
         <h2 class="section-title">Reflection (Can)</h2>
         <p>
-          Reflection is the feasibility check that keeps the plan honest. For each available skill, a pre-trained affordance function (learned from robot experience) estimates the likelihood of success in the current scene. Unlike the “Say” step, the “Can” step is not generated by an LLM. Instead, it is computed by a pre-trained affordance model. In the original SayCan implementation, this model is a languageconditioned value function. This value function is trained on a large dataset of real-world robot rollouts from task execution. Its specific function is to take the robot’s current observation state and a natural language description of a skill (e.g., “pick up the apple”) as input. It then outputs a scalar score that predicts the expected probability of successfully executing that skill. In the final decision-making phase, the system integrates the outputs from both modules: ”Say” (LLM) provides the linguistic usefulness probability for each skill, and “Can” (Affordance Model) provides the physical feasibility probability for each skill. The system multiplies these two scores to obtain a final score for each skill, ultimately selecting the skill with the highest score for execution.
+          Reflection is the feasibility check that keeps the plan honest. For each available skill, a pre-trained affordance function (learned from robot experience) estimates the likelihood of success in the current scene. Unlike the "Say" step, the "Can" step is not generated by an LLM. Instead, it is computed by a pre-trained affordance model. In the original SayCan implementation, this model is a languageconditioned value function. This value function is trained on a large dataset of real-world robot rollouts from task execution. Its specific function is to take the robot's current observation state and a natural language description of a skill (e.g., "pick up the apple") as input. It then outputs a scalar score that predicts the expected probability of successfully executing that skill. In the final decision-making phase, the system integrates the outputs from both modules: "Say" (LLM) provides the linguistic usefulness probability for each skill, and "Can" (Affordance Model) provides the physical feasibility probability for each skill. The system multiplies these two scores to obtain a final score for each skill, ultimately selecting the skill with the highest score for execution.
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">

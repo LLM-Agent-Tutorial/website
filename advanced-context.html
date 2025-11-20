@@ -20,9 +20,9 @@
         <a href="foundations.html" data-nav-target="foundations">Foundations</a>
         <a href="capabilities.html" data-nav-target="capabilities">Agent Examples</a>
         <a href="practical-tips.html" data-nav-target="practical">Practical Tips</a>
-        <a href="advanced-techniques.html" data-nav-target="advanced">Advanced Frontier</a>
+        <a href="advanced-knowledge.html" data-nav-target="advanced">Advanced Frontier</a>
       </nav>
-      <a class="download-btn" href="LLM_Agent_Tutorial%20(3).pdf" download>Download <span>PDF</span></a>
+      <a class="download-btn" href="A Beginner-Friendly Tutorial on LLM-based Agents.pdf" download>Download <span>PDF</span></a>
     </div>
   </header>
 
@@ -70,7 +70,7 @@
         <p>
           As LLM-based agents often engage in multi-turn, prolonged, or complex workflows, a key challenge they may
           encounter is the extremely long context, which significantly raises computational costs, slows down inference,
-          and often reduces accuracy due to models’ bias towards recent inputs. Therefore, naively using maximal-length
+          and often reduces accuracy due to models' bias towards recent inputs. Therefore, naively using maximal-length
           contexts remains impractical for real-world agents. To address this, there are three primary techniques:
           Context Compression, Context Reuse, and Hierarchical Context Management.
         </p>
@@ -92,15 +92,15 @@
         <h2 class="section-title">Context Reuse</h2>
         <p>
           The second strategy is context reuse. Intuitively, prompt caching lets the system treat an unchanged prefix as
-          “already processed”, so it does not need to be recomputed on every turn. Concretely, servers reuse precomputed
+          "already processed", so it does not need to be recomputed on every turn. Concretely, servers reuse precomputed
           key–value attention states to skip redundant prefix computation, reducing latency and cost. To make caching
           effective, maintain a stable prefix—system role, shared tools, policies—so cache hits remain consistent across
           multi-turn conversations. When tool availability must change, avoid editing the prompt; keep all tool
-          definitions in the prefix and switch tools on or off during decoding (mask, don’t remove) to preserve a
+          definitions in the prefix and switch tools on or off during decoding (mask, don't remove) to preserve a
           byte-identical, cache-friendly prefix while constraining actions.
         </p>
       </section>
-      <section id="context-reuse" class="content-section">
+      <section id="hierarchical-context" class="content-section">
         <h2 class="section-title">Hierarchical Context Management</h2>
         <p>
           The third strategy is hierarchical context management: rather than continually expanding a single transcript,
@@ -133,8 +133,9 @@
       <h2>On this page</h2>
       <ul class="progress-list">
         <li><a class="progress-link" data-target="topic-overview" href="#topic-overview">Overview</a></li>
-        <li><a class="progress-link" data-target="context-tactics" href="#context-tactics">Context management
-            toolkit</a></li>
+        <li><a class="progress-link" data-target="context-compression" href="#context-compression">Context Compression</a></li>
+        <li><a class="progress-link" data-target="context-reuse" href="#context-reuse">Context Reuse</a></li>
+        <li><a class="progress-link" data-target="hierarchical-context" href="#hierarchical-context">Hierarchical Context Management</a></li>
       </ul>
       <div class="progress-meter">
         <div class="progress-meter-fill"></div>
