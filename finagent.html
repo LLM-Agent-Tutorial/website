@@ -63,39 +63,33 @@
       <section id="fin-overview" class="content-section">
         <h1 class="section-title">FinAgent: A Multimodal Foundation Agent for Financial Trading</h1>
         <div class="resource-links">
-          <a class="resource-link" href="#" target="_blank" rel="noreferrer">Paper ↗</a>
-          <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">Paper &nearr;</a>
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub &nearr;</a>
         </div>
         <div class="overview-highlight">
           <p>
-            <strong>FinAgent</strong> is a multimodal foundation agent designed for financial trading that addresses adaptability and
-            generalization through a market intelligence module, a reflection module, and a tool-augmented decision-making
-            module. It extracts and summarizes insights from diverse market information, performs dual-level reflection on
-            market dynamics and past decisions, and enhances trading actions through expert-informed guidance.
+            FinAgent is a multimodal foundation agent designed for financial trading that addresses adaptability and generalization through three key components: (i) a market intelligence module, extracting and summarizing key insights from diverse market information, including daily updates on stock news, prices, and monthly and quarterly financial reports; (ii) a reflection module, performing dual-level reflection on market dynamics and past decisions; and (iii) a tool-augmented decision-making module, enhancing trading actions through expert-informed guidance.
           </p>
         </div>
         <figure class="hero-figure">
           <img src="imgs/finagent.png" alt="FinAgent synthesizing market intelligence and reflections" />
-          <figcaption>FinAgent fuses market intelligence, dual-level reflection, and tool-augmented guidance for trading decisions.</figcaption>
+          <figcaption>The overall architecture of FinAgent. The ordinal numbers in the figure represent the order of execution, where augmented tools are implemented with the decision-making module.</figcaption>
         </figure>
-        <p class="capability-lede">What follows explains how FinAgent’s expert role-play, multimodal memory stores, and low/high-level reflection loops guide its trading decisions.</p>
       </section>
 
       <section id="fin-role" class="content-section">
         <h2 class="section-title">Role-play</h2>
         <p>
-          FinAgent is guided by a high-level role description that ensures consistent expertise in market analysis and
-          financial decision-making. The role prompt defines the agent's role, the context of the financial market environment,
-          and the agent's analytical capabilities for trading.
+          FinAgent is guided by a high-level role description that ensures consistent expertise in market analysis and financial decision-making. This role-play specification contains three aspects: the definition of the agent’s role, the context of the financial market environment, and the agent’s analytical capabilities for trading.
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
             <h4>Example of role-playing as an expert financial trader</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>Role:</strong> You are an expert trader who has sufficient financial experience and provides expert guidance.</p>
-            <p><strong>Context:</strong> Imagine working in a real market environment with access to real-time prices, news, financial reports, technical indicators, and auxiliary strategies.</p>
-            <p><strong>Capabilities:</strong> You are capable of deeply analyzing, understanding, and summarizing information to make informed trading decisions (BUY, HOLD, SELL).</p>
+            <p><strong>Role:</strong> You are an expert trader who have sufficient financial experience and provides expert guidance.</p>
+            <p><strong>Context:</strong> Imagine working in a real market environment where you have access to various types of information (e.g., daily real-time market price, news, financial reports, professional investment guidance and market sentiment) relevant to financial markets. You will be able to view visual data that contains comprehensive information, including Kline charts accompanied by technical indicators, historical trading curves and cumulative return curves. And there will be some auxiliary strategies providing you with explanations for trading decisions.</p>
+            <p><strong>Capabilities:</strong> You are capable of deeply analyzing, understanding, and summarizing information, and use these information to make informed and wise trading decisions (i.e., BUY, HOLD and SELL).</p>
           </div>
         </div>
       </section>
@@ -103,39 +97,62 @@
       <section id="fin-memory" class="content-section">
         <h2 class="section-title">Memory</h2>
         <p>
-          Memory plays a crucial role in FinAgent. It adopts a vector-based storage architecture consisting of three main
-          components: (i) summary of market intelligence, collecting and analyzing key insights from multimodal data; (ii)
-          summary of low-level reflection, identifying potential patterns in price movements; and (iii) summary of high-level
-          reflection, storing lessons from past trading decisions. These summaries are fed into subsequent prompts to maintain
-          context over time.
+          Memory plays a crucial role in multimodal LLM-based financial trading agents. In FinAgent, the memory module adopts a vector-based storage architecture consisting of three main components: (i) <i>summary of market intelligence</i>, which collects, summarizes, analyzes, and extracts key insights from diverse multimodal financial data sources; (ii) <i>summary of low-level reflection</i>, which identifies potential patterns in price movements and derives insights from market intelligence summaries; and (iii) <i>summary of high-level reflection</i>, which stores and reflects on past trading decisions. The stored summaries are subsequently used as inputs for other modules. For example, summaries of both past and latest market intelligence are provided as input data to the reflection prompts.
         </p>
       </section>
 
       <section id="fin-reflection" class="content-section">
         <h2 class="section-title">Reflection</h2>
         <p>
-          FinAgent incorporates a dual-level reflection mechanism. Low-level reflection analyzes price change data to reason
-          about and identify potential patterns in market movements. High-level reflection focuses on past trading decisions,
-          summarizing overarching lessons to recommend improvements and corrective actions.
+          FinAgent incorporates a dual-level reflection mechanism: (i) <i>Low-level reflection</i>, which analyzes price change data to reason about and identify potential patterns in market movements; and (ii) <i>High-level reflection</i>, which focuses on past trading decisions, summarizing overarching lessons from both successes and failures to recommend improvements and suggest corrective trading actions.
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
             <h4>Example of analyzing market dynamics with low-level reflection</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>INPUT:</strong> Summaries of latest market intelligence, summaries of past intelligence, Kline chart, and task instructions to analyze reasoning that led to price movements.</p>
-            <p><strong>OUTPUT:</strong> <em>reasoning:</em> "The short-term price increase of 1.60% for Apple Inc. (AAPL) can be attributed to recent positive market sentiment surrounding Apple's upcoming AR/VR product line..." <em>query:</em> "Short-term growth in AAPL's price is driven by reactions to product excitement and concerns..."</p>
+            <p><strong>INPUT:</strong></p>
+            <p><strong>Summaries of latest market intelligence:</strong> Positive sentiment prevails with expectations around Apple's new AR/VR...The overall market sentiment appears POSITIVE in the medium term...</p>
+            <p><strong>Summaries of past market intelligence:</strong> Apple shows resilience and innovation strength, which are likely to maintain investor confidence and could drive the company's market value upward...</p>
+            <p><strong>Kline chart:</strong></p>
+            <img src="imgs/AAPL_kline.png" style="display: block; margin: 0 auto; width: 80%;" alt="Kline chart." />
+            <p><strong>Task:</strong> As the above Kline chart shows, Short-Term (provided by <i>Market intelligence</i>): Over the past 1 day, the price movement ratio has shown an increase of 1.60%, Medium-Term (provided by <i>Market intelligence</i>): ... You should analyze the above information on the reasoning that lead to past to now price movements...</p>
+            <br>
+            <p><strong>Desired format:</strong><br>
+            <i>reasoning:</i> This field will be used for trading decisions...provide the detailed reasoning to determine how the above information that lead to the price movements... <br>
+            <i>query:</i> (tailored to enable focused retrieval of specific types of information) This field will be used to retrieve past reasoning for price movements...</p>
+            <hr class="detail-divider" />
+            <p><strong>OUTPUT:</strong></p>
+            <strong>reasoning:</strong> The short-term price increase of 1.60% for Apple Inc. (AAPL) can be attributed to recent positive market sentiment surrounding Apple's upcoming AR/VR product line. Over the past week, AAPL has seen a 3.38% rise can be linked to positive expectations of new product releases...</br>
+            <strong>query:</strong> Short-term growth in AAPL's price is driven by reactions to product excitement and concerns, medium-term gains come from the positive...</p>
           </div>
         </div>
+
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
             <h4>Example of analyzing past decisions with high-level reflection</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>INPUT:</strong> Summaries of latest and past market intelligence, reasoning from low-level reflection, historical actions, trading chart, and task instructions.</p>
-            <p><strong>OUTPUT:</strong> <em>reasoning:</em> "The BUY decision made on 2023-06-01 appears to have been correct..." <em>improvement:</em> "Constant vigilance and responsiveness ... setting stop-losses to mitigate risks." <em>summary:</em> "The success of the BUY decision ... underscores the importance of comprehensive market analysis..." <em>query:</em> "The price movement analysis and technical indicators provided a compelling case for a bullish trend..."</p>
+            <p><strong>INPUT:</strong></p>
+            <p><strong>Summaries of latest market intelligence:</strong> Positive sentiment prevails with expectations around Apple’s new AR/VR...The overall market sentiment appears POSITIVE in the medium term...</p>
+            <p><strong>Summaries of past market intelligence:</strong> Apple shows resilience and innovation strength, which are likely to maintain investor confidence and could drive the company’s market value upward... Reasoning of low-level reflection: The short-term price increase of 1.60% for AAPL can be attributed to recent positive market sentiment surrounding Apple’s upcoming AR/VR product line...</p>
+            <p><strong>Historical action and reasoning:</strong> Trading decision and reasoning made by your assistant for the past 14 days are as follows: 2023-06-01. BUY... The analysis indicates a bullish future trend, aligning with the need to consider a BUY in such a scenario...</p>
+            <p><strong>Trading chart:</strong></p>
+            <img src="imgs/AAPL_trading.png" style="display: block; margin: 0 auto; width: 80%;" alt="Trading chart." />
+            <p><strong>Task in desired format:</strong><br>
+            <strong>reasoning:</strong> You should reflect on the decisions made at each time were right or wrong and give reasoning...<br>
+            <strong>improvement:</strong> If there are bad decisions, are you likely to revise them and maximize the return? If so, how would you revise them?...<br>
+            <strong>summary:</strong> Provide a summary of the lessons learnt from the success / mistakes that can be adapted to future trading decisions...<br>
+            <strong>query:</strong> (tailored to enable focused retrieval of specific types of information) This field will be used to retrieve past reflection of the decisions, so you should...
+            <hr class="detail-divider" />
+            <p><strong>OUTPUT:</strong></p>
+            <p><strong>reasoning:</strong> The BUY decision made on 2023-06-01 appears to have been correct. This decision aligned well with the market sentiment and the Kline chart analysis...</br>
+            <strong>improvement:</strong> However, constant vigilance and responsiveness to both upward and downward market signals are crucial. For future scenario balancing, it could involve dynamic trade adjustments such as setting stop-losses to mitigate risks...</br>
+            <strong>summary:</strong> The success of the BUY decision on 2023-06-01 underscores the importance of comprehensive market analysis, incorporating factors such as market sentiment...</br>
+            <strong>query:</strong> The price movement analysis and technical indicators provided a compelling case for a bullish trend, thereby justifying the action to buy...</p>
           </div>
         </div>
+       
       </section>
 
       <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>

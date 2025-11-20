@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <script defer src="script.js"></script>
   <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body data-page="metagpt" data-nav="capabilities">
   <header class="site-header">
     <div class="inner">
@@ -25,67 +27,82 @@
   </header>
 
   <div class="layout">
-        <aside class="chapter-sidebar">
-  <ul class="chapter-links">
-    <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
-    <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
-    <li><a data-chapter-link="capabilities" href="capabilities.html">What LLM Agents Can Do and How They Work</a></li>
-    <li>
-      <span class="chapter-parent">Example</span>
-      <ul class="sub-chapter-links">
-        <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
-        <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
-        <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
-        <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
-        <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
-        <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
-        <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
-        <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
-        <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+    <aside class="chapter-sidebar">
+      <ul class="chapter-links">
+        <li><a data-chapter-link="home" href="index.html">Homepage</a></li>
+        <li><a data-chapter-link="foundations" href="foundations.html">What You Must Know About LLM Agents</a></li>
+        <li><a data-chapter-link="capabilities" href="capabilities.html">What LLM Agents Can Do and How They Work</a>
+        </li>
+        <li>
+          <span class="chapter-parent">Example</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="generative-agents" href="generative-agents.html">Generative Agents</a></li>
+            <li><a data-chapter-link="ai-scientist" href="ai-scientist.html">The AI Scientist</a></li>
+            <li><a data-chapter-link="cellagent" href="cellagent.html">CellAgent</a></li>
+            <li><a data-chapter-link="virtual-lab" href="virtual-lab.html">The Virtual Lab</a></li>
+            <li><a data-chapter-link="metagpt" href="metagpt.html">MetaGPT</a></li>
+            <li><a data-chapter-link="finagent" href="finagent.html">FinAgent</a></li>
+            <li><a data-chapter-link="voyager" href="voyager.html">Voyager</a></li>
+            <li><a data-chapter-link="mobile-agent" href="mobile-agent.html">Mobile Agent</a></li>
+            <li><a data-chapter-link="palm-saycan" href="palm-saycan.html">PaLM-SayCan</a></li>
+          </ul>
+        </li>
+        <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
+        <li>
+          <span class="chapter-parent">Advanced Techniques: What is happening at the frontier</span>
+          <ul class="sub-chapter-links">
+            <li><a data-chapter-link="adv-knowledge" href="advanced-knowledge.html">Injecting Domain Knowledge</a></li>
+            <li><a data-chapter-link="adv-reasoning" href="advanced-reasoning.html">Enhancing Reasoning Capabilities</a>
+            </li>
+            <li><a data-chapter-link="adv-context" href="advanced-context.html">Managing Long Context</a></li>
+            <li><a data-chapter-link="adv-internalize" href="advanced-internalize.html">Internalizing Agent
+                Abilities</a></li>
+            <li><a data-chapter-link="adv-safety" href="advanced-safety.html">Agent Safety</a></li>
+          </ul>
+        </li>
       </ul>
-    </li>
-    <li><a data-chapter-link="practical" href="practical-tips.html">Practical Tips</a></li>
-    <li>
-      <span class="chapter-parent">Advanced Techniques: What is happening at the frontier</span>
-      <ul class="sub-chapter-links">
-        <li><a data-chapter-link="adv-knowledge" href="advanced-knowledge.html">Injecting Domain Knowledge</a></li>
-        <li><a data-chapter-link="adv-reasoning" href="advanced-reasoning.html">Enhancing Reasoning Capabilities</a></li>
-        <li><a data-chapter-link="adv-context" href="advanced-context.html">Managing Long Context</a></li>
-        <li><a data-chapter-link="adv-internalize" href="advanced-internalize.html">Internalizing Agent Abilities</a></li>
-        <li><a data-chapter-link="adv-safety" href="advanced-safety.html">Agent Safety</a></li>
-      </ul>
-    </li>
-  </ul>
-</aside>
+    </aside>
 
 
     <main>
       <section id="meta-overview" class="content-section">
         <h1 class="section-title">MetaGPT: Multi-Agent Framework that Write Code Efficiently</h1>
         <div class="resource-links">
-          <a class="resource-link" href="#" target="_blank" rel="noreferrer">Paper ↗</a>
-          <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">Paper &nearr;</a>
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub &nearr;</a>
         </div>
         <div class="overview-highlight">
           <p>
-            <strong>MetaGPT</strong> is an LLM-based multi-agent framework designed to mirror established software engineering
-            practices. It explicitly assigns specialized roles, structures detailed planning and task decomposition, leverages
-            tools for automated code generation, and facilitates iterative debugging through inter-agent cooperation.
+            MetaGPT is an LLM-based multi-agent framework designed to mirror established software engineering practices.
+            Modern software engineering typically decompose complex workflows into distinct processes to manage
+            complexity, enhance productivity, and ensure software quality. MetaGPT replicates this process by: (i)
+            explicitly assigning specialized roles to agents; (ii) structuring detailed planning and task decomposition;
+            (iii) leveraging tools for automated code generation; and (iv) facilitating iterative debugging through
+            inter-agent cooperation.
           </p>
         </div>
         <figure class="hero-figure">
           <img src="imgs/metagpt.png" alt="MetaGPT agents cooperating on a software project" />
-          <figcaption>MetaGPT mirrors product, architect, engineering, and QA roles to coordinate complex software workflows.</figcaption>
+          <figcaption>The software development SOPs between MetaGPT and real-world human teams. In software engineering,
+            SOPs promote collaboration among various roles. MetaGPT showcases its ability to decompose complex tasks
+            into specific actionable procedures assigned to various roles (e.g., Product Manager, Architect, Engineer,
+            etc.).</figcaption>
         </figure>
-        <p class="capability-lede">The sections below show how MetaGPT combines explicit role-play, structured planning, cooperative publish–subscribe messaging, and rich tool use to ship software.</p>
       </section>
 
       <section id="meta-roleplay" class="content-section">
         <h2 class="section-title">Role-play</h2>
         <p>
-          Role-play serves as a foundational capability within MetaGPT, shaping how agents function and collaborate. Roles
-          include Product Manager, Architect, Project Manager, Engineer, and QA Engineer. Role prompts define name, profile,
-          goal, and constraints that govern responsibilities and interaction standards.
+          Role-play serves as a foundational capability within MetaGPT, shaping how individual agents function and
+          collaborate. In MetaGPT, roles include Product Manager, Architect, Project Manager, Engineer, and QA Engineer,
+          where the Product Manager defines requirements, the Architect designs system structure, the Project Manager
+          oversees workflows, the Engineer implements code, and the QA Engineer ensures quality. Specifically, role-play
+          defines the agent’s identity, responsibilities, and interaction constraints through four components: (i) Name,
+          (ii) Profile, detailing the agent’s professional identity, such as a Product Manager or Software Architect,
+          along with their area of expertise, (iii) Goal, clarifying the agent’s primary tasks within the team, for
+          instance, generating product requirements or performing code reviews; and (iv) Constraint, specifying explicit
+          standards, such as adhering to coding conventions and ensuring modularity, readability, and maintainability.
+          To illustrate this clearly, we take the Product Manager as an example.
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
@@ -94,8 +111,10 @@
           <div class="detail-box__body">
             <p><strong>Name:</strong> Alice</p>
             <p><strong>Profile:</strong> Product Manager</p>
-            <p><strong>Goal:</strong> Create a Product Requirement Document or market research/competitive product research.</p>
-            <p><strong>Constraint:</strong> Utilize the same language as the user requirements for seamless communication.</p>
+            <p><strong>Goal:</strong> Create a Product Requirement Document or market research/competitive product
+              research</p>
+            <p><strong>Constraint:</strong> Utilize the same language as the user requirements for seamless
+              communication</p>
           </div>
         </div>
       </section>
@@ -103,18 +122,37 @@
       <section id="meta-planning" class="content-section">
         <h2 class="section-title">Planning</h2>
         <p>
-          Planning involves systematically decomposing complex software engineering tasks into structured, actionable
-          procedures clearly assigned to specific agent roles. The Product Manager analyzes user requirements and produces a
-          detailed Product Requirements Document (PRD) that defines goals, user stories, competitive analysis, and a prioritized
-          requirement pool, guiding downstream agents.
+          In MetaGPT, planning involves systematically decomposing complex software engineering tasks into structured,
+          actionable procedures clearly assigned to specific agent roles. For example, the Product Manager analyzes user
+          requirements and produces a detailed Product Requirements Document (PRD) that explicitly defines product
+          goals, user stories, and a prioritized requirement pool. This structured PRD serves as a foundational
+          functional breakdown, guiding subsequent agents through detailed system design, task distribution, and code
+          implementation.
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
             <h4>Example of planning for a product requirement document</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>INPUT:</strong> Agent description, high-level user requirements ("Make the 2048 sliding tile number puzzle game"), and the task to generate a structured PRD.</p>
-            <p><strong>OUTPUT:</strong> Product Goals: Simple, responsive, user-friendly 2048 puzzle game for desktop and mobile. User Stories: Quickly start games, slide tiles to merge numbers, view scores, reset easily. Competitive Analysis: Original 2048 is simple but limited; mobile versions have good UI but intrusive ads; Threes! is polished yet paid. Prioritized Requirement Pool: Core gameplay (high), score tracking and reset (medium), responsive design and customization (low).</p>
+            <p><strong>INPUT:</strong></p>
+            <p><strong>Agent description</strong>: You are Alice, a Product Manager responsible for analyzing user
+              requirements and creating clear, structured Product Requirement Documents (PRDs). </p>
+            <p><strong>High-level user requirements</strong>: Make the 2048 sliding tile number puzzle game</p>
+            <p><strong>Task</strong>: Generate a structured Product Requirement Document (PRD) clearly including
+              well-defined product goals that describe the intended outcomes and value proposition, detailed user
+              stories explicitly covering core functionalities from the user's perspective, a comprehensive competitive
+              analysis systematically identifying existing solutions and analyzing their strengths and weaknesses, and a
+              prioritized requirement pool organizing all identified tasks by priority levels</p>
+            <hr class="detail-divider" />
+            <p><strong>OUTPUT:</strong></p>
+            <p><strong>Product Goals</strong>: Simple, responsive, user-friendly 2048 puzzle game for desktop and
+              mobile. </p>
+            <p><strong>User Stories</strong>: Quickly start games, slide tiles to merge numbers, clearly view scores,
+              easily reset.</p>
+            <p><strong>Competitive Analysis</strong>:Original 2048 is simple but limited; mobile versions have good UI
+              but intrusive ads; Threes! is polished yet paid.</p>
+            <p><strong>Prioritized Requirement Pool</strong>: Core gameplay mechanics (high), score tracking and reset
+              functionality (medium), responsive design and customization (low).</p>
           </div>
         </div>
       </section>
@@ -122,21 +160,36 @@
       <section id="meta-coop" class="content-section">
         <h2 class="section-title">Cooperation</h2>
         <p>
-          Cooperation revolves around the shared message pool mechanism. Agents publish structured outputs to the pool,
-          other agents subscribe to relevant messages, and tasks flow through publish-subscribe interactions that preserve
-          division of labor.
+          Cooperation within MetaGPT revolves around the shared message pool mechanism, which enables structured and
+          efficient collaboration among specialized agents. Agents publish their structured outputs, such as product
+          requirement documents and system designs, directly into a global message pool, allowing access by other
+          agents. Agents selectively subscribe to messages relevant to their roles, reducing information overload and
+          ensuring efficient collaboration. This publish-subscribe approach ensures efficient division of labor. Below,
+          we illustrate how the Product Manager assigns tasks to the Architect.
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
             <h4>Example of the product manager assigning tasks to the architect</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>INPUT:</strong> Instruction to publish a message with task details, paths, requirements, and the receiving agent.</p>
+            <p><strong>INPUT:</strong></p>
+            <p><strong>Agent description</strong>: You are Alice, a Product Manager responsible for analyzing user
+              requirements and creating clear, structured Product Requirement Documents (PRDs)</p>
+            <p><strong>Task</strong>: You are the Product Manager, responsible for assigning tasks to the Architect. You
+              must ensure all necessary information is included in your message because you are the sole source of
+              information for your team. When publishing messages: Clearly specify the task. Provide relevant paths,
+              links, environment details, programming languages, frameworks, requirements, and constraints. Address the
+              message explicitly to the receiving agent. Wrap the parameters in JSON format: <code>content</code> for
+              task details, and <code>send_to</code> for the receiving agent's name.</p>
+            <hr class="detail-divider" />
+
             <p><strong>OUTPUT:</strong></p>
-            <pre><code>{
+            <pre><code>
+{
   "content": "Bob (Architect), the PRD is ready at docs/PRD.md. Please draft the system design accordingly.",
   "send_to": "Bob"
-}</code></pre>
+}
+            </code></pre>
           </div>
         </div>
       </section>
@@ -144,24 +197,73 @@
       <section id="meta-tools" class="content-section">
         <h2 class="section-title">Tool use</h2>
         <p>
-          Tool use is essential in MetaGPT. Product Managers employ market analysis utilities, Architects use design tools, and
-          Engineers leverage coding tools (Editor, Terminal, Code Review) to streamline work. Engineers justify each tool call,
-          specify parameters, and execute the associated shell commands.
+          Tool use is essential in software development, enabling efficient interaction with external resources and
+          real-world development environments. In MetaGPT, specialized agents employ dedicated tools aligned with their
+          roles to streamline workflows and reduce errors. Tools are strictly aligned with agent roles: Product Managers
+          employ market analysis tools, Architects utilize design visualization tools, and Engineers leverage coding
+          tools (Editor, Terminal, Code Review) to streamline task execution and reduce errors. Below, we provide a
+          concrete example illustrating how the Engineer agent utilizes these tools in practice.
         </p>
         <div class="detail-box detail-box--has-divider">
           <div class="detail-box__header">
-            <h4>Example of the engineer reviewing the system design using <code>Editor.open_file</code></h4>
+            <h4>Example of the engineer reviewing the system design using the <code>Editor.open_file</code> tool</h4>
           </div>
           <div class="detail-box__body">
-            <p><strong>INPUT:</strong> Agent description for Alex (Engineer), system design from the Architect, current task to implement <code>game.py</code>, and access to Editor/Terminal/CodeReview tools.</p>
-            <p><strong>OUTPUT:</strong> <em>Reason:</em> Before implementing <code>game.py</code>, I need to carefully review the complete system design. <em>Tool:</em> <code>Editor.open_file</code>. <em>Tool Parameters:</em> { "path": "docs/system_design.json" }.</p>
+            <p><strong>INPUT:</strong>
+            <p><strong>Agent description:</strong> You are Alex, an autonomous Engineer who writes elegant,
+              production-ready code for game, app, and web projects. You implement features following system designs,
+              prioritizing code quality, maintainability, and deployment readiness.
+              &lt;System Design provided by the Architect&gt;
+            <p><strong>Current Task:</strong> Implement <code>game.py</code> according to the system design, which
+              includes
+              the Game class with grid management, scoring logic, and tile movement methods. While coding, you have
+              access to specialized tools such as:<br>
+              <strong>Tools for Editor:</strong>
+            <ul>
+              <li><code>open_file(path)</code>: Opens a file and returns its content.</li>
+              <li><code>write(path, content)</code>: Creates or overwrites a file with complete content. ...</li>
+              <li>...</li>
+            </ul>
+
+
+            </p>
+            <p><strong>Tools for Terminal:</strong> <code>run_command(cmd, parameters)</code> executes shell commands
+              and returns output. The <code>cmd</code> parameter accepts any valid shell command (e.g., <code>ls</code>,
+              <code>cat</code>, <code>cd</code>).
+            </p>
+            <p><strong>Tools for CodeReview:</strong> <code>review(patch_path, output_file)</code> analyzes code changes
+              and generates review comments.<br>
+              ...<br>
+              Analyze the current task, then select the most appropriate tool to
+              proceed. Your response must include: (1) <strong>Reason</strong> - explain why you need this tool, (2)
+              <strong>Tool</strong> - specify the
+              exact tool name (e.g., Editor.open_file), and (3) <strong>Tool Parameters</strong> - provide all required
+              parameters in
+              JSON format.
+            </p>
+            <hr class="detail-divider" />
+
+            <p><strong>OUTPUT:</strong> </p>
+            <strong>Reason</strong>: Before implementing <code>game.py</code>, I need to carefully review the
+            complete system design. Opening the system design document allows me to reference these specifications
+            while coding. <br>
+            <p><strong>Tool</strong>: Editor.open_file. <br>
+              <strong>Tool Parameters</strong>: <br><code>
+                { "path": "docs/system_design.json" }
+                </code>
+            </p>
           </div>
         </div>
+        <p>
+          After the LLM determines the required tool and specifies its parameters, the agent runs a shell command to
+          execute the tool and retrieves the requested file’s contents. The obtained file data is then incorporated into
+          the agent’s prompt, thereby improving the reliability of subsequent coding tasks.
+        </p>
       </section>
 
       <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
-        
+
         <pre><code>@article{hu2025llm_agents_tutorial,
   title={A Beginner-Friendly Tutorial on LLM-based Agents},
   author={Hu, Shuyue and Ren, Siyue and Chen, Yang and Mu, Chunjiang and Liu, Jinyi and Cui, Zhiyao and Zhang, Yiqun and Li, Hao and Zhou, Dongzhan and Xu, Jia and Zhang, Qiaosheng and Han, Chu and Zheng, Yan and Hao, Jianye and Wang, Zhen},
@@ -185,10 +287,13 @@
         <li><a class="progress-link" data-target="meta-coop" href="#meta-coop">Cooperation</a></li>
         <li><a class="progress-link" data-target="meta-tools" href="#meta-tools">Tool use</a></li>
       </ul>
-      <div class="progress-meter"><div class="progress-meter-fill"></div></div>
+      <div class="progress-meter">
+        <div class="progress-meter-fill"></div>
+      </div>
     </aside>
   </div>
 
   <footer class="footer">© 2025 Hu et al. · MetaGPT summary.</footer>
 </body>
+
 </html>

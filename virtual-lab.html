@@ -68,8 +68,8 @@
       <section id="vl-overview" class="content-section">
         <h1 class="section-title">The Virtual Lab: AI-human Collaboration in Medical Research</h1>
         <div class="resource-links">
-          <a class="resource-link" href="#" target="_blank" rel="noreferrer">Paper ↗</a>
-          <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">Paper &nearr;</a>
+          <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub &nearr;</a>
         </div>
         <div class="overview-highlight">
           <p>
@@ -88,8 +88,24 @@
         </div>
         <figure class="hero-figure">
           <img src="imgs/virtual-lab.png" alt="Agents collaborating inside the Virtual Lab" />
-          <figcaption>The Virtual Lab has humans define the PI and Scientific Critic, then lets AI agents plan meetings,
-            tools, and scripts for biomedical research.</figcaption>
+          <figcaption>a, The workflow for designing agents in the Virtual Lab. Each agent is specified with four
+            criteria: Title, Expertise, Goal and Role. The human researcher in the Virtual Lab specifies these criteria
+            to define the PI agent and the Scientific Critic agent. Then, given a short description of the project by
+            the human researcher, the PI agent automatically creates several scientist agents to work on the project by
+            specifying their Title, Expertise, Goal and Role, using its own prompt as an example. b, The workflow for a
+            team meeting in the Virtual Lab. The human researcher writes an agenda for the meeting, specifying the topic
+            of discussion. The PI agent begins the meeting by providing initial thoughts and agenda questions as a guide
+            for the remaining agents. Then, over the course of N rounds of discussion, each scientist agent provides its
+            response, followed by a critique by the Scientific Critic agent, with the PI agent then synthesizing the
+            discussion and asking follow-up questions. Finally, after the N rounds of discussion, the PI agent
+            summarizes the discussion and provides an answer regarding the meeting agenda. c, The workflow for an
+            individual meeting. The human researcher writes an agenda for the meeting specifying the topic of
+            discussion. Then, the scientist agent tasked with the individual meeting provides a response to the agenda,
+            which is critiqued by the Scientific Critic. In each round, the scientist agent improves its answer based on
+            feedback from the Scientific Critic. Finally, after the N rounds, the scientist agent provides its final,
+            improved answer.
+
+          </figcaption>
         </figure>
         <p>Key capabilities of the Virtual Lab: </p>
       </section>
@@ -278,13 +294,18 @@
           <div class="detail-box__body">
             <p><strong>INPUT</strong>:</p>
             <p><strong>Project</strong>: You are working on a research project to ... </p>
-            <p><strong>Decision</strong>:Your team previous decided to modify existing nanobodies to improve their binding to the newest variant of the SARS-CoV-2 spike protein..</p>
-            <p><strong>Task</strong><i>(Provided by human researcher)</i>: Now you must use Rosetta to calculate the binding energy of nanobody-antigen complexes. You must do this in <strong>3</strong> parts. First, write a complete RosettaScripts XML file ...</p>
+            <p><strong>Decision</strong>:Your team previous decided to modify existing nanobodies to improve their
+              binding to the newest variant of the SARS-CoV-2 spike protein..</p>
+            <p><strong>Task</strong><i>(Provided by human researcher)</i>: Now you must use Rosetta to calculate the
+              binding energy of nanobody-antigen complexes. You must do this in <strong>3</strong> parts. First, write a
+              complete RosettaScripts XML file ...</p>
             <hr class="detail-divider" />
             <p><strong>OUTPUT</strong>:</p>
-            <p><strong>Part 1</strong>:RosettaScripts XML for Binding Energy Calculation:<br>&lt;xml&gt;<br> ... <br>&lt;/xml&gt;</p>
+            <p><strong>Part 1</strong>:RosettaScripts XML for Binding Energy Calculation:<br>&lt;xml&gt;<br> ...
+              <br>&lt;/xml&gt;
+            </p>
             <p><strong>Part 2</strong>:Rosetta Command Example<br>
-            '''bash rosetta_scripts.default.linuxgccrelease ...'''</p>
+              '''bash rosetta_scripts.default.linuxgccrelease ...'''</p>
             <p><strong>Part 3</strong>:Python Script to Process Score Files<br>import os import pandas as pd ...
             </p>
           </div>

@@ -351,8 +351,8 @@ blockquote {
 
 pre,
 code {
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  background: var(--surface-muted);
+  font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Menlo, Consolas, monospace;
+  /* background: var(--surface-muted); */
   border-radius: 8px;
 }
 
