@@ -94,6 +94,7 @@ img {
 
 .download-btn {
   font-family: var(--font-sans);
+  font-size: 0.95rem;
   background: var(--accent);
   color: #fff;
   border-radius: 999px;
@@ -101,10 +102,18 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.download-btn:hover {
+  color: #fff;
+  background: #157313;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 .download-btn span {
-  font-size: 0.85rem;
+  font-size: inherit;
   opacity: 0.9;
 }
 
