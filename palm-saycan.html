@@ -75,6 +75,7 @@
           <img src="imgs/palm-saycan.png" alt="PaLM-SayCan combining Say and Can scores" />
           <figcaption>LLMs have not interacted with their environment and observed the outcome of their responses, and thus are not grounded in the world. SayCan grounds LLMs via value functions of pretrained skills, allowing them to execute real-world, abstract, long-horizon commands on robots.</figcaption>
         </figure>
+        <p>We will now use examples and prompt templates to illustrate how PaLM-SayCan integrates <strong>planning</strong>, <strong>Tool use</strong>, and <strong>reflection</strong> to produce safe, feasible robot behavior.</p>
       </section>
 
       <section id="saycan-planning" class="content-section">
@@ -104,7 +105,7 @@
       </section>
 
       <section id="saycan-tools" class="content-section">
-        <h2 class="section-title">Skill schema</h2>
+        <h2 class="section-title">Tool use</h2>
         <p>
           SayCan treats low-level abilities as tools that must be grounded in two ways. First, <strong>text-to-skill grounding</strong>: each skill exposes a human-readable name and description (and optional arguments) so the LLM can align language to capabilities. Second, <strong>execution grounding</strong>: each skill has an executor with preconditions and postconditions; execution returns a structured outcome (success/failure and observations) that updates the progress log and the robot's state. Adding capabilities is modular: register a new skill by its name/description, provide (or train) its executor and an affordance estimator, and it immediately becomes available to the planner.
         </p>
@@ -167,7 +168,7 @@
       <ul class="progress-list">
         <li><a class="progress-link" data-target="saycan-overview" href="#saycan-overview">Overview</a></li>
         <li><a class="progress-link" data-target="saycan-planning" href="#saycan-planning">Planning (Say)</a></li>
-        <li><a class="progress-link" data-target="saycan-tools" href="#saycan-tools">Skill schema</a></li>
+        <li><a class="progress-link" data-target="saycan-tools" href="#saycan-tools">Tool use</a></li>
         <li><a class="progress-link" data-target="saycan-reflection" href="#saycan-reflection">Reflection (Can)</a></li>
       </ul>
       <div class="progress-meter"><div class="progress-meter-fill"></div></div>
