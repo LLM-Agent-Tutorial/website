@@ -154,6 +154,11 @@ h6 {
   transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.nav-download-btn {
+  width: 100%;
+  max-width: 260px;
+}
+
 .download-btn:hover {
   color: #fff;
   background: #157313;
@@ -706,8 +711,12 @@ table th {
   }
 
   .download-btn {
-    width: 100%;
     justify-content: center;
+  }
+
+  .nav-download-btn {
+    width: 100%;
+    max-width: 260px;
   }
 
   .main-content {
