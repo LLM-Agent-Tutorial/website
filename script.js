@@ -1,26 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.primary-nav');
+  const nav = document.getElementById('mainNav');
 
   if (navToggle && nav) {
-    navToggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', nav.classList.contains('open'));
-    });
+    const navLinks = nav.querySelectorAll('a');
 
-    nav.addEventListener('click', (event) => {
-      if (event.target instanceof HTMLElement && event.target.tagName === 'A' && nav.classList.contains('open')) {
-        nav.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
+    if (window.bootstrap && typeof bootstrap.Collapse === 'function') {
+      const navCollapse = new bootstrap.Collapse(nav, { toggle: false });
 
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768 && nav.classList.contains('open')) {
-        nav.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
+      navToggle.addEventListener('click', () => {
+        const isShown = nav.classList.contains('show');
+        if (isShown) {
+          navCollapse.hide();
+        } else {
+          navCollapse.show();
+        }
+        navToggle.setAttribute('aria-expanded', (!isShown).toString());
+      });
+
+      navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          if (nav.classList.contains('show')) {
+            navCollapse.hide();
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    } else {
+      navToggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', nav.classList.contains('open'));
+      });
+
+      nav.addEventListener('click', (event) => {
+        if (event.target instanceof HTMLElement && event.target.tagName === 'A' && nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
   }
 
   const navTarget = document.body.dataset.nav || '';
