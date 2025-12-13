@@ -74,13 +74,13 @@
 
     <main class="col-12 col-xl-6 col-xxl-6 order-1 order-xl-2 main-content">
       <section id="mob-overview" class="content-section">
-        <h1 class="section-title">Mobile Agent: Operate the Mobile Phone as Smoothly as a Human</h1>
+        <h1 class="section-title" data-i18n-key="mobile-agent.title">Mobile Agent: Operate the Mobile Phone as Smoothly as a Human</h1>
         <div class="resource-links">
           <a class="resource-link" href="https://arxiv.org/pdf/2406.01014" target="_blank" rel="noreferrer">Paper &nearr;</a>
           <a class="resource-link" href="https://github.com/X-PLUG/MobileAgent" target="_blank" rel="noreferrer">GitHub &nearr;</a>
         </div>
         <div class="overview-highlight">
-          <p>
+          <p data-i18n-key="mobile-agent.overview.p1">
             Mobile agent is designed to assist users by simplifying interactions with mobile devices, making complex
             operations easier and more intuitive. Instead of manually handling intricate tasks or repeatedly switching
             between apps, users simply provide high-level instructions in natural language. The agent then interprets
@@ -91,14 +91,14 @@
         </div>
         <figure class="hero-figure">
           <img src="imgs/mobile-agent.jpg" alt="Mobile Agent executing phone operations" />
-          <figcaption>The framework of Mobile-Agent.</figcaption>
+          <figcaption data-i18n-key="mobile-agent.figcaption">The framework of Mobile-Agent.</figcaption>
         </figure>
-        <p>We will now use examples and prompt templates to illustrate how Mobile Agent brings together <strong>planning</strong>, <strong>tool use</strong>, <strong>reflection</strong>, and <strong>memory</strong> to turn natural-language requests into reliable phone actions.</p>
+        <p data-i18n-key="mobile-agent.overview.p2">We will now use examples and prompt templates to illustrate how Mobile Agent brings together <strong>planning</strong>, <strong>tool use</strong>, <strong>reflection</strong>, and <strong>memory</strong> to turn natural-language requests into reliable phone actions.</p>
       </section>
 
       <section id="mob-planning" class="content-section">
         <h2 class="section-title">Planning</h2>
-        <p>
+        <p data-i18n-key="mobile-agent.planning.p1">
           The agent initiates the task by interpreting the user's instruction in the context of the device's current
           state, typically represented by the latest screenshot. Using this combined understanding, it formulates an
           operational plan and identifies the optimal next action. This planning process effectively translates the
@@ -131,7 +131,7 @@
 
       <section id="mob-tools" class="content-section">
         <h2 class="section-title">Tool use</h2>
-        <p>
+        <p data-i18n-key="mobile-agent.tools.p1">
           After generating the next action, the agent directly inputs this action into an action mapping tool, which
           then converts the natural-language action into executable instructions for the device. An abstract action such
           as Tap(500,800) is transformed by the code translator into low-level commands, for example adb shell input tap
@@ -145,7 +145,7 @@
 
       <section id="mob-reflection" class="content-section">
         <h2 class="section-title">Reflection</h2>
-        <p>
+        <p data-i18n-key="mobile-agent.reflection.p1">
           After each operation is executed, the agent evaluates its effectiveness by comparing the screenshot before and
           after the action. If the outcome aligns with the intended goal, the agent returns to the planning phase for
           the next iteration, continuing this cycle until the entire instruction is successfully completed. If the
@@ -182,7 +182,7 @@
 
       <section id="mob-memory" class="content-section">
         <h2 class="section-title">Memory</h2>
-        <p>
+        <p data-i18n-key="mobile-agent.memory.p1">
           Throughout the process, the agent maintains a memory of task-relevant information that may be required in
           later steps. This includes recording intermediate results and preserving contextual details across
           applications. By recalling such information when necessary, the agent provides continuity for multi-step and
@@ -190,7 +190,7 @@
         </p>
       </section>
 
-      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
+      <p class="citation-intro" data-i18n-key="common.citationIntro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
 
         <pre><code>@article{hu2025llm_agents_tutorial,
@@ -202,15 +202,15 @@
 }</code></pre>
       </section>
       <div class="page-nav">
-        <a class="page-nav-btn" href="index.html">Back to Home</a>
-        <a class="page-nav-btn primary" href="palm-saycan.html">Next</a>
+        <a class="page-nav-btn" href="index.html" data-i18n-key="common.pageNav.backHome">Back to Home</a>
+        <a class="page-nav-btn primary" href="palm-saycan.html" data-i18n-key="common.pageNav.next">Next</a>
       </div>
     </main>
 
     <aside class="progress-sidebar col-12 col-xl-3 col-xxl-3 order-3 order-xl-3">
       <h2>On this page</h2>
       <ul class="progress-list">
-        <li><a class="progress-link" data-target="mob-overview" href="#mob-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="mob-overview" href="#mob-overview" data-i18n-key="common.sidebar.overview">Overview</a></li>
         <li><a class="progress-link" data-target="mob-planning" href="#mob-planning">Planning</a></li>
         <li><a class="progress-link" data-target="mob-tools" href="#mob-tools">Tool use</a></li>
         <li><a class="progress-link" data-target="mob-reflection" href="#mob-reflection">Reflection</a></li>

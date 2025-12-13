@@ -74,13 +74,13 @@
 
     <main class="col-12 col-xl-6 col-xxl-6 order-1 order-xl-2 main-content">
       <section id="voy-overview" class="content-section">
-        <h1 class="section-title">Voyager: Exploring, Learning, and Adapting Autonomously in Minecraft</h1>
+        <h1 class="section-title" data-i18n-key="voyager.title">Voyager: Exploring, Learning, and Adapting Autonomously in Minecraft</h1>
         <div class="resource-links">
           <a class="resource-link" href="https://arxiv.org/pdf/2305.16291" target="_blank" rel="noreferrer">Paper &nearr;</a>
           <a class="resource-link" href="https://github.com/MineDojo/Voyager" target="_blank" rel="noreferrer">GitHub &nearr;</a>
         </div>
         <div class="overview-highlight">
-          <p>
+          <p data-i18n-key="voyager.overview.p1">
             Voyager is designed to enable lifelong learning in the video game Minecraft. Minecraft is a 3D open-world
             sandbox featuring diverse biomes, dynamic day–night cycles, various creatures, and a rich variety of blocks
             and items that can be gathered, crafted, and used for building or exploration. The Voyager's objective is to
@@ -93,16 +93,16 @@
         </div>
         <figure class="hero-figure">
           <img src="imgs/voyager.png" alt="Voyager exploring Minecraft via Mineflayer code" />
-          <figcaption>VOYAGER consists of three key components: an automatic curriculum for open-ended exploration, a
+          <figcaption data-i18n-key="voyager.figcaption">VOYAGER consists of three key components: an automatic curriculum for open-ended exploration, a
             skill library for increasingly complex behaviors, and an iterative prompting mechanism that uses code as
             action space.</figcaption>
         </figure>
-        <p>We will now use examples and prompt templates to illustrate how Voyager applies <strong>planning</strong>, <strong>tool use</strong>, <strong>memory</strong>, and <strong>reflection</strong> to explore Minecraft and grow its skill library autonomously.</p>
+        <p data-i18n-key="voyager.overview.p2">We will now use examples and prompt templates to illustrate how Voyager applies <strong>planning</strong>, <strong>tool use</strong>, <strong>memory</strong>, and <strong>reflection</strong> to explore Minecraft and grow its skill library autonomously.</p>
       </section>
 
       <section id="voy-planning" class="content-section">
         <h2 class="section-title">Planning</h2>
-        <p>
+        <p data-i18n-key="voyager.planning.p1">
           Voyager uses the automatic curriculum module for planning within the game, including automatically setting
           tasks and decomposing high-level tasks into sub-tasks. The automatic curriculum module autonomously generates
           new tasks based on its current abilities and the state of the environment. Then, it decomposes high-level
@@ -147,7 +147,7 @@
 
       <section id="voy-tools" class="content-section">
         <h2 class="section-title">Tool use</h2>
-        <p>
+        <p data-i18n-key="voyager.tools.p1">
           Voyager controls the game character to complete tasks proposed by the automatic curriculum module by
           leveraging the LLM generate action code for the character. The action code is composed of <a
             href="https://mineflayer.com">Mineflayer</a> API functions, which enable the game character to perform
@@ -211,7 +211,7 @@
 
       <section id="voy-memory" class="content-section">
         <h2 class="section-title">Memory</h2>
-        <p>
+        <p data-i18n-key="voyager.memory.p1">
           Voyager exhibits memory through its skill library, which is extensible and stores all verified executable
           programs. The skill library is implemented based on a vector database, enabling Voyager to retrieve similar
           skills when facing new tasks and to compose complex skills through the combination of existing skills. In
@@ -225,7 +225,7 @@
 
       <section id="voy-reflection" class="content-section">
         <h2 class="section-title">Reflection</h2>
-        <p>
+        <p data-i18n-key="voyager.reflection.p1">
           The iterative prompting mchanism endows Voyager with reflection ablitity. After executing each generated
           program, Voyager observes environmental feedback, execution errors and selfverification for checking task
           success. By incorporating signals such as execution errors and success checks, Voyager continuously revises
@@ -267,7 +267,7 @@
         </div>
       </section>
 
-      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
+      <p class="citation-intro" data-i18n-key="common.citationIntro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
 
         <pre><code>@article{hu2025llm_agents_tutorial,
@@ -279,15 +279,15 @@
 }</code></pre>
       </section>
       <div class="page-nav">
-        <a class="page-nav-btn" href="index.html">Back to Home</a>
-        <a class="page-nav-btn primary" href="mobile-agent.html">Next</a>
+        <a class="page-nav-btn" href="index.html" data-i18n-key="common.pageNav.backHome">Back to Home</a>
+        <a class="page-nav-btn primary" href="mobile-agent.html" data-i18n-key="common.pageNav.next">Next</a>
       </div>
     </main>
 
     <aside class="progress-sidebar col-12 col-xl-3 col-xxl-3 order-3 order-xl-3">
       <h2>On this page</h2>
       <ul class="progress-list">
-        <li><a class="progress-link" data-target="voy-overview" href="#voy-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="voy-overview" href="#voy-overview" data-i18n-key="common.sidebar.overview">Overview</a></li>
         <li><a class="progress-link" data-target="voy-planning" href="#voy-planning">Planning</a></li>
         <li><a class="progress-link" data-target="voy-tools" href="#voy-tools">Tool use</a></li>
         <li><a class="progress-link" data-target="voy-memory" href="#voy-memory">Memory</a></li>

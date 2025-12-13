@@ -71,13 +71,13 @@
 
     <main class="col-12 col-xl-6 col-xxl-6 order-1 order-xl-2 main-content">
       <section id="ais-overview" class="content-section">
-        <h1 class="section-title">The AI Scientist: Towards Fully Automated Scientific Research</h1>
+        <h1 class="section-title" data-i18n-key="ai-scientist.title">The AI Scientist: Towards Fully Automated Scientific Research</h1>
         <div class="resource-links">
           <a class="resource-link" href="https://arxiv.org/pdf/2408.06292" target="_blank" rel="noreferrer">Paper &nearr;</a>
           <a class="resource-link" href="https://github.com/SakanaAI/AI-Scientist" target="_blank" rel="noreferrer">GitHub &nearr;</a>
         </div>
         <div class="overview-highlight">
-          <p>
+          <p data-i18n-key="ai-scientist.overview.p1">
             The AI Scientist aims to independently carry out a scientific research process from idea
             generation to paper writing without any human involvement. It produces a research paper in three phases: (1)
             idea generation, (2) experimental iteration, and (3) paper write-up. First, the AI Scientist generate a
@@ -90,15 +90,15 @@
         </div>
         <figure class="hero-figure">
           <img src="imgs/ai-scientist.png" alt="Workflow of the AI Scientist system" />
-          <figcaption>Conceptual illustration of The AI Scientist, an end-to-end LLM-driven scientific discovery process. The AI Scientist first invents and assesses the novelty of a set of ideas. It then determines how to test the hypotheses, including writing the necessary code by editing a codebase powered by recent advances in automated code generation. Afterward, the experiments are automatically executed to collect a set of results consisting of both numerical scores and visual summaries (e.g. plots or tables). The results are motivated, explained, and summarized in a LaTeX report. Finally, The AI Scientist generates an automated review, according to current practice at standard machine learning conferences. The review can be used to either improve the project or as feedback to future generations for open-ended scientific discovery.
+          <figcaption data-i18n-key="ai-scientist.figcaption">Conceptual illustration of The AI Scientist, an end-to-end LLM-driven scientific discovery process. The AI Scientist first invents and assesses the novelty of a set of ideas. It then determines how to test the hypotheses, including writing the necessary code by editing a codebase powered by recent advances in automated code generation. Afterward, the experiments are automatically executed to collect a set of results consisting of both numerical scores and visual summaries (e.g. plots or tables). The results are motivated, explained, and summarized in a LaTeX report. Finally, The AI Scientist generates an automated review, according to current practice at standard machine learning conferences. The review can be used to either improve the project or as feedback to future generations for open-ended scientific discovery.
 </figcaption>
         </figure>
-        <p>We will now use examples and prompt templates to illustrate how the AI Scientist combines <strong>planning</strong>, <strong>tool use</strong>, and <strong>reflection</strong> to carry out research and write papers autonomously.</p>
+        <p data-i18n-key="ai-scientist.overview.p2">We will now use examples and prompt templates to illustrate how the AI Scientist combines <strong>planning</strong>, <strong>tool use</strong>, and <strong>reflection</strong> to carry out research and write papers autonomously.</p>
       </section>
 
       <section id="ais-planning" class="content-section">
         <h2 class="section-title">Planning</h2>
-        <p>
+        <p data-i18n-key="ai-scientist.planning.p1">
           Planning helps the AI Scientist break down a complex goal into smaller, sequential steps. For example, during
           experimental iteration, the AI Scientist plans the experimental steps for each selected idea, writes code and
           conducts experiments according to these plans. In the paper write-up phase, the AI Scientist organizes its
@@ -131,7 +131,7 @@
 
       <section id="ais-tools" class="content-section">
         <h2 class="section-title">Tool use</h2>
-        <p>
+        <p data-i18n-key="ai-scientist.tools.p1">
           In all three phases, the AI Scientist extensively leverages tools. During idea generation, the AI Scientist
           evaluates the novelty of ideas by retrieving literature. It prompts an LLM to formulate search queries (such
           as related paper titles or keyword combinations), and then passes these queries to a built-in Python module
@@ -192,7 +192,7 @@
 
       <section id="ais-reflection" class="content-section">
         <h2 class="section-title">Reflection</h2>
-        <p>
+        <p data-i18n-key="ai-scientist.reflection.p1">
           Human scientific research relies heavily on reflection, and the AI Scientist is no exception. When generating
           ideas, the AI Scientist use self-reflection to refine each proposed idea. During experiment iteration, it
           analyzes the experimental results and adjusts methods accordingly. In paper write-up, the AI Scientist perform
@@ -245,7 +245,7 @@
         </div>
       </section>
 
-      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
+      <p class="citation-intro" data-i18n-key="common.citationIntro">If you find this work helpful, please consider citing our paper:</p>
       <section id="citation" class="citation-block">
         <pre><code>@article{hu2025llm_agents_tutorial,
           title={A Beginner-Friendly Tutorial on LLM-based Agents},
@@ -256,15 +256,15 @@
         }</code></pre>
       </section>
       <div class="page-nav">
-        <a class="page-nav-btn" href="index.html">Back to Home</a>
-        <a class="page-nav-btn primary" href="cellagent.html">Next</a>
+        <a class="page-nav-btn" href="index.html" data-i18n-key="common.pageNav.backHome">Back to Home</a>
+        <a class="page-nav-btn primary" href="cellagent.html" data-i18n-key="common.pageNav.next">Next</a>
       </div>
     </main>
 
     <aside class="progress-sidebar col-12 col-xl-3 col-xxl-3 order-3 order-xl-3">
       <h2>On this page</h2>
       <ul class="progress-list">
-        <li><a class="progress-link" data-target="ais-overview" href="#ais-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="ais-overview" href="#ais-overview" data-i18n-key="common.sidebar.overview">Overview</a></li>
         <li><a class="progress-link" data-target="ais-planning" href="#ais-planning">Planning</a></li>
         <li><a class="progress-link" data-target="ais-tools" href="#ais-tools">Tool use</a></li>
         <li><a class="progress-link" data-target="ais-reflection" href="#ais-reflection">Reflection</a></li>

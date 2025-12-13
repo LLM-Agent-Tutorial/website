@@ -74,13 +74,13 @@
 
     <main class="col-12 col-xl-6 col-xxl-6 order-1 order-xl-2 main-content">
       <section id="meta-overview" class="content-section">
-        <h1 class="section-title">MetaGPT: Multi-Agent Framework that Write Code Efficiently</h1>
+        <h1 class="section-title" data-i18n-key="metagpt.title">MetaGPT: Multi-Agent Framework that Write Code Efficiently</h1>
         <div class="resource-links">
           <a class="resource-link" href="https://arxiv.org/pdf/2308.00352" target="_blank" rel="noreferrer">Paper &nearr;</a>
           <a class="resource-link" href="https://github.com/FoundationAgents/MetaGPT" target="_blank" rel="noreferrer">GitHub &nearr;</a>
         </div>
         <div class="overview-highlight">
-          <p>
+          <p data-i18n-key="metagpt.overview.p1">
             MetaGPT is an LLM-based multi-agent framework designed to mirror established software engineering practices.
             Modern software engineering typically decompose complex workflows into distinct processes to manage
             complexity, enhance productivity, and ensure software quality. MetaGPT replicates this process by: (i)
@@ -91,17 +91,17 @@
         </div>
         <figure class="hero-figure">
           <img src="imgs/metagpt.png" alt="MetaGPT agents cooperating on a software project" />
-          <figcaption>The software development SOPs between MetaGPT and real-world human teams. In software engineering,
+          <figcaption data-i18n-key="metagpt.figcaption">The software development SOPs between MetaGPT and real-world human teams. In software engineering,
             SOPs promote collaboration among various roles. MetaGPT showcases its ability to decompose complex tasks
             into specific actionable procedures assigned to various roles (e.g., Product Manager, Architect, Engineer,
             etc.).</figcaption>
         </figure>
-        <p>We will now use examples and prompt templates to illustrate how MetaGPT leverages <strong>role-play</strong>, <strong>planning</strong>, <strong>cooperation</strong>, and <strong>tool use</strong> to ship software systematically.</p>
+        <p data-i18n-key="metagpt.overview.p2">We will now use examples and prompt templates to illustrate how MetaGPT leverages <strong>role-play</strong>, <strong>planning</strong>, <strong>cooperation</strong>, and <strong>tool use</strong> to ship software systematically.</p>
       </section>
 
       <section id="meta-roleplay" class="content-section">
         <h2 class="section-title">Role-play</h2>
-        <p>
+        <p data-i18n-key="metagpt.roleplay.p1">
           Role-play serves as a foundational capability within MetaGPT, shaping how individual agents function and
           collaborate. In MetaGPT, roles include Product Manager, Architect, Project Manager, Engineer, and QA Engineer,
           where the Product Manager defines requirements, the Architect designs system structure, the Project Manager
@@ -130,7 +130,7 @@
 
       <section id="meta-planning" class="content-section">
         <h2 class="section-title">Planning</h2>
-        <p>
+        <p data-i18n-key="metagpt.planning.p1">
           In MetaGPT, planning involves systematically decomposing complex software engineering tasks into structured,
           actionable procedures clearly assigned to specific agent roles. For example, the Product Manager analyzes user
           requirements and produces a detailed Product Requirements Document (PRD) that explicitly defines product
@@ -168,7 +168,7 @@
 
       <section id="meta-coop" class="content-section">
         <h2 class="section-title">Cooperation</h2>
-        <p>
+        <p data-i18n-key="metagpt.cooperation.p1">
           Cooperation within MetaGPT revolves around the shared message pool mechanism, which enables structured and
           efficient collaboration among specialized agents. Agents publish their structured outputs, such as product
           requirement documents and system designs, directly into a global message pool, allowing access by other
@@ -205,7 +205,7 @@
 
       <section id="meta-tools" class="content-section">
         <h2 class="section-title">Tool use</h2>
-        <p>
+        <p data-i18n-key="metagpt.tools.p1">
           Tool use is essential in software development, enabling efficient interaction with external resources and
           real-world development environments. In MetaGPT, specialized agents employ dedicated tools aligned with their
           roles to streamline workflows and reduce errors. Tools are strictly aligned with agent roles: Product Managers
@@ -270,7 +270,7 @@
         </p>
       </section>
 
-      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
+      <p class="citation-intro" data-i18n-key="common.citationIntro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
 
         <pre><code>@article{hu2025llm_agents_tutorial,
@@ -282,15 +282,15 @@
 }</code></pre>
       </section>
       <div class="page-nav">
-        <a class="page-nav-btn" href="index.html">Back to Home</a>
-        <a class="page-nav-btn primary" href="finagent.html">Next</a>
+        <a class="page-nav-btn" href="index.html" data-i18n-key="common.pageNav.backHome">Back to Home</a>
+        <a class="page-nav-btn primary" href="finagent.html" data-i18n-key="common.pageNav.next">Next</a>
       </div>
     </main>
 
     <aside class="progress-sidebar col-12 col-xl-3 col-xxl-3 order-3 order-xl-3">
       <h2>On this page</h2>
       <ul class="progress-list">
-        <li><a class="progress-link" data-target="meta-overview" href="#meta-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="meta-overview" href="#meta-overview" data-i18n-key="common.sidebar.overview">Overview</a></li>
         <li><a class="progress-link" data-target="meta-roleplay" href="#meta-roleplay">Role-play</a></li>
         <li><a class="progress-link" data-target="meta-planning" href="#meta-planning">Planning</a></li>
         <li><a class="progress-link" data-target="meta-coop" href="#meta-coop">Cooperation</a></li>

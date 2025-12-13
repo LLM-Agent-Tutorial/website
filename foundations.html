@@ -71,8 +71,8 @@
 
     <main class="col-12 col-xl-6 col-xxl-6 order-1 order-xl-2 main-content">
       <section id="llm-basics" class="content-section">
-        <h1 class="section-title">What You Must Know About LLM Agents</h1>
-        <p>
+        <h1 class="section-title" data-i18n-key="foundations.title">What You Must Know About LLM Agents</h1>
+        <p data-i18n-key="foundations.overview.p1">
           Large language models (LLMs), such the GPT, DeepSeek, Gemini, and Claude families, are deep learning models
           with billions of parameters, pre-trained on vast amounts of data. This data, typically sourced from
           human-generated content, includes web pages, codebases, textbooks, etc. Through training on these corpora,
@@ -86,8 +86,8 @@
       </section>
 
       <section id="next-token" class="content-section">
-        <h2 class="section-title">The Principles of LLMs: Next-Token Prediction</h2>
-        <p>
+        <h2 class="section-title" data-i18n-key="foundations.nextToken.title">The Principles of LLMs: Next-Token Prediction</h2>
+        <p data-i18n-key="foundations.nextToken.p1">
           The fundamental operation that drives all LLM usage and applications is <strong>next-token
             prediction</strong>. A token is a basic unit of text that the model processes, which can represent words,
           characters, or subword units. Let <em>x</em> denote the textual input to the model, commonly referred to as
@@ -98,7 +98,7 @@
           token, both the prompt <em>x</em> and the generated tokens \((y_1, y_2, \ldots, y_T)\)lie within a finite
           context window, which determines the maximum length of text the model can use at once.
         </p>
-        <p>
+        <p data-i18n-key="foundations.nextToken.p2">
           LLMs are highly versatile. Due to the nature of next-token prediction, they can perform a wide range of tasks,
           as long as the task and the output can be expressed in text (input x and output y). Today, people can instruct
           LLMs using textual prompts to generate code, solve math problems, answer questions in healthcare, write
@@ -109,8 +109,8 @@
       </section>
 
       <section id="llm-vs-agent" class="content-section">
-        <h2 class="section-title">What Makes an LLM Agent?</h2>
-        <p>
+        <h2 class="section-title" data-i18n-key="foundations.agentDefinition.title">What Makes an LLM Agent?</h2>
+        <p data-i18n-key="foundations.agentDefinition.p1">
           Since there is no unanimous agreement on the definition of agents, the differences between a LLM and a LLM
           agent are often blurred. In contrast to a single prompt-response interaction with an LLM, LLM agents typically
           manage multi-stage tasks that unfold through a structured workflow, rather than a one-shot model invocation.
@@ -121,7 +121,7 @@
         </p>
 
         <h3>Memory</h3>
-        <p>Memory is an agent's capacity to store, recall, and leverage information from prior interactions. Because
+        <p data-i18n-key="foundations.memory.p1">Memory is an agent's capacity to store, recall, and leverage information from prior interactions. Because
           LLMs have finite context windows and often struggle with very long inputs, simply retaining every detail might
           be neither practical nor effective. Memory allows an agent to selectively retain and retrieve information,
           merge similar information to reduce redundancy, reflect on information to distill high-level thoughts that
@@ -130,7 +130,7 @@
           prompt-level memory or in external storage such as databases.</p>
 
         <h3>Role-play</h3>
-        <p>Role-play denotes an agent's capacity to take high-level descriptions (such as demographic information,
+        <p data-i18n-key="foundations.roleplay.p1">Role-play denotes an agent's capacity to take high-level descriptions (such as demographic information,
           professional role, or personality traits) as input, and generate behaviors that consistently reflect
           those attributes. Studies show that prompting an agent to adopt the persona of "a conservative, white, male,
           strong Republican" versus "a liberal, white, female, strong Democrat" elicits sharply different political
@@ -138,7 +138,7 @@
           produces pronounced variations in their willingness to cooperate.</p>
 
         <h3>Planning</h3>
-        <p>Planning is an agent's capacity to decompose a complex task or goal into a coherent sequence of actionable
+        <p data-i18n-key="foundations.planning.p1">Planning is an agent's capacity to decompose a complex task or goal into a coherent sequence of actionable
           sub-tasks or steps. LLMs still struggle with long-horizon tasks that demand multi-step reasoning and
           real-time adaptation. Take "book a flight" as an example: the agent must open an airline or aggregator
           site, enter origin, destination, and dates, compare fares, choose seats, and complete payment. A single error
@@ -147,7 +147,7 @@
           fine-grained details, and reflect on progress, adapting as conditions change.</p>
 
         <h3>Tool use</h3>
-        <p>Tool use refers to an agent's ability to select, compose, and invoke external functions, environments, or
+        <p data-i18n-key="foundations.tooluse.p1">Tool use refers to an agent's ability to select, compose, and invoke external functions, environments, or
           APIs. LLMs are limited by their static training data; they may be imprecise with factual information,
           unreliable in performing calculations, and unaware of events occurring after their training cutoff date. A
           common manifestation of tool use is code generation, where the agent produces executable code that can be run
@@ -159,7 +159,7 @@
           the LLM alone could achieve.</p>
 
         <h3>Cooperation</h3>
-        <p>Cooperation is the ability to cooperate with other agents or humans so that tasks too complex or
+        <p data-i18n-key="foundations.cooperation.p1">Cooperation is the ability to cooperate with other agents or humans so that tasks too complex or
           time-inefficient for single agents can be accomplished effectively. This capability requires more than
           parallel effort. It includes inferring others' goals and intentions, communicating efficiently, dividing
           labor, aligning strategies, fostering trust, and resolving conflicts. Sometimes, it may also require detecting
@@ -167,7 +167,7 @@
           group integrity.</p>
 
         <h3>Reflection</h3>
-        <p>Reflection mirrors the human ability to reconsider past behaviors and judgments to improve future decisions.
+        <p data-i18n-key="foundations.reflection.p1">Reflection mirrors the human ability to reconsider past behaviors and judgments to improve future decisions.
           It empowers agents to critique its performance, diagnose errors or gaps, and revise subsequent actions
           accordingly. Studies show that reflecting on past experience helps LLM agents distill prior interactions into
           more abstract and insightful thoughts, summarize overarching lessons from errors, and learn from mistakes to
@@ -175,7 +175,7 @@
           environments.</p>
       </section>
 
-      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
+      <p class="citation-intro" data-i18n-key="common.citationIntro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
 
         <pre><code>@article{hu2025llm_agents_tutorial,
@@ -187,15 +187,15 @@
 }</code></pre>
       </section>
       <div class="page-nav">
-        <a class="page-nav-btn" href="index.html">Back to Home</a>
-        <a class="page-nav-btn primary" href="capabilities.html">Next</a>
+        <a class="page-nav-btn" href="index.html" data-i18n-key="common.pageNav.backHome">Back to Home</a>
+        <a class="page-nav-btn primary" href="capabilities.html" data-i18n-key="common.pageNav.next">Next</a>
       </div>
     </main>
 
     <aside class="progress-sidebar col-12 col-xl-3 col-xxl-3 order-3 order-xl-3">
       <h2>On this page</h2>
       <ul class="progress-list">
-        <li><a class="progress-link" data-target="llm-basics" href="#llm-basics">Overview</a></li>
+        <li><a class="progress-link" data-target="llm-basics" href="#llm-basics" data-i18n-key="common.sidebar.overview">Overview</a></li>
         <li><a class="progress-link" data-target="next-token" href="#next-token">The Principles of LLMs: Next-Token Prediction</a></li>
         <li><a class="progress-link" data-target="llm-vs-agent" href="#llm-vs-agent">What Makes an LLM Agent?</a></li>
       </ul>

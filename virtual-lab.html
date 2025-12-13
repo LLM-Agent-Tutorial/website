@@ -74,13 +74,13 @@
 
     <main class="col-12 col-xl-6 col-xxl-6 order-1 order-xl-2 main-content">
       <section id="vl-overview" class="content-section">
-        <h1 class="section-title">The Virtual Lab: AI-human Collaboration in Medical Research</h1>
+        <h1 class="section-title" data-i18n-key="virtual-lab.title">The Virtual Lab: AI-human Collaboration in Medical Research</h1>
         <div class="resource-links">
           <a class="resource-link" href="https://www.nature.com/articles/s41586-025-09442-9" target="_blank" rel="noreferrer">Paper &nearr;</a>
           <a class="resource-link" href="https://github.com/zou-group/virtual-lab" target="_blank" rel="noreferrer">GitHub &nearr;</a>
         </div>
         <div class="overview-highlight">
-          <p>
+          <p data-i18n-key="virtual-lab.overview.p1">
             The Virtual Lab facilitates interdisciplinary research through collaboration between AI agents and human
             researchers. Initially, the human researcher defines two primary agents—a Principal Investigator (PI) and a
             Scientific Critic. The PI agent automatically assembles a specialized team of scientific agents tailored to
@@ -96,7 +96,7 @@
         </div>
         <figure class="hero-figure">
           <img src="imgs/virtual-lab.png" alt="Agents collaborating inside the Virtual Lab" />
-          <figcaption>a, The workflow for designing agents in the Virtual Lab. Each agent is specified with four
+          <figcaption data-i18n-key="virtual-lab.figcaption">a, The workflow for designing agents in the Virtual Lab. Each agent is specified with four
             criteria: Title, Expertise, Goal and Role. The human researcher in the Virtual Lab specifies these criteria
             to define the PI agent and the Scientific Critic agent. Then, given a short description of the project by
             the human researcher, the PI agent automatically creates several scientist agents to work on the project by
@@ -115,12 +115,12 @@
 
           </figcaption>
         </figure>
-        <p>We will now use examples and prompt templates to illustrate how the Virtual Lab leverages <strong>role-play</strong>, <strong>reflection</strong>, <strong>cooperation</strong>, and <strong>tool use</strong> to guide AI–human collaboration in research.</p>
+        <p data-i18n-key="virtual-lab.overview.p2">We will now use examples and prompt templates to illustrate how the Virtual Lab leverages <strong>role-play</strong>, <strong>reflection</strong>, <strong>cooperation</strong>, and <strong>tool use</strong> to guide AI–human collaboration in research.</p>
       </section>
 
       <section id="vl-roles" class="content-section">
         <h2 class="section-title">Role-play</h2>
-        <p>
+        <p data-i18n-key="virtual-lab.roleplay.p1">
           The Virtual Lab introduces two key roles: a Principal Investigator (PI) agent acting as the primary
           coordinator, and a Scientific Critic agent that provides critical oversight and identifies potential risks.
           Together, they ensure high-quality decision-making and maintain workflow transparency. Below we use the PI
@@ -144,7 +144,7 @@
 
       <section id="vl-reflection" class="content-section">
         <h2 class="section-title">Reflection</h2>
-        <p>
+        <p data-i18n-key="virtual-lab.reflection.p1">
           Once the human researcher defines a high-level goal, the PI agent determines which specialist scientist agents
           are needed (such as Sequence Designers, Structure Predictors, Energy Evaluators, and Evidence Retrievers) in
           an individual team generation meeting. Individual meetings allow an agent to focus on a specific task, the
@@ -192,7 +192,7 @@
 
       <section id="vl-cooperation" class="content-section">
         <h2 class="section-title">Cooperation</h2>
-        <p>
+        <p data-i18n-key="virtual-lab.cooperation.p1">
           Team meetings involve collaborative discussions among the PI, scientist agents, and the Scientific Critic. The
           human researcher sets an agenda, and the PI initiates the conversation by outlining key questions. Each agent
           then provides their insights in turn. After several discussion rounds, the PI synthesizes the input,
@@ -263,7 +263,7 @@
 
       <section id="vl-tools" class="content-section">
         <h2 class="section-title">Tool use</h2>
-        <p>
+        <p data-i18n-key="virtual-lab.tools.p1">
           After finalizing project details in the team meeting, the agents move forward with the help of human
           researchers to complete the steps of tool generation and tool implementation. In the tool generation phase,
           the agents hold another team meeting to collaboratively choose the computational tools they will use. Here is
@@ -285,7 +285,7 @@
             <p>... Apply AlphaFold or Rosetta to model the 3D structures of the top-ranked nanobody variants ...</p>
           </div>
         </div>
-        <p>
+        <p data-i18n-key="virtual-lab.tools.p2">
           Once the toolset is agreed upon, the implementation phase begins. First, the PI holds an individual meeting to
           assign specific computational tools to each specialist agent. Next, each specialist agent conducts their own
           individual meetings, guided and assisted by the human researcher, to generate structured scripts for the
@@ -321,7 +321,7 @@
       </section>
       </section>
 
-      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
+      <p class="citation-intro" data-i18n-key="common.citationIntro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
 
         <pre><code>@article{hu2025llm_agents_tutorial,
@@ -333,15 +333,15 @@
 }</code></pre>
       </section>
       <div class="page-nav">
-        <a class="page-nav-btn" href="index.html">Back to Home</a>
-        <a class="page-nav-btn primary" href="metagpt.html">Next</a>
+        <a class="page-nav-btn" href="index.html" data-i18n-key="common.pageNav.backHome">Back to Home</a>
+        <a class="page-nav-btn primary" href="metagpt.html" data-i18n-key="common.pageNav.next">Next</a>
       </div>
     </main>
 
     <aside class="progress-sidebar col-12 col-xl-3 col-xxl-3 order-3 order-xl-3">
       <h2>On this page</h2>
       <ul class="progress-list">
-        <li><a class="progress-link" data-target="vl-overview" href="#vl-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="vl-overview" href="#vl-overview" data-i18n-key="common.sidebar.overview">Overview</a></li>
         <li><a class="progress-link" data-target="vl-roles" href="#vl-roles">Role-play</a></li>
         <li><a class="progress-link" data-target="vl-reflection" href="#vl-reflection">Reflection</a></li>
         <li><a class="progress-link" data-target="vl-cooperation" href="#vl-cooperation">Cooperation</a></li>

@@ -74,13 +74,13 @@
 
     <main class="col-12 col-xl-6 col-xxl-6 order-1 order-xl-2 main-content">
       <section id="cell-overview" class="content-section">
-        <h1 class="section-title">CellAgent: Automating Biological Data Analysis through Natural Language</h1>
+        <h1 class="section-title" data-i18n-key="cellagent.title">CellAgent: Automating Biological Data Analysis through Natural Language</h1>
         <div class="resource-links">
           <a class="resource-link" href="https://arxiv.org/pdf/2407.09811" target="_blank" rel="noreferrer">Paper &nearr;</a>
           <a class="resource-link" href="https://github.com/lsq2wal/CellAgent" target="_blank" rel="noreferrer">GitHub &nearr;</a>
         </div>
         <div class="overview-highlight">
-          <p>
+          <p data-i18n-key="cellagent.overview.p1">
             CellAgent is an autonomous, LLM-driven multi-agent framework that, given raw single-cell RNA sequencing
             (scRNA-seq) and spatial transcriptomics (ST) data plus natural language instructions, automates end-to-end
             analysis to deliver high-quality visualizations and processed data outputs. Traditional analysis in this
@@ -92,7 +92,7 @@
         </div>
         <figure class="hero-figure">
           <img src="imgs/cellagent.png" alt="Overview of the CellAgent pipeline" />
-          <figcaption>Schematic of the CellAgent Framework. a, Example of user input received by the CellAgent,
+          <figcaption data-i18n-key="cellagent.figcaption">Schematic of the CellAgent Framework. a, Example of user input received by the CellAgent,
             comprising single-cell data and user-provided text information. b, Upon receiving user input, the Planner
             role first parses user intent and decomposes the task into subtasks. c, Illustration of final results,
             including results of individual subtasks and the final task outcome. d, Detailed view of the CellAgent's
@@ -105,11 +105,11 @@
             evaluation of results under multiple solutions, the Evaluator aggregates results to obtain the final outcome
             of this step.</figcaption>
         </figure>
-        <p>We will now use examples and prompt templates to illustrate how CellAgent leverages <strong>role-play</strong>, <strong>planning</strong>, <strong>tool use</strong>, <strong>reflection</strong>, <strong>cooperation</strong>, and <strong>memory</strong> to automate end-to-end biological analysis.</p>
+        <p data-i18n-key="cellagent.overview.p2">We will now use examples and prompt templates to illustrate how CellAgent leverages <strong>role-play</strong>, <strong>planning</strong>, <strong>tool use</strong>, <strong>reflection</strong>, <strong>cooperation</strong>, and <strong>memory</strong> to automate end-to-end biological analysis.</p>
 
       <section id="cell-roles" class="content-section">
         <h2 class="section-title">Role-play</h2>
-        <p>
+        <p data-i18n-key="cellagent.roleplay.p1">
           CellAgent's architecture is built on a clear division of labor among three specialized agents: a
           <strong>Planner</strong>, an
           <strong>Executor</strong>, and an <strong>Evaluator</strong>. Each agent has a distinct role modeled after the
@@ -177,7 +177,7 @@
 
       <section id="cell-planning" class="content-section">
         <h2 class="section-title">Planning</h2>
-        <p>
+        <p data-i18n-key="cellagent.planning.p1">
           Planning in CellAgent is a hierarchical process managed by the Planner agent. Upon receiving a user's request
           in natural language, the Planner leverages its expert-curated knowledge (as given in their role-play prompt
           shown above) to decompose the complex task into a series of well-defined, sequential sub-tasks. This ensures
@@ -210,7 +210,7 @@
 
       <section id="cell-tools" class="content-section">
         <h2 class="section-title">Tool use</h2>
-        <p>
+        <p data-i18n-key="cellagent.tools.p1">
           The Executor agent is equipped with a comprehensive, expert-curated toolkit named scOmni. This toolkit
           consolidates a wide range of essential software for single-cell analysis (e.g., Scanpy, CellTypist, Harmony)
           and provides detailed documentation on their usage. The Executor intelligently select the most appropriate
@@ -242,7 +242,7 @@
 
       <section id="cell-reflection" class="content-section">
         <h2 class="section-title">Reflection</h2>
-        <p>
+        <p data-i18n-key="cellagent.reflection.p1">
           CellAgent incorporates a self-reflective optimization mechanism driven by the Evaluator agent. After the Executor runs a piece of code, the Evaluator assesses the quality and correctness of the output, such as plots or statistical results. This process replaces traditional manual assessment. If the results are suboptimal (e.g., poor cell clustering, insufficient batch correction), the Evaluator provides critical feedback and suggests corrective actions, such as adjusting hyperparameters or trying an alternative tool. This iterative loop of execution and reflection ensures the final results are robust and accurate.
         </p>
         <div class="detail-box detail-box--has-divider">
@@ -264,19 +264,19 @@
 
       <section id="cell-cooperation" class="content-section">
         <h2 class="section-title">Cooperation</h2>
-        <p>
+        <p data-i18n-key="cellagent.cooperation.p1">
           Cooperation in CellAgent follows a structured, hierarchical workflow rather than a conversational model. The agents coordinate by passing structured information sequentially. The Planner creates a high-level plan and passes the first sub-task to the Executor. The Executor completes the subtask and hands its result (e.g., a processed data object and visualizations) to the Evaluator. The Evaluator provides feedback to the Executor, which may trigger a refinement of the current sub-task. Once a subtask is successfully completed, the Executor proceeds to the next one in the plan, ensuring an orderly and systematic progression through the entire analysis.
         </p>
       </section>
 
       <section id="cell-memory" class="content-section">
         <h2 class="section-title">Memory</h2>
-        <p>
+        <p data-i18n-key="cellagent.memory.p1">
           To enable efficient cooperation among agents and maintain context throughout a complex, multi-step analysis, CellAgent employs a global and local integrative memory control mechanism. This system systematically stores and manages historical information to optimize retrieval efficiency and enhance task execution. Global Memory maintains the high-level context, storing the complete analytical plan generated by the Planner and the final result for each step. This ensures all agent actions remain aligned with the overall scientific objective. Local Memory, in contrast, captures the operational details within each sub-task, including the specific code, parameters, and feedback from the Evaluator. This Memory mechanism is essential for ensuring consistency between sequential steps and enabling the iterative, self-reflective optimization loop.
         </p>
       </section>
 
-      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
+      <p class="citation-intro" data-i18n-key="common.citationIntro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
 
         <pre><code>@article{hu2025llm_agents_tutorial,
@@ -288,15 +288,15 @@
 }</code></pre>
       </section>
       <div class="page-nav">
-        <a class="page-nav-btn" href="index.html">Back to Home</a>
-        <a class="page-nav-btn primary" href="virtual-lab.html">Next</a>
+        <a class="page-nav-btn" href="index.html" data-i18n-key="common.pageNav.backHome">Back to Home</a>
+        <a class="page-nav-btn primary" href="virtual-lab.html" data-i18n-key="common.pageNav.next">Next</a>
       </div>
     </main>
 
     <aside class="progress-sidebar col-12 col-xl-3 col-xxl-3 order-3 order-xl-3">
       <h2>On this page</h2>
       <ul class="progress-list">
-        <li><a class="progress-link" data-target="cell-overview" href="#cell-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="cell-overview" href="#cell-overview" data-i18n-key="common.sidebar.overview">Overview</a></li>
         <li><a class="progress-link" data-target="cell-roles" href="#cell-roles">Role-play</a></li>
         <li><a class="progress-link" data-target="cell-planning" href="#cell-planning">Planning</a></li>
         <li><a class="progress-link" data-target="cell-tools" href="#cell-tools">Tool use</a></li>

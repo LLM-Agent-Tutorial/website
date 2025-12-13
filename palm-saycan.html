@@ -69,26 +69,26 @@
 
     <main class="col-12 col-xl-6 col-xxl-6 order-1 order-xl-2 main-content">
       <section id="saycan-overview" class="content-section">
-        <h1 class="section-title">PaLM-SayCan: A Clear, Grounded Agent Pattern</h1>
+        <h1 class="section-title" data-i18n-key="palm-saycan.title">PaLM-SayCan: A Clear, Grounded Agent Pattern</h1>
         <div class="resource-links">
           <a class="resource-link" href="https://arxiv.org/pdf/2204.01691" target="_blank" rel="noreferrer">Paper &nearr;</a>
           <a class="resource-link" href="https://say-can.github.io/" target="_blank" rel="noreferrer">Website &nearr;</a>
         </div>
         <div class="overview-highlight">
-          <p>
+          <p data-i18n-key="palm-saycan.overview.p1">
             Embodied agents must turn open-ended language into safe, effective behavior amid partial observability, long horizons, hardware limits, and real-time uncertainty. Typical failures include vague plans that ignore geometry, hallucinated capabilities the robot does not have, and unsafe actions a robot cannot execute. PaLM-SayCan addresses these issues by separating high-level reasoning from low-level feasibility. At each step it asks: <i>What is useful to do next</i>? (Say) and <i>What can the robot actually do now?</i> (Can). Only actions that are both useful and feasible are executed. At decision time, the agent takes the user's instruction, its current state, and a library of named skills. The LLM ranks the skills by how helpful each one would be right now (<i>Say</i>). A pre-trained affordance model then estimates how likely each skill is to succeed in the current scene (<i>Can</i>). The system combines usefulness and feasibility, executes the top skill, logs the outcome, updates state, and repeats until the goal is reached or no safe, feasible action remains.
           </p>
         </div>
         <figure class="hero-figure">
           <img src="imgs/palm-saycan.png" alt="PaLM-SayCan combining Say and Can scores" />
-          <figcaption>LLMs have not interacted with their environment and observed the outcome of their responses, and thus are not grounded in the world. SayCan grounds LLMs via value functions of pretrained skills, allowing them to execute real-world, abstract, long-horizon commands on robots.</figcaption>
+          <figcaption data-i18n-key="palm-saycan.figcaption">LLMs have not interacted with their environment and observed the outcome of their responses, and thus are not grounded in the world. SayCan grounds LLMs via value functions of pretrained skills, allowing them to execute real-world, abstract, long-horizon commands on robots.</figcaption>
         </figure>
-        <p>We will now use examples and prompt templates to illustrate how PaLM-SayCan integrates <strong>planning</strong>, <strong>Tool use</strong>, and <strong>reflection</strong> to produce safe, feasible robot behavior.</p>
+        <p data-i18n-key="palm-saycan.overview.p2">We will now use examples and prompt templates to illustrate how PaLM-SayCan integrates <strong>planning</strong>, <strong>Tool use</strong>, and <strong>reflection</strong> to produce safe, feasible robot behavior.</p>
       </section>
 
       <section id="saycan-planning" class="content-section">
         <h2 class="section-title">Planning (Say)</h2>
-        <p>
+        <p data-i18n-key="palm-saycan.planning.p1">
           The LLM acts as a <i>semantic planner over a fixed skill set</i>. It does not invent new primitives; it scores which provided skill is most useful now, optionally revealing short reasoning for interpretability.
         </p>
         <div class="detail-box detail-box--has-divider">
@@ -114,7 +114,7 @@
 
       <section id="saycan-tools" class="content-section">
         <h2 class="section-title">Tool use</h2>
-        <p>
+        <p data-i18n-key="palm-saycan.tools.p1">
           SayCan treats low-level abilities as tools that must be grounded in two ways. First, <strong>text-to-skill grounding</strong>: each skill exposes a human-readable name and description (and optional arguments) so the LLM can align language to capabilities. Second, <strong>execution grounding</strong>: each skill has an executor with preconditions and postconditions; execution returns a structured outcome (success/failure and observations) that updates the progress log and the robot's state. Adding capabilities is modular: register a new skill by its name/description, provide (or train) its executor and an affordance estimator, and it immediately becomes available to the planner.
         </p>
         <div class="detail-box detail-box--has-divider">
@@ -134,7 +134,7 @@
 
       <section id="saycan-reflection" class="content-section">
         <h2 class="section-title">Reflection (Can)</h2>
-        <p>
+        <p data-i18n-key="palm-saycan.reflection.p1">
           Reflection is the feasibility check that keeps the plan honest. For each available skill, a pre-trained affordance function (learned from robot experience) estimates the likelihood of success in the current scene. Unlike the "Say" step, the "Can" step is not generated by an LLM. Instead, it is computed by a pre-trained affordance model. In the original SayCan implementation, this model is a languageconditioned value function. This value function is trained on a large dataset of real-world robot rollouts from task execution. Its specific function is to take the robot's current observation state and a natural language description of a skill (e.g., "pick up the apple") as input. It then outputs a scalar score that predicts the expected probability of successfully executing that skill. In the final decision-making phase, the system integrates the outputs from both modules: "Say" (LLM) provides the linguistic usefulness probability for each skill, and "Can" (Affordance Model) provides the physical feasibility probability for each skill. The system multiplies these two scores to obtain a final score for each skill, ultimately selecting the skill with the highest score for execution.
         </p>
         <div class="detail-box detail-box--has-divider">
@@ -154,7 +154,7 @@
         </div>
       </section>
 
-      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
+      <p class="citation-intro" data-i18n-key="common.citationIntro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
         
         <pre><code>@article{hu2025llm_agents_tutorial,
@@ -166,15 +166,15 @@
 }</code></pre>
       </section>
       <div class="page-nav">
-        <a class="page-nav-btn" href="index.html">Back to Home</a>
-        <a class="page-nav-btn primary" href="practical-tips.html">Next</a>
+        <a class="page-nav-btn" href="index.html" data-i18n-key="common.pageNav.backHome">Back to Home</a>
+        <a class="page-nav-btn primary" href="practical-tips.html" data-i18n-key="common.pageNav.next">Next</a>
       </div>
     </main>
 
     <aside class="progress-sidebar col-12 col-xl-3 col-xxl-3 order-3 order-xl-3">
       <h2>On this page</h2>
       <ul class="progress-list">
-        <li><a class="progress-link" data-target="saycan-overview" href="#saycan-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="saycan-overview" href="#saycan-overview" data-i18n-key="common.sidebar.overview">Overview</a></li>
         <li><a class="progress-link" data-target="saycan-planning" href="#saycan-planning">Planning (Say)</a></li>
         <li><a class="progress-link" data-target="saycan-tools" href="#saycan-tools">Tool use</a></li>
         <li><a class="progress-link" data-target="saycan-reflection" href="#saycan-reflection">Reflection (Can)</a></li>

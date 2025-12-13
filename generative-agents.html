@@ -71,14 +71,14 @@
 
     <main class="col-12 col-xl-6 col-xxl-6 order-1 order-xl-2 main-content">
       <section id="overview" class="content-section">
-        <h1 class="section-title">Generative Agents: Simulacra of Believable Human Behaviors</h1>
+        <h1 class="section-title" data-i18n-key="generative-agents.title">Generative Agents: Simulacra of Believable Human Behaviors</h1>
         <div class="resource-links">
           <a class="resource-link" href="https://arxiv.org/pdf/2304.03442" target="_blank" rel="noreferrer">Paper &nearr;</a>
           <a class="resource-link" href="https://github.com/joonspk-research/generative_agents" target="_blank" rel="noreferrer">GitHub &nearr;</a>
         </div>
 
         <div class="overview-highlight">
-          <p>
+          <p data-i18n-key="generative-agents.overview.p1">
             Generative Agents provides an LLM-based agent architecture designed to simulate human behaviors within a
             sandbox environment. Because human behavior is inherently vast, dynamic, and contextdependent, traditional
             agents often struggle to produce behavior that appears genuinely human believable. Generative Agents address
@@ -90,12 +90,12 @@
 
         <figure class="hero-figure">
           <img src="imgs/generative-agents.png" alt="Illustration of generative agents" />
-          <figcaption>Generative agents are presented as believable simulacra of human behavior for interactive
+          <figcaption data-i18n-key="generative-agents.figcaption">Generative agents are presented as believable simulacra of human behavior for interactive
             applications. In this work, the authors demonstrate generative agents by populating a sandbox environment,
             reminiscent of The Sims, with twenty-five agents. Users are able to observe and intervene as the agents plan
             their days, share news, form relationships, and coordinate group activities.</figcaption>
         </figure>
-        <p>We will now use examples and prompt templates to illustrate how Generative Agents leverage
+        <p data-i18n-key="generative-agents.overview.p2">We will now use examples and prompt templates to illustrate how Generative Agents leverage
           <strong>role-play</strong>, <strong>memory</strong>, <strong>planning</strong>, and
           <strong>reflection</strong> to perform credible social simulations.
         </p>
@@ -104,7 +104,7 @@
       <section id="role-play" class="content-section">
         <h2 class="section-title">Role-Play</h2>
         <!-- <h3>Role-play prompts</h3> -->
-        <p>
+        <p data-i18n-key="generative-agents.roleplay.p1">
           This capability is crucial for generative agents, as their high-level agent descriptions shape the types of
           agents they become. The agent descriptions are composed of three aspects: (i) basic information, which
           specifies attributes such as the agent's name, age, and innate traits; (ii) current state, which indicates
@@ -137,7 +137,7 @@
 
       <section id="memory" class="content-section">
         <h2 class="section-title">Memory</h2>
-        <p>
+        <p data-i18n-key="generative-agents.memory.p1">
           Memory in generative agents is stored in a JSON-format database that records and retrieves past information,
           ensuring consistency with prior experiences. Agent memory consists of three types: (i) event, which records
           observations of the environment or other agents (e.g., "Isabella Rodriguez is packing her bag"); (ii) chat,
@@ -169,7 +169,7 @@
 
       <section id="reflection" class="content-section">
         <h2 class="section-title">Reflection</h2>
-        <p>
+        <p data-i18n-key="generative-agents.reflection.p1">
           Over time, an agent's memory may accumulate excessive and redundant records; to address this, the agent can
           reflect on extended chats and summarizes them into higher-level thoughts. Below is a prompt template for
           condensing the conversation between Isabella and Francisco about preparing for the Valentine's Day party into
@@ -205,7 +205,7 @@
 
       <section id="planning" class="content-section">
         <h2 class="section-title">Planning</h2>
-        <p>
+        <p data-i18n-key="generative-agents.planning.p1">
           Plans specify a future sequence of actions that promote consistent behavior over time. In generative agents, a
           daily plan is generated based on the agent's character profile, covering its basic attributes, current state,
           and lifestyle. Each daily plan comprises ordered entries, each with a location, start time, and duration.
@@ -248,7 +248,7 @@
 
 
 
-      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
+      <p class="citation-intro" data-i18n-key="common.citationIntro">If you find this work helpful, please consider citing our paper:</p>
       <section id="citation" class="citation-block">
         <pre><code>@article{hu2025llm_agents_tutorial,
           title={A Beginner-Friendly Tutorial on LLM-based Agents},
@@ -259,15 +259,15 @@
         }</code></pre>
       </section>
       <div class="page-nav">
-        <a class="page-nav-btn" href="index.html">Back to Home</a>
-        <a class="page-nav-btn primary" href="ai-scientist.html">Next</a>
+        <a class="page-nav-btn" href="index.html" data-i18n-key="common.pageNav.backHome">Back to Home</a>
+        <a class="page-nav-btn primary" href="ai-scientist.html" data-i18n-key="common.pageNav.next">Next</a>
       </div>
     </main>
 
     <aside class="progress-sidebar col-12 col-xl-3 col-xxl-3 order-3 order-xl-3">
       <h2>On this page</h2>
       <ul class="progress-list">
-        <li><a class="progress-link" data-target="overview" href="#overview">Overview</a></li>
+        <li><a class="progress-link" data-target="overview" href="#overview" data-i18n-key="common.sidebar.overview">Overview</a></li>
         <li><a class="progress-link" data-target="role-play" href="#role-play">Role-Play</a></li>
         <li><a class="progress-link" data-target="memory" href="#memory">Memory</a></li>
         <li><a class="progress-link" data-target="reflection" href="#reflection">Reflection</a></li>

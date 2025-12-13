@@ -69,26 +69,26 @@
 
     <main class="col-12 col-xl-6 col-xxl-6 order-1 order-xl-2 main-content">
       <section id="fin-overview" class="content-section">
-        <h1 class="section-title">FinAgent: A Multimodal Foundation Agent for Financial Trading</h1>
+        <h1 class="section-title" data-i18n-key="finagent.title">FinAgent: A Multimodal Foundation Agent for Financial Trading</h1>
         <div class="resource-links">
           <a class="resource-link" href="https://arxiv.org/pdf/2402.18485" target="_blank" rel="noreferrer">Paper &nearr;</a>
           <a class="resource-link" href="#" target="_blank" rel="noreferrer">GitHub &nearr;</a>
         </div>
         <div class="overview-highlight">
-          <p>
+          <p data-i18n-key="finagent.overview.p1">
             FinAgent is a multimodal foundation agent designed for financial trading that addresses adaptability and generalization through three key components: (i) a market intelligence module, extracting and summarizing key insights from diverse market information, including daily updates on stock news, prices, and monthly and quarterly financial reports; (ii) a reflection module, performing dual-level reflection on market dynamics and past decisions; and (iii) a tool-augmented decision-making module, enhancing trading actions through expert-informed guidance.
           </p>
         </div>
         <figure class="hero-figure">
           <img src="imgs/finagent.png" alt="FinAgent synthesizing market intelligence and reflections" />
-          <figcaption>The overall architecture of FinAgent. The ordinal numbers in the figure represent the order of execution, where augmented tools are implemented with the decision-making module.</figcaption>
+          <figcaption data-i18n-key="finagent.figure.caption">The overall architecture of FinAgent. The ordinal numbers in the figure represent the order of execution, where augmented tools are implemented with the decision-making module.</figcaption>
         </figure>
-        <p>We will now use examples and prompt templates to illustrate how FinAgent relies on <strong>role-play</strong>, <strong>memory</strong>, and <strong>reflection</strong> to make informed trading decisions.</p>
+        <p data-i18n-key="finagent.overview.p2">We will now use examples and prompt templates to illustrate how FinAgent relies on <strong>role-play</strong>, <strong>memory</strong>, and <strong>reflection</strong> to make informed trading decisions.</p>
       </section>
 
       <section id="fin-role" class="content-section">
         <h2 class="section-title">Role-play</h2>
-        <p>
+        <p data-i18n-key="finagent.roleplay.p1">
           FinAgent is guided by a high-level role description that ensures consistent expertise in market analysis and financial decision-making. This role-play specification contains three aspects: the definition of the agent's role, the context of the financial market environment, and the agent's analytical capabilities for trading.
         </p>
         <div class="detail-box detail-box--has-divider">
@@ -105,14 +105,14 @@
 
       <section id="fin-memory" class="content-section">
         <h2 class="section-title">Memory</h2>
-        <p>
+        <p data-i18n-key="finagent.memory.p1">
           Memory plays a crucial role in multimodal LLM-based financial trading agents. In FinAgent, the memory module adopts a vector-based storage architecture consisting of three main components: (i) <i>summary of market intelligence</i>, which collects, summarizes, analyzes, and extracts key insights from diverse multimodal financial data sources; (ii) <i>summary of low-level reflection</i>, which identifies potential patterns in price movements and derives insights from market intelligence summaries; and (iii) <i>summary of high-level reflection</i>, which stores and reflects on past trading decisions. The stored summaries are subsequently used as inputs for other modules. For example, summaries of both past and latest market intelligence are provided as input data to the reflection prompts.
         </p>
       </section>
 
       <section id="fin-reflection" class="content-section">
         <h2 class="section-title">Reflection</h2>
-        <p>
+        <p data-i18n-key="finagent.reflection.p1">
           FinAgent incorporates a dual-level reflection mechanism: (i) <i>Low-level reflection</i>, which analyzes price change data to reason about and identify potential patterns in market movements; and (ii) <i>High-level reflection</i>, which focuses on past trading decisions, summarizing overarching lessons from both successes and failures to recommend improvements and suggest corrective trading actions.
         </p>
         <div class="detail-box detail-box--has-divider">
@@ -164,7 +164,7 @@
        
       </section>
 
-      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
+      <p class="citation-intro" data-i18n-key="common.citationIntro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
         
         <pre><code>@article{hu2025llm_agents_tutorial,
@@ -176,15 +176,15 @@
 }</code></pre>
       </section>
       <div class="page-nav">
-        <a class="page-nav-btn" href="index.html">Back to Home</a>
-        <a class="page-nav-btn primary" href="voyager.html">Next</a>
+        <a class="page-nav-btn" href="index.html" data-i18n-key="common.pageNav.backHome">Back to Home</a>
+        <a class="page-nav-btn primary" href="voyager.html" data-i18n-key="common.pageNav.next">Next</a>
       </div>
     </main>
 
     <aside class="progress-sidebar col-12 col-xl-3 col-xxl-3 order-3 order-xl-3">
       <h2>On this page</h2>
       <ul class="progress-list">
-        <li><a class="progress-link" data-target="fin-overview" href="#fin-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="fin-overview" href="#fin-overview" data-i18n-key="common.sidebar.overview">Overview</a></li>
         <li><a class="progress-link" data-target="fin-role" href="#fin-role">Role-play</a></li>
         <li><a class="progress-link" data-target="fin-memory" href="#fin-memory">Memory</a></li>
         <li><a class="progress-link" data-target="fin-reflection" href="#fin-reflection">Reflection</a></li>

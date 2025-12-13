@@ -70,32 +70,32 @@
 
     <main class="col-12 col-xl-6 col-xxl-6 order-1 order-xl-2 main-content">
       <section id="topic-overview" class="content-section">
-        <h1 class="section-title">Enhancing Reasoning Capabilities</h1>
-        <p>
+        <h1 class="section-title" data-i18n-key="adv-reasoning.title">Enhancing Reasoning Capabilities</h1>
+        <p data-i18n-key="adv-reasoning.overview.p1">
           Reasoning underpins many core agent abilities, including planning, tool use, and cooperation. Recent advances have significantly strengthened the reasoning capabilities of LLMs. For example, OpenAI's oseries and DeepSeek-R1 are LLMs specifically enhanced for reasoning. Compared with standard LLMs (such as the GPT-4 series) from the same providers, these models are explicitly trained to perform multistep thinking before producing an answer. As a result, they often demonstrate superior performance on complex tasks such as mathematics and programming, though they also tend to produce substantially longer outputs and consume more tokens.
         </p>
       </section>
 
       <section id="chain-of-thought" class="content-section">
         <h2 class="section-title">Chain-of-Thought</h2>
-        <p>
+        <p data-i18n-key="adv-reasoning.cot.p1">
           This technique is the most simple technique for enhancing a model's reasoning ability. It encourages models to generate intermediate reasoning steps by adding a simple instruction to the prompt—"Let's think step by step". This prompt guides the model to engage in multi-step reasoning before arriving at its final answer, rather than responding directly. Despite its simplicity, this method yields substantial improvements in reasoning performance. Building on this, long CoT extends the depth and complexity of reasoning traces by encouraging models to elaborate over multiple stages, simulate nested sub-decisions, and maintain coherence across extended contexts. Self-consistency aggregates reasoning from multiple CoT samples to increase reliability, while Tree-of-Thoughts (ToT)generalizes CoT by searching over multiple reasoning paths before settling on a final solution.
         </p>
       </section>
       <section id="test-time-scaling" class="content-section">
         <h2 class="section-title">Test-Time Scaling</h2>
-        <p>
+        <p data-i18n-key="adv-reasoning.tts.p1">
           Test Time Scaling (TTS) is another simple yet powerful strategy for enhancing the reasoning capabilities of LLMs at inference time, without requiring retraining or architectural changes. The core idea is to generate multiple reasoning samples–such as diverse CoT traces–and select the most consistent or confident output. This leverages the model's ability to explore varied reasoning paths and self-correct through redundancy. Two basic and popular TTS methods are Beam Search and Monte Carlo Tree Search (MCTS). Beam Search maintains a fixed number of top candidate sequences based on likelihood scores, promoting diversity while preserving high-probability paths. MCTS adaptively explores the reasoning space by simulating reasoning paths and using statistical heuristics to guide search toward promising paths. These techniques allow LLMs to scale their deliberative capacity, improving reliability and reducing hallucinations in tasks that demand multi-step reasoning, such as math word problems, commonsense inference, and strategic planning.
         </p>
       </section>
       <section id="reinforcement-learning" class="content-section">
         <h2 class="section-title">Reinforcement Learning</h2>
-        <p>
+        <p data-i18n-key="adv-reasoning.rl.p1">
           When one wants to enhance the reasoning capability of LLMs at training time, the technique of Reinforcement learning (RL) provides an almost standard approach. sRL enables the model to learn from experience by exploring alternative reasoning paths and improving through reward signals. These rewards may be verifiable, when grounded in objective correctness (e.g., comparing against labeled solutions), or they may quantify alignment with human preferences, when derived from human feedback. For example, REINFORCE is an early RL method that realized this idea in LLMs. More recently, advanced techniques have built on this foundation to offer greater stability and efficiency. Proximal Policy Optimization (PPO) emphasizes training stability, while Direct Preference Optimization (DPO) offers a way to directly align with human preference without explicit reward signals. Group Relative Policy Optimization (GRPO) enhances reasoning by contrasting the reward-gain across a relatively small group of reasoning paths, offering more computational efficiency.
         </p>
       </section>
 
-      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
+      <p class="citation-intro" data-i18n-key="common.citationIntro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
         <pre><code>@article{hu2025llm_agents_tutorial,
   title={A Beginner-Friendly Tutorial on LLM-based Agents},
@@ -106,14 +106,14 @@
 }</code></pre>
       </section>
       <div class="page-nav">
-        <a class="page-nav-btn" href="index.html">Back to Home</a>
-        <a class="page-nav-btn primary" href="advanced-context.html">Next</a>
+        <a class="page-nav-btn" href="index.html" data-i18n-key="common.pageNav.backHome">Back to Home</a>
+        <a class="page-nav-btn primary" href="advanced-context.html" data-i18n-key="common.pageNav.next">Next</a>
       </div>
     </main>
       <aside class="progress-sidebar col-12 col-xl-3 col-xxl-3 order-3 order-xl-3">
         <h2>On this page</h2>
         <ul class="progress-list">
-          <li><a class="progress-link" data-target="topic-overview" href="#topic-overview">Overview</a></li>
+          <li><a class="progress-link" data-target="topic-overview" href="#topic-overview" data-i18n-key="common.sidebar.overview">Overview</a></li>
           <li><a class="progress-link" data-target="chain-of-thought" href="#chain-of-thought">Chain-of-Thought</a></li>
           <li><a class="progress-link" data-target="test-time-scaling" href="#test-time-scaling">Test-Time Scaling</a></li>
           <li><a class="progress-link" data-target="reinforcement-learning" href="#reinforcement-learning">Reinforcement Learning</a></li>

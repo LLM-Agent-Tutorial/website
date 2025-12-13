@@ -74,8 +74,8 @@
 
     <main class="col-12 col-xl-6 col-xxl-6 order-1 order-xl-2 main-content">
       <section id="topic-overview" class="content-section">
-        <h1 class="section-title">Managing Long Context</h1>
-        <p>
+        <h1 class="section-title" data-i18n-key="adv-context.title">Managing Long Context</h1>
+        <p data-i18n-key="adv-context.overview.p1">
           As LLM-based agents often engage in multi-turn, prolonged, or complex workflows, a key challenge they may
           encounter is the extremely long context, which significantly raises computational costs, slows down inference,
           and often reduces accuracy due to models' bias towards recent inputs. Therefore, naively using maximal-length
@@ -86,7 +86,7 @@
 
       <section id="context-compression" class="content-section">
         <h2 class="section-title">Context Compression</h2>
-        <p>
+        <p data-i18n-key="adv-context.compression.p1">
           The first strategy is context compression, which reduces the prompt to the minimum necessary set. In
           Retrieval-Augmented Generation (RAG), a large knowledge source is segmented and indexed so that, at query
           time, only the top-k relevant chunks are inserted into the prompt instead of the whole corpus. In addition,
@@ -98,7 +98,7 @@
 
       <section id="context-reuse" class="content-section">
         <h2 class="section-title">Context Reuse</h2>
-        <p>
+        <p data-i18n-key="adv-context.reuse.p1">
           The second strategy is context reuse. Intuitively, prompt caching lets the system treat an unchanged prefix as
           "already processed", so it does not need to be recomputed on every turn. Concretely, servers reuse precomputed
           key–value attention states to skip redundant prefix computation, reducing latency and cost. To make caching
@@ -110,7 +110,7 @@
       </section>
       <section id="hierarchical-context" class="content-section">
         <h2 class="section-title">Hierarchical Context Management</h2>
-        <p>
+        <p data-i18n-key="adv-context.hierarchical.p1">
           The third strategy is hierarchical context management: rather than continually expanding a single transcript,
           we structure contexts according to role and scope. An orchestrator manages global goals and constraints,
           delegating detailed execution to specialized sub-agents, each operating with concise, role-specific prompts.
@@ -122,7 +122,7 @@
         </p>
       </section>
 
-      <p class="citation-intro">If you find this work helpful, please consider citing our paper:</p>
+      <p class="citation-intro" data-i18n-key="common.citationIntro">If you find this work helpful, please consider citing our paper:</p>
       <section class="citation-block">
         <pre><code>@article{hu2025llm_agents_tutorial,
   title={A Beginner-Friendly Tutorial on LLM-based Agents},
@@ -133,14 +133,14 @@
 }</code></pre>
       </section>
       <div class="page-nav">
-        <a class="page-nav-btn" href="index.html">Back to Home</a>
-        <a class="page-nav-btn primary" href="advanced-internalize.html">Next</a>
+        <a class="page-nav-btn" href="index.html" data-i18n-key="common.pageNav.backHome">Back to Home</a>
+        <a class="page-nav-btn primary" href="advanced-internalize.html" data-i18n-key="common.pageNav.next">Next</a>
       </div>
     </main>
     <aside class="progress-sidebar col-12 col-xl-3 col-xxl-3 order-3 order-xl-3">
       <h2>On this page</h2>
       <ul class="progress-list">
-        <li><a class="progress-link" data-target="topic-overview" href="#topic-overview">Overview</a></li>
+        <li><a class="progress-link" data-target="topic-overview" href="#topic-overview" data-i18n-key="common.sidebar.overview">Overview</a></li>
         <li><a class="progress-link" data-target="context-compression" href="#context-compression">Context Compression</a></li>
         <li><a class="progress-link" data-target="context-reuse" href="#context-reuse">Context Reuse</a></li>
         <li><a class="progress-link" data-target="hierarchical-context" href="#hierarchical-context">Hierarchical Context Management</a></li>

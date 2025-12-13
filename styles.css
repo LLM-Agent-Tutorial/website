@@ -113,7 +113,7 @@ h6 {
 
   .site-header .inner {
     display: grid;
-    grid-template-columns: var(--side-width) 1fr auto;
+    grid-template-columns: var(--side-width) 1fr auto auto;
     align-items: center;
   }
 }
@@ -157,6 +157,10 @@ h6 {
 .nav-download-btn {
   width: 100%;
   max-width: 260px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  justify-content: flex-start;
+  text-align: left;
 }
 
 .download-btn:hover {
@@ -179,6 +183,42 @@ h6 {
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 0.35rem 0.6rem;
+}
+
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.2rem 0.3rem;
+  min-width: 130px;
+  justify-content: space-between;
+}
+
+.language-toggle__btn {
+  border: none;
+  background: transparent;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  flex: 1 1 0;
+  text-align: center;
+}
+
+.language-toggle__btn:hover {
+  color: var(--text);
+}
+
+.language-toggle__btn.is-active {
+  background: var(--text);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .layout {
@@ -680,7 +720,7 @@ table th {
     position: static;
     max-height: none;
     border: none;
-    padding: 0;
+    padding: 0 var(--main-pad);
   }
 
   .main-content {
@@ -694,11 +734,26 @@ table th {
   .site-header .inner {
     flex-wrap: wrap;
     width: min(1400px, 100% - 1.5rem);
+    position: relative;
+  }
+
+  #mainNav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: #fff;
+    padding: 0.75rem 1rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    will-change: height;
   }
 
   .primary-nav {
-    padding: 0.75rem 0;
-    background: #fff;
+    padding: 0;
+    background: transparent;
   }
 
   .primary-nav .navbar-nav {
@@ -716,7 +771,7 @@ table th {
 
   .nav-download-btn {
     width: 100%;
-    max-width: 260px;
+    max-width: none;
   }
 
   .main-content {
