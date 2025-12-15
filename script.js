@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '在真实世界部署 LLM Agent，安全性至关重要，需要它们在不确定环境下仍保持对齐、可控、可恢复。尽管研究尚不充分，四个方向很有前景。第一，对工具调用、物理操作、关键资产与敏感数据的访问建立严格权限与环境约束，确保操作安全。第二，用安全加固的组件来构建 Agent，例如防劫持与防代码注入的 scaffold、保护机密性的记忆模块、通过密码学校验加固的 MCP 通道。第三，通过序列化安全状态形成快照，在检测到异常、目标漂移或未授权行为时能够恢复、回滚到已验证配置，或切换到更严格的策略。第四，在多 Agent 系统中引入监督 Agent，防止因信息不对称或级联放大导致的串谋或越权行为。',
     },
     capabilities: {
-      'capabilities.title': 'LLM Agent 能做什么，以及它们如何工作',
+      'capabilities.title': 'LLM Agent 的能力与原理',
       'capabilities.overview.p1':
         '本节精选了一组示例，展示关键 Agent 能力及其背后的提示设计机制，涵盖多种应用场景。概要见下表，每个示例都是自包含的案例。',
       'capabilities.table.caption':

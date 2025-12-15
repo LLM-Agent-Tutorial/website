@@ -508,11 +508,15 @@ body[data-page='ai-scientist'] .token.number {
 }
 
 .table-scroll {
-  overflow: visible;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 table {
   width: 100%;
+  min-width: 720px;
   border-collapse: collapse;
   margin-top: 1rem;
 }
