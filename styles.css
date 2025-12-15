@@ -6,6 +6,7 @@
   --muted: #656565;
   --accent: #1a8917;
   --border: #e6e3db;
+  --divider-strong: #c29b56;
   --radius: 12px;
   --font-serif: 'Charter', 'Georgia', 'Times New Roman', serif;
   --font-sans: 'Helvetica Neue', Arial, sans-serif;
@@ -650,8 +651,9 @@ table th {
 }
 
 .detail-box .detail-divider {
-  border-top: 1px solid var(--border);
-  margin: 1rem 0;
+  border-top: 2px solid var(--divider-strong);
+  margin: 1.1rem 0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
 }
 
 .section-title {

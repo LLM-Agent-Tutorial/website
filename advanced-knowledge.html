@@ -84,7 +84,7 @@
       </section>
 
       <section id="in-context-learning" class="content-section">
-        <h2 class="section-title">In-Context Learning</h2>
+        <h2 class="section-title" data-i18n-key="adv-knowledge.incontext.title">In-Context Learning</h2>
         <p data-i18n-key="adv-knowledge.incontext.p1">
           The most straightforward way to inject domain knowledge is to place the relevant information directly within
           the LLM's context window. This method leverages the model's incontext learning ability, allowing it to use the
@@ -122,14 +122,14 @@
       </section>
 
       <section id="retrieval-augmented-generation" class="content-section">
-        <h2 class="section-title">Retrieval-Augmented Generation</h2>
+        <h2 class="section-title" data-i18n-key="adv-knowledge.rag.title">Retrieval-Augmented Generation</h2>
         <p data-i18n-key="adv-knowledge.rag.p1">
           When dealing with a large corpus of documents, RAG offers a more scalable and efficient solution. Instead of attempting to fit all possible information into the context window, RAG operates on a "just-in-time" basis by retrieving only the most relevant snippets of knowledge in response to the user's query. Taking the medical scenario as an example, this allows an agent to pull specific symptom descriptions for cardiac ischemia from a vast medical database to provide precise, expert-level advice. Standard RAG often treats knowledge chunks as independent, parallel pieces of information, but the user can also explore different ways to construct the knowledge base according to their needs. For example, by incorporating a knowledge graph, the system can represent the intricate relationships between different concepts and entities, and thus fetches not just directly relevant text but also interconnected information. Finally, RAG is not limited to a static set of documents. The retrieval mechanism can be extended to pull information from a wide variety of sources, including structured databases (e.g., via text-to-SQL queries) or live web searches, ensuring the agent has access to the most current information available.
         </p>
       </section>
 
       <section id="fine-tuning" class="content-section">
-        <h2 class="section-title">Fine-Tuning</h2>
+        <h2 class="section-title" data-i18n-key="adv-knowledge.finetune.title">Fine-Tuning</h2>
         <p data-i18n-key="adv-knowledge.finetune.p1">
           A third approach is to embed domain knowledge directly into the LLM's parameter weights through fine-tuning. This process involves further training the pre-trained model on a custom dataset specific to the target domain. Full-Parameter Fine-Tuning would modify all of the model's weights, which offers the highest potential for performance but is extremely resource-intensive. In contrast, methods as LoRA (Low-Rank Adaptation) or adapters freeze most of the model's parameters and only train a small set of new ones, known as Parameter-Efficient Fine-Tuning (PEFT). This dramatically reduces computational costs and makes fine-tuning more accessible. Fine-tuning does more than just teach the model facts; it changes its behavior and makes the knowledge an intrinsic part of its reasoning process. Meanwhile, since the knowledge is stored in the model's weights, the user does not need to include large amounts of text in the prompt during inference. This leads to faster response times and lower operational costs, which is especially beneficial for high-volume applications.
         </p>
@@ -154,9 +154,9 @@
       <h2>On this page</h2>
       <ul class="progress-list">
         <li><a class="progress-link" data-target="topic-overview" href="#topic-overview" data-i18n-key="common.sidebar.overview">Overview</a></li>
-        <li><a class="progress-link" data-target="in-context-learning" href="#in-context-learning">In-Context Learning</a></li>
-        <li><a class="progress-link" data-target="retrieval-augmented-generation" href="#retrieval-augmented-generation">Retrieval-Augmented Generation</a></li>
-        <li><a class="progress-link" data-target="fine-tuning" href="#fine-tuning">Fine-Tuning</a></li>
+        <li><a class="progress-link" data-target="in-context-learning" href="#in-context-learning" data-i18n-key="adv-knowledge.incontext.title">In-Context Learning</a></li>
+        <li><a class="progress-link" data-target="retrieval-augmented-generation" href="#retrieval-augmented-generation" data-i18n-key="adv-knowledge.rag.title">Retrieval-Augmented Generation</a></li>
+        <li><a class="progress-link" data-target="fine-tuning" href="#fine-tuning" data-i18n-key="adv-knowledge.finetune.title">Fine-Tuning</a></li>
       </ul>
       <div class="progress-meter">
         <div class="progress-meter-fill"></div>

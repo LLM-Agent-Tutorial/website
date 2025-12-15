@@ -210,38 +210,47 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     'adv-knowledge': {
       'adv-knowledge.title': '注入领域知识',
+      'adv-knowledge.incontext.title': '上下文学习（In-Context Learning）',
       'adv-knowledge.overview.p1':
-        '向通用LLM注入领域知识是将其引导为强大的专家级 LLM Agent 的关键。具体采用哪种方式取决于知识规模、更新频率以及希望 Agent 呈现的行为。主要有三种技术：In-Context Learning、Retrieval-Augmented Generation (RAG) 和 Fine-Tuning。',
+        '向通用LLM注入领域知识是将其引导为强大的专家级 LLM Agent 的关键。具体采用哪种方式取决于知识规模、更新频率以及希望 Agent 呈现的行为。主要有三种技术：上下文学习（In-Context Learning）、检索增强生成、（Retrieval-Augmented Generation，RAG）和微调（Fine-Tuning）。',
       'adv-knowledge.incontext.p1':
-        '最直接的做法是把相关信息直接放入 LLM 的上下文窗口，利用模型的 in-context 学习能力把这段文本当作生成答案的可信来源。由于用户可以动态插入任意信息而不需要额外基础设施，这种方式非常灵活，尤其适合范围有限的知识，比如某些股票交易规则或患者的临床总结。',
+        '最直接的做法是把相关信息直接放入 LLM 的上下文窗口，利用模型的上下文学习能力把这段文本当作生成答案的可信来源。由于用户可以动态插入任意信息而不需要额外基础设施，这种方式非常灵活，尤其适合范围有限的知识，比如某些股票交易规则或患者的临床总结。',
       'adv-knowledge.incontext.p2':
-        '不过，这种方式不适合庞大的知识库。每次把大段文本塞进 prompt 成本高（输入输出 token 都会计费），在多轮对话中尤甚。过长的上下文还会挤占用户提问、对话历史和模型输出的空间，导致截断或连贯性下降。长上下文的处理会在 <a href="advanced-context.html"><em>Managing Long Context</em></a> 一节展开。',
+        '不过，这种方式不适合庞大的知识库。每次把大段文本塞进 prompt 成本高（输入输出 token 都会计费），在多轮对话中尤甚。过长的上下文还会挤占用户提问、对话历史和模型输出的空间，导致截断或连贯性下降。长上下文的处理会在 <a href="advanced-context.html"><em>长上下文管理</em></a> 一节展开。',
+      'adv-knowledge.rag.title': '检索增强生成（Retrieval-Augmented Generation）',
       'adv-knowledge.rag.p1':
         '当文档规模庞大时，RAG 是更可扩展也更高效的方案。它在查询时“按需”检索最相关的片段，而不是把所有信息都塞进上下文。例如在医疗场景，Agent 可以从大型数据库中检索与心肌缺血相关的具体症状描述，给出精准建议。标准 RAG 将知识块视为彼此独立的平行信息，用户也可以按需构建知识图谱等结构来显式表示概念与实体的关系，从而取回不仅直接相关的文本，还能获取关联信息。此外，RAG 不局限于静态文档；检索可以扩展到结构化数据库（如 text-to-SQL）或在线搜索，确保 Agent 获取最新信息。',
+      'adv-knowledge.finetune.title': '微调（Fine-Tuning）',
       'adv-knowledge.finetune.p1':
-        '第三种方式是通过 Fine-Tuning 将领域知识直接嵌入模型参数。它在特定领域数据集上继续训练预训练模型。全参数 Fine-Tuning 会更新全部参数，性能潜力最高但资源消耗巨大；LoRA、adapter 等 PEFT 方法则冻结大部分参数，只训练少量新增参数，大幅降低成本。Fine-Tuning 不只是教模型事实，它会改变行为，把知识内化为推理的一部分。由于知识存储在权重里，推理时无需在 prompt 中放入大量文本，响应更快、成本更低，特别适合高并发应用。',
+        '第三种方式是通过微调将领域知识直接嵌入模型参数。它在特定领域数据集上继续训练预训练模型。全参数微调会更新全部参数，性能潜力最高但资源消耗巨大；LoRA、adapter 等 PEFT 方法则冻结大部分参数，只训练少量新增参数，大幅降低成本。微调不只是教模型事实，它会改变行为，把知识内化为推理的一部分。由于知识存储在权重里，推理时无需在 prompt 中放入大量文本，响应更快、成本更低，特别适合高并发应用。',
     },
     'adv-context': {
       'adv-context.title': '长上下文管理',
+      'adv-context.compression.title': '上下文压缩（Context Compression）',
       'adv-context.overview.p1':
-        'LLM Agent 常要处理多轮、长流程或复杂任务，极长的上下文会显著抬高计算成本、减慢推理，并因模型偏向近期输入而降低准确性。直接用最大长度上下文在现实中并不可行。常见应对手段有三类：Context Compression、Context Reuse、Hierarchical Context Management。',
+        'LLM Agent 常要处理多轮、长流程或复杂任务，极长的上下文会显著抬高计算成本、减慢推理，并因模型偏向近期输入而降低准确性。直接用最大长度上下文在现实中并不可行。常见应对手段有三类：上下文压缩（Context Compression）、上下文复用（Context Reuse）、分层上下文管理（Hierarchical Context Management）。',
       'adv-context.compression.p1':
-        'Context Compression 通过把 prompt 压缩到必要的最小集合来降本。在 RAG 场景，大型知识源被切分并索引，查询时只把最相关的 top-k 片段插入 prompt。Agent 也可以对过往对话做摘要或合并，保持短对话；或把长期信息放到外部记忆（数据库、向量库），按需再注入，默认让工作 prompt 保持精简。',
+        '上下文压缩通过把 prompt 压缩到必要的最小集合来降本。在 RAG 场景，大型知识源被切分并索引，查询时只把最相关的 top-k 片段插入 prompt。Agent 也可以对过往对话做摘要或合并，保持短对话；或把长期信息放到外部记忆（数据库、向量库），按需再注入，默认让工作 prompt 保持精简。',
+      'adv-context.reuse.title': '上下文复用（Context Reuse）',
       'adv-context.reuse.p1':
-        'Context Reuse 的核心是缓存。直观地说，如果前缀没变，就不必在每轮都重复计算。具体做法是在服务端复用预计算的 key–value 注意力状态，跳过冗余前缀以降低时延与成本。要让缓存有效，需要保持前缀稳定——例如系统角色、共享工具和策略保持一致。若工具需要增删，尽量不要改 prompt；把所有工具定义都放在前缀，通过解码时的掩码来开关工具，从而保持字节级相同、对缓存友好的前缀，同时限制可用动作。',
+        '上下文复用的核心是缓存。直观地说，如果前缀没变，就不必在每轮都重复计算。具体做法是在服务端复用预计算的 key–value 注意力状态，跳过冗余前缀以降低时延与成本。要让缓存有效，需要保持前缀稳定——例如系统角色、共享工具和策略保持一致。若工具需要增删，尽量不要改 prompt；把所有工具定义都放在前缀，通过解码时的掩码来开关工具，从而保持字节级相同、对缓存友好的前缀，同时限制可用动作。',
+      'adv-context.hierarchical.title': '分层上下文管理（Hierarchical Context Management）',
       'adv-context.hierarchical.p1':
-        'Hierarchical Context Management 则将上下文按角色与范围分层，而不是不断累加单一对话。一个编排者负责全局目标与约束，再把细节执行交给具备精简、角色化 prompt 的子 Agent。Agent 之间传递结构化摘要（关键信息、假设、输出），而非长对话，以保证每一步上下文短而易缓存。同时，把能力组织成可复用的模块化技能包，按需加载到上下文，进一步控制提示词长度与复杂度。这类分层设计在子 Agent 编排与技能管理实践中日益常见。',
+        '分层上下文管理则将上下文按角色与范围分层，而不是不断累加单一对话。一个编排者负责全局目标与约束，再把细节执行交给具备精简、角色化 prompt 的子 Agent。Agent 之间传递结构化摘要（关键信息、假设、输出），而非长对话，以保证每一步上下文短而易缓存。同时，把能力组织成可复用的模块化技能包，按需加载到上下文，进一步控制提示词长度与复杂度。这类分层设计在子 Agent 编排与技能管理实践中日益常见。',
     },
     'adv-reasoning': {
       'adv-reasoning.title': '增强推理能力',
+      'adv-reasoning.cot.title': '思维链（Chain-of-Thought）',
       'adv-reasoning.overview.p1':
-        '推理支撑着规划、工具使用、协作等核心 Agent 能力。近期很多工作显著提升了 LLM 的推理水平。例如 OpenAI 的 oseries 与 DeepSeek-R1 都是为推理强化的模型，相比同供应商的标准 LLM（如 GPT-4 系列），它们会在给答案前显式做多步思考，因此在数学、编程等复杂任务上表现更好，但输出更长、token 开销也更高。',
+        '推理（Reasoning）支撑着规划、工具使用、协作等核心 Agent 能力。近期很多工作显著提升了 LLM 的推理水平。例如 OpenAI 的 oseries 与 DeepSeek-R1 都是为推理强化的模型，相比同供应商的标准 LLM（如 GPT-4 系列），它们会在给答案前显式做多步思考，因此在数学、编程等复杂任务上表现更好，但输出更长、token 开销也更高。',
       'adv-reasoning.cot.p1':
         'Chain-of-Thought 是最简单的推理增强技巧。只需在提示中加一句 “Let’s think step by step”，就能鼓励模型先写出中间推理再给答案。尽管简单，却能显著提高推理效果。Long CoT 进一步鼓励更长、更层次化的推理轨迹；Self-consistency 通过汇聚多条 CoT 结果提升可靠性；Tree-of-Thoughts (ToT) 则把 CoT 泛化为在多条推理路径上搜索后再确定最终解。',
+      'adv-reasoning.tts.title': '推理时扩展（Test-Time Scaling）',
       'adv-reasoning.tts.p1':
-        'Test-Time Scaling 在推理时增加模型的思考深度，无需重新训练或改架构。核心是生成多条推理样本（如多样的 CoT），再选择最一致或最有信心的输出，利用模型的多路径探索与冗余自校验能力。常见方法包括 Beam Search 和 Monte Carlo Tree Search (MCTS)：前者保留若干高概率且多样的候选序列，后者通过模拟与统计启发式自适应探索推理空间。这类方法能扩展模型的思辨能力，降低多步推理任务中的幻觉与错误。',
+        '推理时扩展技术在推理时增加模型的思考深度，无需重新训练或改架构。核心是生成多条推理样本（如多样的 CoT），再选择最一致或最有信心的输出，利用模型的多路径探索与冗余自校验能力。常见方法包括 Beam Search 和 Monte Carlo Tree Search (MCTS)：前者保留若干高概率且多样的候选序列，后者通过模拟与统计启发式自适应探索推理空间。这类方法能扩展模型的思辨能力，降低多步推理任务中的幻觉与错误。',
+      'adv-reasoning.rl.title': '强化学习（Reinforcement Learning，RL）',
       'adv-reasoning.rl.p1':
-        '如果要在训练阶段提升推理能力，Reinforcement Learning 是几乎标准的选择。RL 让模型通过探索不同的推理路径、结合奖励信号来学习。奖励可以是可验证的（例如与标注答案对比），也可以是基于人类偏好的偏好奖励。早期的 REINFORCE 已将此思路用于 LLM，随后 PPO 注重训练稳定性，DPO 直接对齐人类偏好而无需显式奖励，GRPO 则通过在小规模推理路径中对比奖励增益，提供更高效的推理强化。',
+        '如果要在训练阶段提升推理能力，RL是几乎标准的选择。RL 让模型通过探索不同的推理路径、结合奖励信号来学习。奖励可以是可验证的（例如与标注答案对比），也可以是基于人类偏好的偏好奖励。早期的 REINFORCE 已将此思路用于 LLM，随后 PPO 注重训练稳定性，DPO 直接对齐人类偏好而无需显式奖励，GRPO 则通过在小规模推理路径中对比奖励增益，提供更高效的推理强化。',
     },
     'adv-internalize': {
       'adv-internalize.title': '内化 Agent 能力',

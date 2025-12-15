@@ -85,7 +85,7 @@
       </section>
 
       <section id="context-compression" class="content-section">
-        <h2 class="section-title">Context Compression</h2>
+        <h2 class="section-title" data-i18n-key="adv-context.compression.title">Context Compression</h2>
         <p data-i18n-key="adv-context.compression.p1">
           The first strategy is context compression, which reduces the prompt to the minimum necessary set. In
           Retrieval-Augmented Generation (RAG), a large knowledge source is segmented and indexed so that, at query
@@ -97,7 +97,7 @@
       </section>
 
       <section id="context-reuse" class="content-section">
-        <h2 class="section-title">Context Reuse</h2>
+        <h2 class="section-title" data-i18n-key="adv-context.reuse.title">Context Reuse</h2>
         <p data-i18n-key="adv-context.reuse.p1">
           The second strategy is context reuse. Intuitively, prompt caching lets the system treat an unchanged prefix as
           "already processed", so it does not need to be recomputed on every turn. Concretely, servers reuse precomputed
@@ -109,7 +109,7 @@
         </p>
       </section>
       <section id="hierarchical-context" class="content-section">
-        <h2 class="section-title">Hierarchical Context Management</h2>
+        <h2 class="section-title" data-i18n-key="adv-context.hierarchical.title">Hierarchical Context Management</h2>
         <p data-i18n-key="adv-context.hierarchical.p1">
           The third strategy is hierarchical context management: rather than continually expanding a single transcript,
           we structure contexts according to role and scope. An orchestrator manages global goals and constraints,
@@ -141,9 +141,9 @@
       <h2>On this page</h2>
       <ul class="progress-list">
         <li><a class="progress-link" data-target="topic-overview" href="#topic-overview" data-i18n-key="common.sidebar.overview">Overview</a></li>
-        <li><a class="progress-link" data-target="context-compression" href="#context-compression">Context Compression</a></li>
-        <li><a class="progress-link" data-target="context-reuse" href="#context-reuse">Context Reuse</a></li>
-        <li><a class="progress-link" data-target="hierarchical-context" href="#hierarchical-context">Hierarchical Context Management</a></li>
+        <li><a class="progress-link" data-target="context-compression" href="#context-compression" data-i18n-key="adv-context.compression.title">Context Compression</a></li>
+        <li><a class="progress-link" data-target="context-reuse" href="#context-reuse" data-i18n-key="adv-context.reuse.title">Context Reuse</a></li>
+        <li><a class="progress-link" data-target="hierarchical-context" href="#hierarchical-context" data-i18n-key="adv-context.hierarchical.title">Hierarchical Context Management</a></li>
       </ul>
       <div class="progress-meter">
         <div class="progress-meter-fill"></div>
